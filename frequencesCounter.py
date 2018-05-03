@@ -1,15 +1,15 @@
 class FrequencesCounter:
     def __init__(self):
-        self.dangerous_char = ['--', '#', '/*', '*/', "'", "''", '||', '\\\\', '=', '/**/', '@@', '%']
+        self.dangerous_char = ['--', '#', '/*', '*/', "'", "''", '||', '\\\\', '=', '/**/', '@@', '%', '``']
         self.dangerous_token = ['rename', 'drop', 'delete', 'insert', 'create', 'exec', 'update', 'union', 'set',
                                 'alter', 'database', 'and', 'or', 'information_schema', 'load_file', 'select',
-                                'shutdown', 'cmdshell', 'hex', 'ascii', 'asc', '__time__', 'sleep', 'exec', 'concat',
+                                'shutdown', 'cmdshell', 'hex', 'ascii', 'asc', 'sleep', 'exec', 'concat',
                                 'char', 'tuncat', 'group  by', 'order', 'join', 'var', 'limit', 'ord', 'benchmark',
                                 'varchar', 'waitfor', 'nvarchar', 'variable', 'print', 'pg_sleep', 'elt', 'xp_regread',
                                 'isnull', 'null', 'ping', '/etc/passwd', 'microsoftversione', 'mysql.user', 'procedure',
                                 'localhost', 'execute', 'ipconfig', 'delay', 'sys', 'tablespace', 'xp_cmdshell',
                                 'to_timestamp_tz', 'utl_http',  'current_user',  'session_user', 'current_setting',
-                                'pg_shadow', 'pg_group', 'utl_inaddr', 'get_host_address', 'md5']
+                                'pg_shadow', 'pg_group', 'utl_inaddr', 'get_host_address', 'md5', 'bin']
 
         self.suspicious_token = ['from', 'all', 'as', 'declare', 'version', 'where', 'table', 'like', 'values', 'into',
                                  'any', 'distinct', 'in', 'count', 'users', 'identified', 'top', 'load',
@@ -52,6 +52,15 @@ class FrequencesCounter:
                         return True
         return False
 
+    def isNumeric(self, token):
+        if token.isdigit():
+            return True
+        try:
+            int(token, 16)
+            return True
+        except:
+            return False
+
     def get_frequences(self, tokenized_str):
         freq = self.create_freq_dict()
         for token in tokenized_str:
@@ -61,7 +70,7 @@ class FrequencesCounter:
                 freq['d_token'] = freq['d_token'] + 1
             elif token in self.punctuation:
                 freq['punck'] = freq['punck'] + 1
-            elif token in self.suspicious_token:
+            elif token in self.suspicious_token or self.isNumeric(token):
                 freq['s_token'] = freq['s_token'] + 1
             elif self.is_always_true(token):
                 freq['alw_true'] = True

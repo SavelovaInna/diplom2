@@ -20,7 +20,7 @@ for line in f:
 
     # res = '    '.join(s) + '\t' + \
     #       '\t'.join('{}'.format(value) for key, value in freq.items()) +\
-    #       '\t' + '\t'.join(memberships) + '\n' #+ '\t' + create_out() + '\n'
+    #       '\t' + '\t'.join(d.memberships) + '\n' #+ '\t' + create_out() + '\n'
 
     res = '\t'.join(d.memberships) + '\t' + d.output + '\n'
     if not line.endswith('\t'):
