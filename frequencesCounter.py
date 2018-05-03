@@ -1,19 +1,21 @@
 class FrequencesCounter:
     def __init__(self):
-        self.dangerous_char = ['--', '#', '/*', '*/', "'", "''", '||', '\\\\', '=', '/**/', '@@']
+        self.dangerous_char = ['--', '#', '/*', '*/', "'", "''", '||', '\\\\', '=', '/**/', '@@', '%']
         self.dangerous_token = ['rename', 'drop', 'delete', 'insert', 'create', 'exec', 'update', 'union', 'set',
                                 'alter', 'database', 'and', 'or', 'information_schema', 'load_file', 'select',
                                 'shutdown', 'cmdshell', 'hex', 'ascii', 'asc', '__time__', 'sleep', 'exec', 'concat',
                                 'char', 'tuncat', 'group  by', 'order', 'join', 'var', 'limit', 'ord', 'benchmark',
                                 'varchar', 'waitfor', 'nvarchar', 'variable', 'print', 'pg_sleep', 'elt', 'xp_regread',
                                 'isnull', 'null', 'ping', '/etc/passwd', 'microsoftversione', 'mysql.user', 'procedure',
-                                'localhost', 'execute', 'ipconfig', 'delay', 'sys']
+                                'localhost', 'execute', 'ipconfig', 'delay', 'sys', 'tablespace', 'xp_cmdshell',
+                                'to_timestamp_tz', 'utl_http',  'current_user',  'session_user', 'current_setting',
+                                'pg_shadow', 'pg_group', 'utl_inaddr', 'get_host_address', 'md5']
 
         self.suspicious_token = ['from', 'all', 'as', 'declare', 'version', 'where', 'table', 'like', 'values', 'into',
-                                 'any', 'distinct', 'in', 'count', 'md5', 'users', 'identified', 'top', 'load',
-                                 'between', 'begin', 'truncate', 'is', 'by', 'copy']
+                                 'any', 'distinct', 'in', 'count', 'users', 'identified', 'top', 'load',
+                                 'between', 'begin', 'truncate', 'is', 'by', 'copy',  'having']
         self.punctuation = ['<', '>', '*', ';', '_', '-', '(', ')', '=', '{', '}', '@', '.', ',', '&', '[', ']', '+',
-                            '-', '?', '%', '!', ':', '\\', '/']
+                            '-', '?', '!', ':', '\\', '/']
 
         self.another_token = set()
 
