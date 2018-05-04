@@ -13,10 +13,10 @@ class MyTokenizer:
             (re.compile(r'([:,])$'), r' \1 '),
             (re.compile(r'\.\.\.'), r' ... '),
             (re.compile(r'%20'), r' \g<0> '),
-            (re.compile(r'[:;@#$%&=+.\-\']'), r' \g<0> '),
+            (re.compile(r'[:;@#$%&=+.\-\'\\/]'), r' \g<0> '),
             (re.compile(r'/\*'), r' \g<0> '),
             (re.compile(r'\*/'), r' \g<0> '),
-            (re.compile(r'([^\.])(\.)([\]\)}>"\']*)\s*$'), r'\1 \2\3 '),  # Handles the final period.
+            (re.compile(r'([^\.])(\.)([\]\)}>"\']*)\s*$(//)'), r'\1 \2\3 '),  # Handles the final period.
             (re.compile(r'[?!]'), r' \g<0> '),
             (re.compile(r"([^'])' "), r"\1 ' "),
         ]
