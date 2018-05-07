@@ -31,13 +31,13 @@ class FrequencesCounter:
         self.dangerous_token_xss.extend(get_tokens('data/tokens/character.txt'))
 
 
-        self.dangerous_token_ci = ['echo', 'print(`echo', 'shell_exec', 'proc_open', 'popen', 'str', 'str1', 'then',
-                                   'sleep', 'else']
+        self.dangerous_token_ci = ['echo', 'print(`echo', 'shell_exec', 'proc_open', 'popen', 'str', 'str1',
+                                   'sleep']
         self.dangerous_substr_ci = ['exec(print', 'system(print', 'passthru(print']
 
         self.suspicious_token = ['from', 'all', 'as', 'declare', 'version', 'where', 'table', 'like', 'values', 'into',
                                  'any', 'distinct', 'in', 'count', 'users', 'identified', 'top', 'load',
-                                 'between', 'begin', 'truncate', 'is', 'by', 'copy',  'having']
+                                 'between', 'begin', 'truncate', 'is', 'by', 'copy',  'having', 'if', 'then', 'else']
         self.punctuation = ['*', ';', '_', '-', '(', ')', '=', '{', '}', '@', '.', ',', '&', '[', ']', '+',
                             '-', '?', '!', ':', '\\', '/']
 
@@ -60,7 +60,6 @@ class FrequencesCounter:
         freq['s_token'] = 0
         freq['space'] = 0
         freq['length'] = 0
-        freq['alw_true'] = False
         return freq
 
     def is_always_true(self, s):  # add 'whatever' in ('whatever')
@@ -92,9 +91,9 @@ class FrequencesCounter:
         for token in tokenized_str:
             if token in self.dangerous_char:
                 freq['d_char'] = freq['d_char'] + 1
-            elif token in self.dangerous_token_ci or [s for s in self.dangerous_substr_ci if token in s]:
+            elif token in self.dangerous_token_ci or [s for s in self.dangerous_substr_ci if token == s]:
                 freq['d_token_ci'] = freq['d_token_ci'] + 1
-            elif token in self.dangerous_token_sqli:
+            elif token in self.dangerous_token_sqli or self.is_always_true(token):
                 freq['d_token_sqli'] = freq['d_token_sqli'] + 1
             elif token in self.dangerous_token_xss:
                 freq['d_token_xss'] = freq['d_token_xss'] + 1
@@ -102,8 +101,6 @@ class FrequencesCounter:
                 freq['punck'] = freq['punck'] + 1
             elif token in self.suspicious_token or self.isNumeric(token):
                 freq['s_token'] = freq['s_token'] + 1
-            elif self.is_always_true(token):
-                freq['alw_true'] = True
             else:
                 self.another_token.add(token)
         return freq
@@ -111,5 +108,4 @@ class FrequencesCounter:
     def get_other_param(self, str, freq):
         freq['space'] = str.count(' ')
         freq['length'] = len(str)
-        freq['alw_true'] = self.is_always_true(str)
 

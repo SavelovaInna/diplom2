@@ -1,13 +1,12 @@
-import nltk
 from tokenizer import MyTokenizer
 from frequencesCounter import FrequencesCounter
 from urllib.parse import unquote
 import codecs
 
-#f = codecs.open('data/xssAll.txt', "r", "utf_8")
-f = codecs.open('data/sqliAll.txt', "r", "utf_8")
-#f = codecs.open('data/ciAll.txt', "r", "utf_8")
-out = codecs.open("out_variable.csv", "w")
+#f = codecs.open('data/new_xssAll.txt', "r", "utf_8")
+f = codecs.open('data/new_sqliAll.txt', "r", "utf_8")
+#f = codecs.open('data/new_ciAll.txt', "r", "utf_8")
+out = codecs.open("out_variable.csv", "w", "utf-8")
 out_another_token = codecs.open("out_another_token.txt", "w", "utf-8")
 
 tokenizer = MyTokenizer()
