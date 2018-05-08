@@ -16,45 +16,31 @@ class DataPoint:
         self.output = ''
         self.memberships = []
 
-    def __max_level(self, levels):
+    @staticmethod
+    def __max_level(levels):
         if not levels:
             return ''
         levels_high = ['VL', 'L', 'ML', 'M', 'MH', 'H', 'VH']
         indexes = [levels_high.index(l) for l in levels]
         return levels_high[max(indexes)]
 
-    def  __create_out(self):
-        count_h = 0
-        count_l = 0
-        count_m = 0
-        for var in self.fuzzy_vars:
-            if self.fuzzy_vars[var] == 'H':
-                count_h = count_h + 1
-            if self.fuzzy_vars[var] == 'M':
-                count_m = count_m + 1
-            if self.fuzzy_vars[var] == 'L':
-                count_l = count_l + 1
-
+    def __create_out(self):
         out = []
-        if count_h > 3:
+
+        if self.fuzzy_vars['d_char'] == 'H' or self.fuzzy_vars['d_token_sqli'] == 'H':
             out.append('H')
-        if count_m > 3:
+        if self.fuzzy_vars['d_char'] == 'M' or self.fuzzy_vars['d_token_sqli'] == 'M':
             out.append('H')
-        if count_l > 3:
+        if self.fuzzy_vars['d_char'] == 'L' and self.fuzzy_vars['d_token_sqli'] == 'L'\
+                and (self.fuzzy_vars['s_token'] == 'M' or self.fuzzy_vars['space'] == 'M' or
+                     self.fuzzy_vars['punck'] == 'M' or self.fuzzy_vars['s_token'] == 'H' or
+                     self.fuzzy_vars['space'] == 'H' or self.fuzzy_vars['punck'] == 'H'):
+            out.append('M')
+
+        if self.fuzzy_vars['d_char'] == 'L' and self.fuzzy_vars['d_token_sqli'] == 'L'\
+                and self.fuzzy_vars['s_token'] == 'L' and self.fuzzy_vars['space'] == 'L' and \
+                     self.fuzzy_vars['punck'] == 'L':
             out.append('L')
-        if self.fuzzy_vars['alw_true'] == 'H' and \
-                (self.fuzzy_vars['d_char'] == 'H' or self.fuzzy_vars['d_token'] == 'H'):
-            out.append('H')
-        if self.fuzzy_vars['alw_true'] == 'H' and \
-                (self.fuzzy_vars['d_char'] == 'M' and self.fuzzy_vars['d_token'] == 'M'):
-            out.append('H')
-        if self.fuzzy_vars['d_char'] == 'H' and self.fuzzy_vars['d_token'] == 'H':
-            out.append('H')
-        if self.fuzzy_vars['alw_true'] == 'H' or \
-                (self.fuzzy_vars['d_char'] == 'H' or self.fuzzy_vars['d_token'] == 'H'):
-            out.append('M')
-        if self.fuzzy_vars['d_char'] == 'M' and self.fuzzy_vars['d_token'] == 'M':
-            out.append('M')
 
         return self.__max_level(out)
 
@@ -63,7 +49,7 @@ class DataPoint:
         for var in self.fuzzy_vars:
             self.fuzzy_vars[var].create_level(input[var])
             self.memberships.append(self.fuzzy_vars[var].get_word_level())
-        #self.output = self.__create_out()
+        self.output = self.__create_out()
         #return self.output
 
     def __eq__(self, other):
@@ -71,3 +57,11 @@ class DataPoint:
             if self.fuzzy_vars[key] != other.fuzzy_vars[key]:
                 return False
         return True
+
+    def to_dict_levels(self):
+        d = dict()
+        for var in self.fuzzy_vars:
+            d[var] = self.fuzzy_vars[var].get_word_level()
+
+        d['attack'] = self.output
+        return d

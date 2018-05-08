@@ -5,6 +5,7 @@ from skfuzzy import control as ctrl
 
 class FuzzyVariable:
     def __init__(self, name, max, middle):
+        self.name = name
         self.max = max
         self.middle = middle
         universum = np.arange(0, max, 1)
@@ -26,25 +27,31 @@ class FuzzySystem:
         self.inputs.append(FuzzyVariable('d_token_xss', 31, 6))
         self.inputs.append(FuzzyVariable('d_token_ci', 8, 4))
         self.inputs.append(FuzzyVariable('punck', 38, 4))
-        self.inputs.append(FuzzyVariable( 's_token', 15, 2))
-        self.inputs.append(FuzzyVariable( 'space', 26, 4))
+        self.inputs.append(FuzzyVariable('s_token', 15, 2))
+        self.inputs.append(FuzzyVariable('space', 26, 4))
         self.inputs.append(FuzzyVariable('length', 196, 40))
 
-        self.attack = FuzzyVariable('attack', 100, 50)
-        self.rules = []
+        self.attack = ctrl.Consequent(np.arange(0, 100, 1), 'attack')
+        self.attack.automf(names=['L', 'M', 'H'])
+        self.rules = {}
+        self.rules['sqli'] = []
+        self.rules['xss'] = []
+        self.rules['ci'] = []
 
-    def add_rule(self, inputs_levels, output_level):
+
+    def add_rule(self, inputs_levels, type):
+        antecedent = None
         for variable in self.inputs:
             if inputs_levels[variable.name]:
                 if antecedent:
-                    antecedent = antecedent & variable[inputs_levels[variable.name]]
+                    antecedent = antecedent & variable.var[inputs_levels[variable.name]]
                 else:
-                    antecedent = variable[inputs_levels[variable.name]]
+                    antecedent = variable.var[inputs_levels[variable.name]]
 
-        self.rules.append(ctrl.Rule(antecedent, self.attack[output_level]))
+        self.rules[type].append(ctrl.Rule(antecedent, self.attack[inputs_levels['attack']]))
 
-    def start_system(self):
-        system_control = ctrl.ControlSystem(self.rules)
+    def start_system(self, type):
+        system_control = ctrl.ControlSystem(self.rules[type])
         self.system = ctrl.ControlSystemSimulation(system_control)
 
     def compute(self, data):

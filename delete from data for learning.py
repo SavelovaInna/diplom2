@@ -20,5 +20,5 @@ for name in dataNames:
         k = 0
         for key in ['d_char', 'd_token_sqli', 'd_token_xss', 'd_token_ci']:
             k = k + freq[key]
-        if k > 3 and k < 100:
+        if k > 2 and k < 100:
             out.write(line)
