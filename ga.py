@@ -24,38 +24,41 @@ attack_data['sqli'] = get_input_from_file('data/new_sqliAll.txt')
 valid_data = get_input_from_file('data/valid_data.txt')
 
 def int_to_level(a):
-    if a == 1:
+    if a == 0:
         return 'L'
-    elif a == 2:
+    elif a == 1 or a == 2:
         return 'M'
     elif a == 3:
         return 'H'
-    else:
-        return ''
 
 def get_attack_count(fs, data):
     count = 0
     for line in data:
         try:
             res = fs.compute(line)
-            if res > 40:
+            if res > 50:
                 count = count + 1
         except:
             pass
     return count
 
+def chromosome_to_rule(r):
+    variables = ['d_char', 'd_token_sqli', 'd_token_xss', 'd_token_ci', 'punck', 's_token', 'space', 'length']
+    levels = dict()
+    for var in variables:
+        levels[var] = int_to_level(r & 0b11)
+        r = r >> 2
+    levels['attack'] = int_to_level(r & 0b11)
+    if not levels['attack']:
+        levels['attack'] = 'L'
+    return levels
+
+@profile
 def fitness_function(x, *args):
-    variables = ['d_char', 'd_token_sqli', 'd_token_xss', 'd_token_ci','punck', 's_token', 'space', 'length']
     fs = FuzzySystem()
     for r in x:
         r = int(r)
-        levels = dict()
-        for var in variables:
-            levels[var] = int_to_level(r & 0b11)
-            r = r >> 2
-        levels['attack'] = int_to_level(r & 0b11)
-        if not levels['attack']:
-            levels['attack'] = 'L'
+        levels = chromosome_to_rule(r)
         fs.add_rule(levels, 'sqli')
 
     fs.start_system(''.join(args))
@@ -65,14 +68,21 @@ def fitness_function(x, *args):
     all_attack_line = len(attack_data['sqli'])
     all_valid_line = len(valid_data)
 
-    print(detected_attack_line, detected_valid_line,
-          1 / (detected_attack_line/all_attack_line - detected_valid_line/all_valid_line))
-    return 1 / abs(detected_attack_line/all_attack_line - detected_valid_line/all_valid_line)
+    res = (all_attack_line - detected_attack_line)/all_attack_line + detected_valid_line/all_valid_line
+    print(detected_attack_line, detected_valid_line, res)
+
+    return res
 
 
-bounds = [(0, 262144) for i in range(0, 200)]
-result = differential_evolution(fitness_function, bounds, 'sqli')
+bounds = [(0, 262144) for i in range(0, 20)]
+result = differential_evolution(fitness_function, bounds, 'sqli', 'best1bin', 7)
 print(result)
 
 
-
+# x = [199440.18040827, 160453.31339275,  74459.43200463, 172040.17706042,
+#        215591.37279189,  40273.20229866, 155553.71674261, 119051.02637304,
+#         18116.22680483, 127598.9181293]
+for r in result.x:
+    r = int(r)
+    levels = chromosome_to_rule(r)
+    print('  '.join(['%s:: %s' % (key, value) for (key, value) in levels.items()]))

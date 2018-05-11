@@ -51,8 +51,12 @@ class FuzzySystem:
         self.rules[type].append(ctrl.Rule(antecedent, self.attack[inputs_levels['attack']]))
 
     def start_system(self, type):
-        system_control = ctrl.ControlSystem(self.rules[type])
-        self.system = ctrl.ControlSystemSimulation(system_control)
+        try:
+            system_control = ctrl.ControlSystem(self.rules[type])
+            self.system = ctrl.ControlSystemSimulation(system_control)
+        except:
+            print(self.inputs)
+
 
     def compute(self, data):
         for var in self.inputs:
