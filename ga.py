@@ -5,6 +5,7 @@ from tokenizer import MyTokenizer
 from frequencesCounter import FrequencesCounter
 from scipy.optimize import differential_evolution
 
+
 def get_input_from_file(file_name):
     f = codecs.open(file_name, "r", "utf_8")
     tokenizer = MyTokenizer()
@@ -19,9 +20,10 @@ def get_input_from_file(file_name):
         input.append(freq)
     return input
 
-attack_data ={}
-attack_data['sqli'] = get_input_from_file('data/new_sqliAll.txt')
+
+attack_data = {}
 valid_data = get_input_from_file('data/valid_data.txt')
+
 
 def int_to_level(a):
     if a == 0:
@@ -38,9 +40,10 @@ def get_attack_count(fs, data):
             res = fs.compute(line)
             if res > 50:
                 count = count + 1
-        except:
+        except ValueError:
             pass
     return count
+
 
 def chromosome_to_rule(r):
     variables = ['d_char', 'd_token_sqli', 'd_token_xss', 'd_token_ci', 'punck', 's_token', 'space', 'length']
@@ -53,19 +56,21 @@ def chromosome_to_rule(r):
         levels['attack'] = 'L'
     return levels
 
-@profile
+
+
 def fitness_function(x, *args):
     fs = FuzzySystem()
+    type = ''.join(args)
     for r in x:
         r = int(r)
         levels = chromosome_to_rule(r)
-        fs.add_rule(levels, 'sqli')
+        fs.add_rule(levels, type)
 
-    fs.start_system(''.join(args))
+    fs.start_system(type)
 
-    detected_attack_line = get_attack_count(fs, attack_data['sqli'])
+    detected_attack_line = get_attack_count(fs, attack_data[type])
     detected_valid_line = get_attack_count(fs, valid_data)
-    all_attack_line = len(attack_data['sqli'])
+    all_attack_line = len(attack_data[type])
     all_valid_line = len(valid_data)
 
     res = (all_attack_line - detected_attack_line)/all_attack_line + detected_valid_line/all_valid_line
@@ -74,15 +79,18 @@ def fitness_function(x, *args):
     return res
 
 
-bounds = [(0, 262144) for i in range(0, 20)]
-result = differential_evolution(fitness_function, bounds, 'sqli', 'best1bin', 7)
-print(result)
+def create_rule(type):
+    attack_data[type] = get_input_from_file('data/new_' + type + 'All.txt')
+
+    bounds = [(0, 262144) for i in range(0, 2)]
+    result = differential_evolution(fitness_function, bounds, type, 'best1bin')
+    print(result)
 
 
-# x = [199440.18040827, 160453.31339275,  74459.43200463, 172040.17706042,
-#        215591.37279189,  40273.20229866, 155553.71674261, 119051.02637304,
-#         18116.22680483, 127598.9181293]
-for r in result.x:
-    r = int(r)
-    levels = chromosome_to_rule(r)
-    print('  '.join(['%s:: %s' % (key, value) for (key, value) in levels.items()]))
+    for r in result.x:
+        r = int(r)
+        levels = chromosome_to_rule(r)
+        print('  '.join(['%s:: %s' % (key, value) for (key, value) in levels.items()]))
+
+
+create_rule('xss')

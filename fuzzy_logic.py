@@ -54,7 +54,7 @@ class FuzzySystem:
         try:
             system_control = ctrl.ControlSystem(self.rules[type])
             self.system = ctrl.ControlSystemSimulation(system_control)
-        except:
+        except Exception:
             print(self.inputs)
 
 
