@@ -8,6 +8,12 @@ from deap import base
 from deap import creator
 from deap import tools
 
+from learningUtils import LearningUtils
+utils = LearningUtils()
+utils = LearningUtils()
+utils.attack_data[type] = utils.get_input_from_file('data/new_' + type + 'All.txt')
+
+
 creator.create("FitnessMin", base.Fitness, weights=(-1.0,))
 creator.create("Individual", array.array, typecode='b', fitness=creator.FitnessMin)
 
@@ -21,11 +27,8 @@ toolbox.register("individual", tools.initRepeat, creator.Individual, toolbox.att
 toolbox.register("population", tools.initRepeat, list, toolbox.individual)
 
 
-def evalOneMax(individual):
-    return sum(individual),
 
-
-toolbox.register("evaluate", evalOneMax)
+toolbox.register("evaluate", utils.fitness_function())
 toolbox.register("mate", tools.cxTwoPoint)
 toolbox.register("mutate", tools.mutFlipBit, indpb=0.05)
 toolbox.register("select", tools.selTournament, tournsize=3)
