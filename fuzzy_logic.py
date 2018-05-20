@@ -18,18 +18,21 @@ class FuzzyVariable:
         triangle = [self.middle, self.max, self.max]
         self.var['H'] = fuzz.trimf(universum, triangle)
 
+    def print(self):
+        self.var.view()
+
 
 class FuzzySystem:
     def __init__(self):
         self.inputs = []
-        self.inputs.append(FuzzyVariable('d_char', 11, 4))
-        self.inputs.append(FuzzyVariable('d_token_sqli', 13, 2))
-        self.inputs.append(FuzzyVariable('d_token_xss', 31, 6))
+        self.inputs.append(FuzzyVariable('d_char', 63, 4))
+        self.inputs.append(FuzzyVariable('d_token_sqli', 13, 3))
+        self.inputs.append(FuzzyVariable('d_token_xss', 31, 5))
         self.inputs.append(FuzzyVariable('d_token_ci', 8, 4))
-        self.inputs.append(FuzzyVariable('punck', 38, 4))
-        self.inputs.append(FuzzyVariable('s_token', 15, 2))
-        self.inputs.append(FuzzyVariable('space', 26, 4))
-        self.inputs.append(FuzzyVariable('length', 196, 40))
+        self.inputs.append(FuzzyVariable('punck', 56, 2))
+        self.inputs.append(FuzzyVariable('s_token', 346, 6))
+        self.inputs.append(FuzzyVariable('space', 85, 6))
+        self.inputs.append(FuzzyVariable('length',969, 63))
 
         self.attack = ctrl.Consequent(np.arange(0, 100, 1), 'attack')
         self.attack.automf(names=['L', 'M', 'H'])

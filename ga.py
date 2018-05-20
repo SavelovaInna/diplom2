@@ -4,10 +4,11 @@ from learningUtils import LearningUtils
 
 def create_rule(type):
     utils = LearningUtils()
-    utils.attack_data[type] = utils.get_input_from_file('data/new_' + type + 'All.txt')
+    utils.setType('xss')
+
 
     bounds = [(0, 262144) for i in range(0, 2)]
-    result = differential_evolution(utils.fitness_function_sciPy, bounds, type, 'best1bin')
+    result = differential_evolution(utils.fitness_function_sciPy, bounds)
     print(result)
 
 

@@ -10,6 +10,10 @@ class LearningUtils:
         self.attack_data = {}
         self.valid_data = self.get_input_from_file('data/valid_data.txt')
 
+    def setType(self, type):
+        self.type = type
+        self.attack_data[type] = self.get_input_from_file('data/new_' + type + 'All.txt')
+
     def get_input_from_file(self, file_name):
         f = codecs.open(file_name, "r", "utf_8")
         tokenizer = MyTokenizer()
@@ -57,23 +61,36 @@ class LearningUtils:
             levels['attack'] = 'L'
         return levels
 
-    def fitness_function_sciPy(self, x, *args):
+
+
+    def get_result(self, fs):
+        detected_attack_line = self.get_attack_count(fs, self.attack_data[self.type])
+        detected_valid_line = self.get_attack_count(fs, self.valid_data)
+        all_attack_line = len(self.attack_data[self.type])
+        all_valid_line = len(self.valid_data)
+
+        res = (all_attack_line - detected_attack_line) / all_attack_line + detected_valid_line / all_valid_line
+        print(detected_attack_line, detected_valid_line, res)
+        return res
+
+    def fitness_function_sciPy(self, x):
         fs = FuzzySystem()
-        type = ''.join(args)
         for r in x:
             r = int(r)
             levels = self.chromosome_to_rule(r)
-            fs.add_rule(levels, type)
+            fs.add_rule(levels, self.type)
 
-        fs.start_system(type)
+        fs.start_system(self.type)
+        return self.get_result(fs)
 
-        detected_attack_line = self.get_attack_count(fs, self.attack_data[type])
-        detected_valid_line = self.get_attack_count(fs, self.valid_data)
-        all_attack_line = len(self.attack_data[type])
-        all_valid_line = len(self.valid_data)
+    def fitness_function_for_one_rule(self, individual):
+        x = 0
+        for bit in individual:
+            x = (x << 1) | bit
 
-        res = (all_attack_line - detected_attack_line)/all_attack_line + detected_valid_line/all_valid_line
-        print(detected_attack_line, detected_valid_line, res)
-
-        return res
+        fs = FuzzySystem()
+        levels = self.chromosome_to_rule(x)
+        fs.add_rule(levels, self.type)
+        fs.start_system(self.type)
+        return (self.get_result(fs),)
 
