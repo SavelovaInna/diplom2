@@ -3,6 +3,7 @@ from tokenizer import MyTokenizer
 from frequencesCounter import FrequencesCounter
 from data_point import DataPoint
 
+
 def create_rules(type):
     data_points = []
 

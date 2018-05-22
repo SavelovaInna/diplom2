@@ -26,7 +26,7 @@ class FuzzySystem:
     def __init__(self):
         self.inputs = []
         self.inputs.append(FuzzyVariable('d_char', 63, 4))
-        self.inputs.append(FuzzyVariable('d_token_sqli', 13, 3))
+        self.inputs.append(FuzzyVariable('d_token_sqli', 13, 2))
         self.inputs.append(FuzzyVariable('d_token_xss', 31, 5))
         self.inputs.append(FuzzyVariable('d_token_ci', 8, 4))
         self.inputs.append(FuzzyVariable('punck', 56, 2))

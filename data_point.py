@@ -5,14 +5,14 @@ from fuzzy_variable import FuzzyVariable
 class DataPoint:
     def __init__(self):
         self.fuzzy_vars = dict()
-        self.fuzzy_vars['d_char'] = FuzzyVariable('d_char', 11, 4, 3)
+        self.fuzzy_vars['d_char'] = FuzzyVariable('d_char', 63, 4, 3)
         self.fuzzy_vars['d_token_sqli'] = FuzzyVariable('d_token_sqli', 13, 2, 3)
-        self.fuzzy_vars['d_token_xss'] = FuzzyVariable('d_token_xss', 31, 6, 3)
+        self.fuzzy_vars['d_token_xss'] = FuzzyVariable('d_token_xss', 31, 5, 3)
         self.fuzzy_vars['d_token_ci'] = FuzzyVariable('d_token_ci', 8, 4, 3)
-        self.fuzzy_vars['punck'] = FuzzyVariable('punck', 38, 4, 3)
-        self.fuzzy_vars['s_token'] = FuzzyVariable('s_token', 15, 2, 3)
-        self.fuzzy_vars['space'] = FuzzyVariable('space', 26, 4, 3)
-        self.fuzzy_vars['length'] = FuzzyVariable('length', 196, 40, 3)
+        self.fuzzy_vars['punck'] = FuzzyVariable('punck', 56, 2, 3)
+        self.fuzzy_vars['s_token'] = FuzzyVariable('s_token', 346, 6, 3)
+        self.fuzzy_vars['space'] = FuzzyVariable('space', 85, 6, 3)
+        self.fuzzy_vars['length'] = FuzzyVariable('length', 969, 63, 3)
         self.output = ''
         self.memberships = []
 

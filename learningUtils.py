@@ -4,6 +4,37 @@ from urllib.parse import unquote
 from tokenizer import MyTokenizer
 from frequencesCounter import FrequencesCounter
 
+class LearningRule:
+    def __init__(self):
+        self.variables = ['d_char', 'd_token_sqli', 'd_token_xss', 'd_token_ci', 'punck', 's_token', 'space', 'length',
+                          'attack']
+        self.trans_from_lv = {'L': 0, 'M': 1, 'H': 3}
+        self.trans_from_ch = {0: 'L', 1: 'M', 2: 'H'}
+        self.levels = {}
+        self.chromosome = {}
+
+    def set_from_chromosome(self, chromosome):
+        self.chromosome = chromosome
+        gens = [chromosome[i:i + 2] for i in range(0, len(chromosome), 2)]
+        for i in range(0, len(gens)):
+            self.levels[self.variables[i]] = self.trans_from_ch[gens[i].count(1)]
+        return self.levels
+
+    def set_from_levels(self, levels):
+        self.levels = levels
+        self.chromosome = []
+        for var in levels:
+            gen = self.trans_from_lv[levels[var]]
+            self.chromosome.append((gen & 10) >> 1)
+            self.chromosome.append(gen & 1)
+        return self.chromosome
+
+    def __eq__(self, other):
+        for var in self.levels:
+            if self.levels[var] != other.levels[var]:
+                return False
+        return True
+
 
 class LearningUtils:
     def __init__(self):
@@ -28,69 +59,31 @@ class LearningUtils:
             input.append(freq)
         return input
 
-
-    def int_to_level(self, a):
-        if a == 0:
-            return 'L'
-        elif a == 1 or a == 2:
-            return 'M'
-        elif a == 3:
-            return 'H'
-
-
-    def get_attack_count(self, fs, data):
+    @staticmethod
+    def get_attack_count(fs, data):
         count = 0
         for line in data:
             try:
                 res = fs.compute(line)
-                if res > 50:
+                if res > 40:
                     count = count + 1
             except ValueError:
                 pass
         return count
 
+    def fitness_function(self, individual):
+        fs = FuzzySystem()
+        rule = LearningRule()
+        rule.set_from_chromosome(individual)
+        fs.add_rule(rule.levels, self.type)
+        fs.start_system(self.type)
 
-    def chromosome_to_rule(self,r):
-        variables = ['d_char', 'd_token_sqli', 'd_token_xss', 'd_token_ci', 'punck', 's_token', 'space', 'length']
-        levels = dict()
-        for var in variables:
-            levels[var] = self.int_to_level(r & 0b11)
-            r = r >> 2
-        levels['attack'] = self.int_to_level(r & 0b11)
-        if not levels['attack']:
-            levels['attack'] = 'L'
-        return levels
-
-
-
-    def get_result(self, fs):
         detected_attack_line = self.get_attack_count(fs, self.attack_data[self.type])
         detected_valid_line = self.get_attack_count(fs, self.valid_data)
         all_attack_line = len(self.attack_data[self.type])
         all_valid_line = len(self.valid_data)
 
         res = (all_attack_line - detected_attack_line) / all_attack_line + detected_valid_line / all_valid_line
-        print(detected_attack_line, detected_valid_line, res)
-        return res
-
-    def fitness_function_sciPy(self, x):
-        fs = FuzzySystem()
-        for r in x:
-            r = int(r)
-            levels = self.chromosome_to_rule(r)
-            fs.add_rule(levels, self.type)
-
-        fs.start_system(self.type)
-        return self.get_result(fs)
-
-    def fitness_function_for_one_rule(self, individual):
-        x = 0
-        for bit in individual:
-            x = (x << 1) | bit
-
-        fs = FuzzySystem()
-        levels = self.chromosome_to_rule(x)
-        fs.add_rule(levels, self.type)
-        fs.start_system(self.type)
-        return (self.get_result(fs),)
+        #print(detected_attack_line, detected_valid_line, res)
+        return (res,)
 
