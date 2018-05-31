@@ -1,0 +1,10 @@
+{"d_char": "M", "d_token_sqli": "L", "d_token_xss": "M", "d_token_ci": "L", "punck": "M", "s_token": "L", "space": "L", "length": "M", "attack": "H"}
+{"d_char": "M", "d_token_sqli": "L", "d_token_xss": "M", "d_token_ci": "L", "punck": "M", "s_token": "M", "space": "M", "length": "M", "attack": "H"}
+{"d_char": "M", "d_token_sqli": "L", "d_token_xss": "L", "d_token_ci": "L", "punck": "L", "s_token": "L", "space": "L", "length": "L", "attack": "H"}
+{"d_char": "M", "d_token_sqli": "M", "d_token_xss": "M", "d_token_ci": "L", "punck": "M", "s_token": "L", "space": "M", "length": "M", "attack": "H"}
+{"d_char": "M", "d_token_sqli": "L", "d_token_xss": "L", "d_token_ci": "L", "punck": "M", "s_token": "L", "space": "L", "length": "M", "attack": "H"}
+{"d_char": "M", "d_token_sqli": "L", "d_token_xss": "M", "d_token_ci": "L", "punck": "M", "s_token": "L", "space": "M", "length": "M", "attack": "H"}
+{"d_char": "M", "d_token_sqli": "L", "d_token_xss": "M", "d_token_ci": "L", "punck": "L", "s_token": "L", "space": "L", "length": "M", "attack": "H"}
+{"d_char": "M", "d_token_sqli": "M", "d_token_xss": "M", "d_token_ci": "L", "punck": "H", "s_token": "M", "space": "M", "length": "M", "attack": "H"}
+{"d_char": "M", "d_token_sqli": "M", "d_token_xss": "L", "d_token_ci": "L", "punck": "M", "s_token": "M", "space": "M", "length": "M", "attack": "H"}
+{"d_char": "M", "d_token_sqli": "L", "d_token_xss": "L", "d_token_ci": "L", "punck": "M", "s_token": "M", "space": "M", "length": "M", "attack": "H"}

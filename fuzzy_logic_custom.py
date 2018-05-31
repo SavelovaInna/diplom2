@@ -1,16 +1,17 @@
 import numpy as np
 import skfuzzy as fuzz
 import matplotlib.pyplot as plt
+import operator
 
 
 class FuzzyVariable:
-    def __init__(self, name, max, middle):
+    def __init__(self, name, max, middle, step=1):
         self.name = name
         self.max = max
         self.middle = middle
 
         self.terms = {}
-        self.universum = np.arange(0, max, 1)
+        self.universum = np.arange(0, max, step)
         self.levels = {}
 
         triangle = [0, 0, middle]
@@ -24,6 +25,12 @@ class FuzzyVariable:
         self.levels['L'] = fuzz.interp_membership(self.universum, self.terms['L'], input)
         self.levels['M'] = fuzz.interp_membership(self.universum, self.terms['M'], input)
         self.levels['H'] = fuzz.interp_membership(self.universum, self.terms['H'], input)
+
+    def get_word_level_max(self):
+        return max(self.levels, key=lambda key: self.levels[key])
+
+    def __eq__(self, other):
+        return self.get_word_level_max() == other
 
     def graph(self):
         fig, ax = plt.subplots(figsize=(8, 9))
@@ -57,11 +64,61 @@ class Rule:
     def __repr__(self):
         return str(self.antecedents_levels) + ' - attack:' + self.consequent_level
 
+class Implication:
+    def calc_implication(self, a,b):
+        pass
+
+
+class ImplicationLukacevich(Implication):
+    def __init__(self):
+        self.antecedentOperator = np.fmax
+        self.ruleOperator = np.fmin
+
+    def calc_implication(self, a, b):
+        return min(1, 1 - a + b)
+
+
+class ImplicationMamdani(Implication):
+    def __init__(self):
+        self.antecedentOperator = np.fmin
+        self.ruleOperator = np.fmax
+
+    def calc_implication(self, a, b):
+        return min(a, b)
+
+class ImplicationGedel(Implication):
+    def __init__(self):
+        self.antecedentOperator = np.fmax
+        self.ruleOperator = np.fmin
+
+    def calc_implication(self, a, b):
+        if a <= b:
+            return 1
+        return b
+
+class ImplicationZade(Implication):
+    def __init__(self):
+        self.antecedentOperator = np.fmax
+        self.ruleOperator = np.fmin
+
+    def calc_implication(self, a, b):
+        return max(min(a,b), 1-a)
+
+class ImplicationResher(Implication):
+    def __init__(self):
+        self.antecedentOperator = np.fmax
+        self.ruleOperator = np.fmin
+
+    def calc_implication(self, a, b):
+        if a <= b:
+            return 1
+        return 0
+
 
 class FuzzySystem:
     def __init__(self):
         self.inputs = {}
-        self.inputs['d_char'] = FuzzyVariable('d_char', 63, 4)
+        self.inputs['d_char'] = FuzzyVariable('d_char', 63, 4,1)
         self.inputs['d_token_sqli'] = FuzzyVariable('d_token_sqli', 13, 2)
         self.inputs['d_token_xss'] = FuzzyVariable('d_token_xss', 31, 5)
         self.inputs['d_token_ci'] = FuzzyVariable('d_token_ci', 8, 4)
@@ -70,37 +127,46 @@ class FuzzySystem:
         self.inputs['space'] = FuzzyVariable('space', 85, 6)
         self.inputs['length'] = FuzzyVariable('length', 969, 63)
 
-        self.attack = FuzzyVariable('attack', 100, 50)
+        self.output = FuzzyVariable('attack', 100, 50)
 
         self.rules = {}
         self.rules['sqli'] = []
         self.rules['xss'] = []
         self.rules['ci'] = []
 
-        self.implication = self.implication_Lukacevich
+        self.implication = ImplicationLukacevich()
 
-    def implication_Lukacevich(self, a, b):
-        return min(1, 1 - a + b)
+    def add_input(self, name, max, middle, step = 1):
+        self.inputs[name] = FuzzyVariable(name, max, middle, step)
 
-    def implicationMamdani(self, a, b):
-        return min(a, b)
+    def add_output(self, name, max, middle, step = 1):
+        self.output = FuzzyVariable(name, max, middle, step)
 
     def set_implication(self, impl_name):
         if impl_name == 'mamdani':
-            self.implication = self.implicationMamdani
+            self.implication = ImplicationMamdani()
+        elif impl_name == 'gedel':
+            self.implication = ImplicationGedel()
+        elif impl_name == 'lukasevich':
+            self.implication = ImplicationLukacevich()
+        elif impl_name == 'zade':
+            self.implication = ImplicationZade()
+        elif impl_name == 'resher':
+            self.implication = ImplicationResher()
 
-    def add_rule(self, inputs_levels, out_level, type):
+    def add_rule(self, inputs_levels, type):
         rule = Rule()
-        for var in inputs_levels:
-            rule.add_antecedent(var, inputs_levels[var])
-        rule.set_consequent(out_level)
+        for var in self.inputs:
+            if var in inputs_levels:
+                rule.add_antecedent(var, inputs_levels[var])
+        rule.set_consequent(inputs_levels[self.output.name])
         self.rules[type].append(rule)
 
     def start_system(self, type):
         pass
 
     def modus_ponens(self, antecedent_var_level, consequent_set_level):
-        return [self.implication(antecedent_var_level,x) for x in consequent_set_level]
+        return [self.implication.calc_implication(antecedent_var_level, x) for x in consequent_set_level]
 
     def agredate(self, array, func):
         agg = array[0]
@@ -116,58 +182,21 @@ class FuzzySystem:
             rule_arr = []
             for var in rule.antecedents_levels:
                 ant_level = self.inputs[var].levels[rule.antecedents_levels[var]]
-                cons_term = self.attack.terms[rule.consequent_level]
+                cons_term = self.output.terms[rule.consequent_level]
                 rule_arr.append(self.modus_ponens(ant_level, cons_term))
-            implications.append(self.agredate(rule_arr, np.fmax))
-        res = self.agredate(implications, np.fmin)
-        return fuzz.defuzz(self.attack.universum, res, 'centroid')
+            implications.append(self.agredate(rule_arr, self.implication.antecedentOperator))
+        try:
+            res = self.agredate(implications, self.implication.ruleOperator)
+            return fuzz.defuzz(self.output.universum, res, 'centroid')
+        except Exception:
+            return 0
 
     def compute(self, data):
-        #for type in self.rules.keys():
-        type = 'sqli'
-        print (self.compute_for_type(data, type))
-
-
-
-rules = [
-{'d_char': 'M', 'd_token_sqli': 'M', 'd_token_xss': 'L', 'd_token_ci': 'L', 'punck': 'M', 's_token': 'L', 'space': 'M', 'length': 'M'},
-{'d_char': 'M', 'd_token_sqli': 'M', 'd_token_xss': 'L', 'd_token_ci': 'L', 'punck': 'M', 's_token': 'M', 'space': 'M', 'length': 'M'},
-{'d_char': 'M', 'd_token_sqli': 'M', 'd_token_xss': 'L', 'd_token_ci': 'L', 'punck': 'L', 's_token': 'L', 'space': 'M', 'length': 'L'},
-{'d_char': 'L', 'd_token_sqli': 'M', 'd_token_xss': 'L', 'd_token_ci': 'L', 'punck': 'M', 's_token': 'L', 'space': 'L', 'length': 'M'},
-{'d_char': 'M', 'd_token_sqli': 'L', 'd_token_xss': 'L', 'd_token_ci': 'L', 'punck': 'M', 's_token': 'L', 'space': 'L', 'length': 'L'},
-{'d_char': 'L', 'd_token_sqli': 'M', 'd_token_xss': 'L', 'd_token_ci': 'L', 'punck': 'M', 's_token': 'L', 'space': 'M', 'length': 'M'},
-{'d_char': 'M', 'd_token_sqli': 'L', 'd_token_xss': 'L', 'd_token_ci': 'L', 'punck': 'M', 's_token': 'L', 'space': 'M', 'length': 'M'},
-]
-
-fs = FuzzySystem()
-for r in rules:
-    fs.add_rule(r, 'H', 'sqli')
-
-
-data = [
-    {'d_char': 1, 'd_token_sqli': 2, 'd_token_xss': 0, 'd_token_ci': 0, 'punck': 5, 's_token': 0, 'space': 2, 'length': 26},
-{'d_char': 1, 'd_token_sqli': 2, 'd_token_xss': 0, 'd_token_ci': 0, 'punck': 6, 's_token': 0, 'space': 2, 'length': 27},
-{'d_char': 1, 'd_token_sqli': 2, 'd_token_xss': 0, 'd_token_ci': 0, 'punck': 6, 's_token': 0, 'space': 2, 'length': 27},
-{'d_char': 4, 'd_token_sqli': 1, 'd_token_xss': 0, 'd_token_ci': 0, 'punck': 3, 's_token': 0, 'space': 2, 'length': 12},
-{'d_char': 8, 'd_token_sqli': 1, 'd_token_xss': 0, 'd_token_ci': 0, 'punck': 4, 's_token': 0, 'space': 8, 'length': 45},
-{'d_char': 1, 'd_token_sqli': 2, 'd_token_xss': 0, 'd_token_ci': 0, 'punck': 5, 's_token': 2, 'space': 0, 'length': 27},
-{'d_char': 3, 'd_token_sqli': 2, 'd_token_xss': 0, 'd_token_ci': 0, 'punck': 6, 's_token': 2, 'space': 2, 'length': 32},
-{'d_char': 1, 'd_token_sqli': 5, 'd_token_xss': 0, 'd_token_ci': 0, 'punck': 17, 's_token': 5, 'space': 0, 'length': 43},
-{'d_char': 11, 'd_token_sqli': 1, 'd_token_xss': 2, 'd_token_ci': 0, 'punck': 2, 's_token': 0, 'space': 2, 'length': 21},
-{'d_char': 2, 'd_token_sqli': 1, 'd_token_xss': 0, 'd_token_ci': 1, 'punck': 2, 's_token': 0, 'space': 2, 'length': 21},
-{'d_char': 2, 'd_token_sqli': 1, 'd_token_xss': 0, 'd_token_ci': 0, 'punck': 0, 's_token': 2, 'space': 3, 'length': 9} ,
-{'d_char': 1, 'd_token_sqli': 1, 'd_token_xss': 0, 'd_token_ci': 1, 'punck': 3, 's_token': 1, 'space': 2, 'length': 22},
-{'d_char': 4, 'd_token_sqli': 1, 'd_token_xss': 2, 'd_token_ci': 0, 'punck': 3, 's_token': 0, 'space': 2, 'length': 12},
-{'d_char': 0, 'd_token_sqli': 4, 'd_token_xss': 0, 'd_token_ci': 0, 'punck': 4, 's_token': 2, 'space': 8, 'length': 40},
-{'d_char': 1, 'd_token_sqli': 3, 'd_token_xss': 0, 'd_token_ci': 0, 'punck': 7, 's_token': 3, 'space': 2, 'length': 34},
-{'d_char': 5, 'd_token_sqli': 1, 'd_token_xss': 1, 'd_token_ci': 0, 'punck': 2, 's_token': 2, 'space': 2, 'length': 14},
-{'d_char': 2, 'd_token_sqli': 3, 'd_token_xss': 0, 'd_token_ci': 0, 'punck': 5, 's_token': 2, 'space': 2, 'length': 32}
-]
-
-fs.set_implication('mamdani')
-for d in data:
-    print(fs.compute_for_type(d, 'sqli'))
-
-
-
-
+        res = {}
+        for type in self.rules.keys():
+           res[type] = self.compute_for_type(data, type)
+        sorted_res = sorted(res.items(), key=operator.itemgetter(1), reverse=True)
+        if abs(sorted_res[0][1] - sorted_res[1][1]) < 5 and \
+                data['d_token_' + sorted_res[0][0]] < data['d_token_' + sorted_res[1][0]]:
+                return sorted_res[1]
+        return sorted_res[0]

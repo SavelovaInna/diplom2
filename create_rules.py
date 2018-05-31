@@ -3,7 +3,6 @@ from tokenizer import MyTokenizer
 from frequencesCounter import FrequencesCounter
 from data_point import DataPoint
 
-
 def create_rules(type):
     data_points = []
 
@@ -28,8 +27,5 @@ def create_rules(type):
         if not contains_point(d):
             data_points.append(d)
 
-    return [point.to_dict_levels() for point in data_points]
-
-    # for point in data_points:
-    #     print(point.to_dict_levels())
+    return [point.memberships for point in data_points]
 

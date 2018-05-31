@@ -1,4 +1,4 @@
-from fuzzy_logic import FuzzySystem
+from fuzzy_logic_custom import FuzzySystem
 import codecs
 from urllib.parse import unquote
 from tokenizer import MyTokenizer
@@ -35,11 +35,15 @@ class LearningRule:
                 return False
         return True
 
+    def __str__(self):
+        return str(self.levels)
+
 
 class LearningUtils:
-    def __init__(self):
+    def __init__(self, implication='mamdani'):
         self.attack_data = {}
         self.valid_data = self.get_input_from_file('data/valid_data.txt')
+        self.implication = implication
 
     def setType(self, type):
         self.type = type
@@ -59,13 +63,12 @@ class LearningUtils:
             input.append(freq)
         return input
 
-    @staticmethod
-    def get_attack_count(fs, data):
+    def get_attack_count(self, fs, data):
         count = 0
         for line in data:
             try:
-                res = fs.compute(line)
-                if res > 40:
+                res = fs.compute_for_type(line, self.type)
+                if res > 50:
                     count = count + 1
             except ValueError:
                 pass
@@ -76,6 +79,7 @@ class LearningUtils:
         rule = LearningRule()
         rule.set_from_chromosome(individual)
         fs.add_rule(rule.levels, self.type)
+        fs.set_implication(self.implication)
         fs.start_system(self.type)
 
         detected_attack_line = self.get_attack_count(fs, self.attack_data[self.type])
@@ -83,7 +87,7 @@ class LearningUtils:
         all_attack_line = len(self.attack_data[self.type])
         all_valid_line = len(self.valid_data)
 
-        res = (all_attack_line - detected_attack_line) / all_attack_line + detected_valid_line / all_valid_line
-        #print(detected_attack_line, detected_valid_line, res)
+        res = (all_attack_line * 100 - detected_attack_line) / all_attack_line + detected_valid_line / all_valid_line
+        print(detected_attack_line, detected_valid_line, res)
         return (res,)
 

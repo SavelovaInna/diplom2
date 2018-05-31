@@ -8,7 +8,7 @@ from deap import tools
 
 from learningUtils import LearningUtils, LearningRule
 from create_rules import create_rules
-from fuzzy_logic import FuzzySystem
+from fuzzy_logic_custom import FuzzySystem
 
 
 class GeneticLearning:
@@ -20,8 +20,8 @@ class GeneticLearning:
     def init_population(self, pcls, ind_init):
         return pcls(ind_init(x) for x in create_rules(self.utils.type))
 
-    def __init__(self, type):
-        self.utils = LearningUtils()
+    def __init__(self, type, implication_type='mamdani'):
+        self.utils = LearningUtils(implication_type)
         self.utils.setType(type)
 
         creator.create("FitnessMin", base.Fitness, weights=(-1.0,))
@@ -55,7 +55,7 @@ class GeneticLearning:
         while i < len(data):
             try:
                 res = fs.compute(data[i])
-                if res > 50:
+                if res[1] > 50:
                     del data[i]
                     i = i - 1
             except ValueError:
@@ -65,6 +65,7 @@ class GeneticLearning:
     def get_optimal_rules(self):
         rules = []
         fs = FuzzySystem()
+        fs.set_implication(self.utils.implication)
         while True:
             res = self.ga()
             rule = LearningRule()
