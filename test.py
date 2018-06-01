@@ -50,10 +50,14 @@ def test(type):
     read_rule(fs, 'ci')
 
     fs.start_system(type)
-    fs.set_implication('resher')
-    print(get_statistic_learning_data(fs, 'sqli', 'data/new_sqliAll.txt'))
-    print(get_statistic_learning_data(fs, 'xss', 'data/new_xssAll.txt'))
-    print(get_statistic_learning_data(fs, 'ci', 'data/new_ciAll.txt'))
-    print(get_false_alarm(fs))
+    # fs.set_implication('resher')
+    # print(get_statistic_learning_data(fs, 'sqli', 'data/new_sqliAll.txt'))
+    # print(get_statistic_learning_data(fs, 'xss', 'data/new_xssAll.txt'))
+    # print(get_statistic_learning_data(fs, 'ci', 'data/new_ciAll.txt'))
+    # print(get_false_alarm(fs))
+
+    #print(get_statistic_learning_data(fs, 'sqli', 'data/test_data/sql.txt'))
+    #print(get_statistic_learning_data(fs, 'xss', 'data/test_data/xss.txt'))
+    print(get_statistic_learning_data(fs, 'ci', 'data/test_data/ci.txt'))
 
 test('sqli')
