@@ -5,8 +5,9 @@ import operator
 
 
 class FuzzyVariable:
-    def __init__(self, name, max, middle, step=1):
+    def __init__(self, name, max, middle, min=0, step=1):
         self.name = name
+        self.min = min
         self.max = max
         self.middle = middle
 
@@ -14,12 +15,15 @@ class FuzzyVariable:
         self.universum = np.arange(0, max, step)
         self.levels = {}
 
-        triangle = [0, 0, middle]
+        triangle = [min, min, middle]
         self.terms['L'] = fuzz.trimf(self.universum, triangle)
-        triangle = [0, self.middle, self.max]
+        triangle = [min, self.middle, self.max]
         self.terms['M'] = fuzz.trimf(self.universum, triangle)
         triangle = [self.middle, self.max, self.max]
         self.terms['H'] = fuzz.trimf(self.universum, triangle)
+
+    def set_term(self, term_level, triangle_par):
+        self.terms['term_level'] = fuzz.trimf(self.universum, triangle_par)
 
     def set_input(self, input):
         self.levels['L'] = fuzz.interp_membership(self.universum, self.terms['L'], input)
@@ -118,7 +122,7 @@ class ImplicationResher(Implication):
 class FuzzySystem:
     def __init__(self):
         self.inputs = {}
-        self.inputs['d_char'] = FuzzyVariable('d_char', 63, 4,1)
+        self.inputs['d_char'] = FuzzyVariable('d_char', 63, 4, 1)
         self.inputs['d_token_sqli'] = FuzzyVariable('d_token_sqli', 13, 2)
         self.inputs['d_token_xss'] = FuzzyVariable('d_token_xss', 31, 5)
         self.inputs['d_token_ci'] = FuzzyVariable('d_token_ci', 8, 4)

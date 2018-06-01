@@ -10,14 +10,19 @@ class LearningRule:
                           'attack']
         self.trans_from_lv = {'L': 0, 'M': 1, 'H': 3}
         self.trans_from_ch = {0: 'L', 1: 'M', 2: 'H'}
+        self.int_value = 0
         self.levels = {}
         self.chromosome = {}
+
+    def chromosome_to_int(self, bitlist):
+        return int("".join(str(i) for i in bitlist), 2)
 
     def set_from_chromosome(self, chromosome):
         self.chromosome = chromosome
         gens = [chromosome[i:i + 2] for i in range(0, len(chromosome), 2)]
         for i in range(0, len(gens)):
             self.levels[self.variables[i]] = self.trans_from_ch[gens[i].count(1)]
+        self.int_value = self.chromosome_to_int(chromosome)
         return self.levels
 
     def set_from_levels(self, levels):
@@ -27,7 +32,15 @@ class LearningRule:
             gen = self.trans_from_lv[levels[var]]
             self.chromosome.append((gen & 10) >> 1)
             self.chromosome.append(gen & 1)
+        self.int_value = self.chromosome_to_int(self.chromosome)
         return self.chromosome
+
+    def set_from_int(self, int_value):
+        self.int_value = int_value
+        while int_value > 0:
+            self.chromosome.insert(0, int_value & 1)
+            int_value = int_value >> 1
+        self.set_from_chromosome(self.chromosome)
 
     def __eq__(self, other):
         for var in self.levels:

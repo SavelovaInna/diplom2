@@ -9,27 +9,38 @@ from deap import tools
 from learningUtils import LearningUtils, LearningRule
 from create_rules import create_rules
 from fuzzy_logic_custom import FuzzySystem
+from random import randint
 
 
 class GeneticLearning:
-    def init_individual(self, creator, levels):
-        rule = LearningRule()
-        rule.set_from_levels(levels)
-        return creator(rule.chromosome)
+    def create_params(self, max):
+        return [max//2, 0, max//2, max, max//2]
 
-    def init_population(self, pcls, ind_init):
-        return pcls(ind_init(x) for x in create_rules(self.utils.type))
+    def init_individual(self, creator, count_rules):
+        rules_ch = []
+        for i in range(0, count_rules):
+            rule = LearningRule()
+            rule.set_from_levels(self.initial_rules[randint(0, len(self.initial_rules)-1)])
+            rules_ch.append(rule.int_value)
+        return creator(self.initial_membersips + rules_ch)
+
+    def init_population(self, pcls, ind_init, pop_size, count_rules):
+        return pcls(ind_init(count_rules) for i in range(0, pop_size))
 
     def __init__(self, type, implication_type='mamdani'):
         self.utils = LearningUtils(implication_type)
         self.utils.setType(type)
+        self.initial_rules = create_rules(self.utils.type)
+        self.initial_membersips  = []
+        for x in [63, 13, 31, 8, 56, 346, 85, 969]:
+            self.initial_membersips.extend(self.create_params(x))
 
         creator.create("FitnessMin", base.Fitness, weights=(-1.0,))
-        creator.create("Individual", array.array, typecode='b', fitness=creator.FitnessMin)
+        creator.create("Individual", array.array, typecode='i', fitness=creator.FitnessMin)
         self.toolbox = base.Toolbox()
 
         self.toolbox.register("individual_guess", self.init_individual, creator.Individual)
-        self.toolbox.register("population_guess", self.init_population, list, self.toolbox.individual_guess)
+        self.toolbox.register("population_guess", self.init_population, list, self.toolbox.individual_guess, 30, 5)
 
         self.toolbox.register("evaluate", self.utils.fitness_function)
         self.toolbox.register("mate", tools.cxTwoPoint)
@@ -85,4 +96,7 @@ class GeneticLearning:
         for rule in rules:
             print(rule.levels)
         return rules
+
+l = GeneticLearning('sqli')
+l.get_optimal_rules()
 
