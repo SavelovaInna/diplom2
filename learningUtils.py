@@ -12,16 +12,19 @@ class LearningRule:
         self.trans_from_ch = {0: 'L', 1: 'M', 2: 'H'}
         self.int_value = 0
         self.levels = {}
-        self.chromosome = {}
+        self.chromosome = []
 
     def chromosome_to_int(self, bitlist):
         return int("".join(str(i) for i in bitlist), 2)
 
-    def set_from_chromosome(self, chromosome):
-        self.chromosome = chromosome
+    def chromosome_to_levels(self, chromosome):
         gens = [chromosome[i:i + 2] for i in range(0, len(chromosome), 2)]
         for i in range(0, len(gens)):
             self.levels[self.variables[i]] = self.trans_from_ch[gens[i].count(1)]
+
+    def set_from_chromosome(self, chromosome):
+        self.chromosome = chromosome
+        self.chromosome_to_levels(chromosome)
         self.int_value = self.chromosome_to_int(chromosome)
         return self.levels
 
@@ -37,10 +40,8 @@ class LearningRule:
 
     def set_from_int(self, int_value):
         self.int_value = int_value
-        while int_value > 0:
-            self.chromosome.insert(0, int_value & 1)
-            int_value = int_value >> 1
-        self.set_from_chromosome(self.chromosome)
+        self.chromosome = [int(x) for x in list("{0:0>18b}".format(int_value))]
+        self.chromosome_to_levels(self.chromosome)
 
     def __eq__(self, other):
         for var in self.levels:
@@ -87,11 +88,20 @@ class LearningUtils:
                 pass
         return count
 
+    def set_memberships(self, var, membersips):
+        var.set_term('L', [0,0, membersips[0]])
+        var.set_term('M', membersips[1:4])
+        var.set_term('H', [membersips[4], membersips[4], var.max])
+
     def fitness_function(self, individual):
         fs = FuzzySystem()
-        rule = LearningRule()
-        rule.set_from_chromosome(individual)
-        fs.add_rule(rule.levels, self.type)
+        var_membersips = [individual[i:i + 5] for i in range(0, len(fs.inputs) * 5, 5)]
+        for var, membersip in zip(fs.inputs.keys(), var_membersips):
+            self.set_memberships(fs.inputs[var], membersip)
+        for r in individual[len(fs.inputs) * 5:]:
+            rule = LearningRule()
+            rule.set_from_int(r)
+            fs.add_rule(rule.levels, self.type)
         fs.set_implication(self.implication)
         fs.start_system(self.type)
 

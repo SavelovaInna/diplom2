@@ -2,7 +2,7 @@ import re
 import os
 
 def get_payload_xml(file_name):
-    f = open('data/test_data/sqlmap/' + filename, 'r')
+    f = open('data/test_data/sqlmap/' + file_name, 'r')
     data = f.read()
     f.close()
     res = re.findall(r'<vector>([\s\S]*?)<\/vector>', data)

@@ -23,7 +23,7 @@ class FuzzyVariable:
         self.terms['H'] = fuzz.trimf(self.universum, triangle)
 
     def set_term(self, term_level, triangle_par):
-        self.terms['term_level'] = fuzz.trimf(self.universum, triangle_par)
+        self.terms[term_level] = fuzz.trimf(self.universum, triangle_par)
 
     def set_input(self, input):
         self.levels['L'] = fuzz.interp_membership(self.universum, self.terms['L'], input)
